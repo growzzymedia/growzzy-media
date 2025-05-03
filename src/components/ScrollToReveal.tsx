@@ -9,13 +9,16 @@ const ScrollToReveal = () => {
           entry.target.classList.add('is-visible');
           
           // Handle special animations based on data attributes
-          if (entry.target.hasAttribute('data-delay')) {
-            entry.target.style.animationDelay = `${entry.target.getAttribute('data-delay')}s`;
+          // Cast target to HTMLElement to access style property
+          const element = entry.target as HTMLElement;
+          
+          if (element.hasAttribute('data-delay')) {
+            element.style.animationDelay = `${element.getAttribute('data-delay')}s`;
           }
           
-          if (entry.target.hasAttribute('data-animation')) {
-            const animationType = entry.target.getAttribute('data-animation');
-            entry.target.classList.add(`animate-${animationType}`);
+          if (element.hasAttribute('data-animation')) {
+            const animationType = element.getAttribute('data-animation');
+            element.classList.add(`animate-${animationType}`);
           }
         }
       });
