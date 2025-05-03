@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 const Resources = () => {
   const resources = [
@@ -26,10 +26,10 @@ const Resources = () => {
       <div className="container">
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 fade-in-section">Resources</h2>
-          <p className="text-lg mb-3 fade-in-section">
+          <p className="text-lg mb-3 fade-in-section" data-delay="0.1">
             Freebies, templates & tools to make your marketing life easier.
           </p>
-          <p className="text-muted-foreground fade-in-section">
+          <p className="text-muted-foreground fade-in-section" data-delay="0.2">
             Whether you're looking for plug-and-play social templates or full-scale strategy kits, 
             we've curated a library to help marketers move faster and smarter.
           </p>
@@ -37,25 +37,33 @@ const Resources = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {resources.map((resource, index) => (
-            <div 
+            <a 
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section"
-              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+              href="https://superprofile.bio/growzzymedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group"
+              data-delay={`${0.2 + index * 0.1}`}
             >
-              <img 
-                src={resource.image}
-                alt={resource.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="overflow-hidden">
+                <img 
+                  src={resource.image}
+                  alt={resource.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
               <div className="p-6">
                 <div className="text-sm text-growzzy-primary font-medium mb-2">{resource.type}</div>
-                <h3 className="text-lg font-semibold">{resource.title}</h3>
+                <h3 className="text-lg font-semibold group-hover:text-growzzy-primary transition-colors">{resource.title}</h3>
+                <div className="mt-4 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  View Resource <ExternalLink className="ml-2 w-4 h-4" />
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
-        <div className="text-center fade-in-section">
+        <div className="text-center fade-in-section" data-delay="0.5">
           <a 
             href="https://superprofile.bio/growzzymedia" 
             target="_blank"

@@ -54,11 +54,11 @@
   }
 
   .btn-primary {
-    @apply bg-growzzy-primary hover:bg-growzzy-dark text-white font-medium py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
+    @apply bg-growzzy-primary hover:bg-growzzy-dark text-white font-medium py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1;
   }
 
   .btn-outline {
-    @apply border-2 border-growzzy-primary text-growzzy-primary hover:bg-growzzy-primary hover:text-white font-medium py-[10px] px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
+    @apply border-2 border-growzzy-primary text-growzzy-primary hover:bg-growzzy-primary hover:text-white font-medium py-[10px] px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center shadow-sm hover:shadow-md transform hover:-translate-y-1;
   }
 
   .section-padding {
@@ -68,9 +68,25 @@
   .fade-in-section {
     @apply opacity-0;
   }
+  
+  .slide-in-section {
+    @apply opacity-0;
+  }
+  
+  .scale-in-section {
+    @apply opacity-0;
+  }
 
   .fade-in-section.is-visible {
     @apply animate-fade-in;
+  }
+  
+  .slide-in-section.is-visible {
+    @apply animate-slide-in;
+  }
+  
+  .scale-in-section.is-visible {
+    @apply animate-scale-in;
   }
   
   .service-card {
@@ -82,7 +98,7 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
   }
 }
 
@@ -120,4 +136,109 @@
   background-color: rgba(13, 139, 139, 0.1);
   bottom: 10%;
   left: 20%;
+}
+
+/* Additional Animation Classes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.7s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s ease-out forwards;
+}
+
+/* Enhanced keyframes */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.8s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+/* Media queries for better responsiveness */
+@media (max-width: 640px) {
+  .btn-primary, .btn-outline {
+    @apply w-full justify-center py-2.5 px-4;
+  }
+  
+  .container {
+    @apply px-4;
+  }
+  
+  .bg-blob {
+    opacity: 0.3;
+  }
 }

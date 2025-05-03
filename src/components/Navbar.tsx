@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,36 +21,50 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Our Work", href: "#work" },
-    { name: "Blog", href: "#blog" },
-    { name: "Resources", href: "#resources" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Our Work", href: "/portfolio" },
+    { name: "Blog", href: "/blog" },
+    { name: "Resources", href: "/resources" },
+    { name: "Contact", href: "/contact" }
   ];
+
+  // Determine if we're on the homepage to show hashtag links
+  const isHomePage = location.pathname === '/';
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="container flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <img src="/lovable-uploads/5b22c906-da6f-4a74-93b1-443537c5a5f4.png" alt="Growzzy Media Logo" className="h-10" />
+          <img src="/lovable-uploads/5b22c906-da6f-4a74-93b1-443537c5a5f4.png" alt="Growzzy Media Logo" className="h-12" />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-foreground hover:text-growzzy-primary font-medium transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a href="#contact" className="btn-primary">
+          {navLinks.map((link) => {
+            // Determine if this is a hash link (only applies on homepage)
+            const isHashLink = link.name !== "Home" && isHomePage;
+            const linkPath = isHashLink ? `/#${link.name.toLowerCase().replace(' ', '-')}` : link.href;
+            
+            return (
+              <Link
+                key={link.name}
+                to={linkPath}
+                className={`text-foreground hover:text-growzzy-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-growzzy-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${location.pathname === link.href ? 'text-growzzy-primary after:scale-x-100' : ''}`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          <Link to="/contact" className="btn-primary">
             Let's Talk
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile menu button */}
@@ -63,25 +78,28 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-md transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+      <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-md transition-all duration-500 ${isOpen ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'}`}>
         <div className="container py-4 flex flex-col space-y-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-foreground hover:text-growzzy-primary py-2 font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
-          <a 
-            href="#contact" 
+          {navLinks.map((link) => {
+            const isHashLink = link.name !== "Home" && isHomePage;
+            const linkPath = isHashLink ? `/#${link.name.toLowerCase().replace(' ', '-')}` : link.href;
+            
+            return (
+              <Link
+                key={link.name}
+                to={linkPath}
+                className={`text-foreground hover:text-growzzy-primary py-2 font-medium ${location.pathname === link.href ? 'text-growzzy-primary' : ''}`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          <Link 
+            to="/contact" 
             className="btn-primary w-full text-center"
-            onClick={() => setIsOpen(false)}
           >
             Let's Talk
-          </a>
+          </Link>
         </div>
       </div>
     </header>
