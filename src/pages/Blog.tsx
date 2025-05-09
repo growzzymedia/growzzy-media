@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -16,242 +15,120 @@ const BlogPage = () => {
 
   const blogPosts = [
     {
-      id: "linkedin-strategies",
-      title: "5 LinkedIn Strategies That Actually Worked in 2025",
-      excerpt: "We analyzed 100+ campaigns to find what's actually working now. In this article, we break down the exact strategies that are generating results.",
-      date: "May 1, 2025",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      id: "building-online-presence",
+      title: "Building Your Business's Online Presence",
+      excerpt: "In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability — all rolled into one.",
+      date: "May 5, 2025",
+      image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       author: "Varuni Bansal",
-      category: "LinkedIn",
+      category: "Digital Strategy",
       content: `
-        <p class="mb-4">LinkedIn has transformed from a simple job-hunting platform to one of the most powerful B2B marketing channels available today. However, what worked just a year ago is already becoming less effective as the algorithm evolves.</p>
+        <p class="mb-4">In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability — all rolled into one. But building it? That's a whole journey.</p>
         
-        <p class="mb-4">After analyzing over 100 campaigns for our clients in 2025, we've identified the strategies that are actually driving real engagement and business results.</p>
+        <p class="mb-4">Here's how to start:</p>
         
-        <h3 class="text-xl font-semibold my-4">1. Authentic Video Storytelling</h3>
+        <h3 class="text-xl font-semibold my-4">Clarity First</h3>
+        <p class="mb-4">Know what you stand for and who you serve. Your brand voice, messaging, and visuals should all reflect this.</p>
         
-        <p class="mb-4">The days of polished, corporate videos are over. Our highest-performing content has been authentic, single-person videos that share genuine stories and insights. The key is creating content that feels like a one-to-one conversation rather than a broadcast.</p>
+        <h3 class="text-xl font-semibold my-4">Website > Everything Else</h3>
+        <p class="mb-4">Think of your website as your digital home. Make it SEO-optimized, mobile-friendly, and conversion-focused.</p>
         
-        <h3 class="text-xl font-semibold my-4">2. Strategic Comment Engagement</h3>
+        <h3 class="text-xl font-semibold my-4">Social Media Strategy</h3>
+        <p class="mb-4">Choose platforms based on where your audience hangs out. Be consistent, not just present.</p>
         
-        <p class="mb-4">Rather than trying to be everywhere, we've found focusing on becoming a regular, thoughtful commenter on 5-10 strategic accounts yields far better results than random engagement. This focused approach helps build genuine relationships that later convert to business opportunities.</p>
+        <h3 class="text-xl font-semibold my-4">Content is Currency</h3>
+        <p class="mb-4">Blog posts, reels, newsletters — the more value you offer, the more trust you build.</p>
         
-        <h3 class="text-xl font-semibold my-4">3. The "Document, Don't Create" Approach</h3>
+        <h3 class="text-xl font-semibold my-4">Google My Business + Listings</h3>
+        <p class="mb-4">Don't sleep on local SEO. GMB is your best friend for foot traffic and credibility.</p>
         
-        <p class="mb-4">Content that shares real experiences and lessons outperforms theoretical advice by a significant margin. Our clients who share their day-to-day journey, complete with challenges and failures, consistently see higher engagement rates.</p>
-        
-        <h3 class="text-xl font-semibold my-4">4. Data-Driven Storytelling</h3>
-        
-        <p class="mb-4">Posts that combine personal narrative with unique data points get 3x more engagement. The LinkedIn algorithm favors content that offers genuine insight backed by evidence.</p>
-        
-        <h3 class="text-xl font-semibold my-4">5. Consistency Over Frequency</h3>
-        
-        <p class="mb-4">Our analysis shows that consistent posting (2-3 times per week) outperforms daily posting in terms of meaningful engagement and business results. Quality truly beats quantity on today's LinkedIn.</p>
-        
-        <p class="mt-6 text-growzzy-primary font-medium">Want to implement these strategies for your business? Get in touch to learn how we can help optimize your LinkedIn presence.</p>
+        <p class="mt-6 text-growzzy-primary font-medium">Your online presence doesn't need to be perfect on day one. It needs to be intentional, authentic, and constantly evolving.</p>
       `
     },
     {
-      id: "google-ads-mistakes",
-      title: "Why Most Google Ads Campaigns Fail (And How to Fix It)",
-      excerpt: "Common mistakes we've seen after managing $2M+ in ad spend and the exact steps we take to turn underperforming campaigns around.",
-      date: "April 23, 2025",
+      id: "our-glow-up-story",
+      title: "Our Glow-Up Story: How Growzzy Media Became That Digital Marketing Agency",
+      excerpt: "We didn't start with a full team, fancy tools, or massive retainers. We started with a Canva free account, one client who took a chance, and a Wi-Fi connection that worked 60% of the time.",
+      date: "April 28, 2025",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Mayank Goel",
+      category: "Company Story",
+      content: `
+        <p class="mb-4">We didn't start with a full team, fancy tools, or massive retainers. We started with a Canva free account, one client who took a chance, and a Wi-Fi connection that worked 60% of the time.</p>
+        
+        <p class="mb-4">Then came the glow-up.</p>
+        
+        <h3 class="text-xl font-semibold my-4">The Learning Curve</h3>
+        <p class="mb-4">We learned (the hard way) how to run ads that actually convert.</p>
+        <p class="mb-4">We figured out SEO isn't just keywords — it's strategy.</p>
+        <p class="mb-4">We stopped saying yes to everyone and niched down.</p>
+        <p class="mb-4">We made mistakes, lost sleep, and sometimes even lost confidence.</p>
+        
+        <p class="mb-4">But we stayed real. Every brand we helped grow became proof we were doing something right.</p>
+        
+        <h3 class="text-xl font-semibold my-4">Today?</h3>
+        <p class="mb-4">We're a team that breathes digital. From ghostwriting for LinkedIn influencers to managing multi-channel ad funnels — we've evolved into a full-stack agency with heart.</p>
+        
+        <p class="mt-6 text-growzzy-primary font-medium">Moral of the story: You don't have to start perfect. You just have to start. And stay obsessed with learning.</p>
+      `
+    },
+    {
+      id: "beginners-guide-to-seo",
+      title: "Beginner's Guide to SEO",
+      excerpt: "Search Engine Optimization is how you show up when someone Googles 'best [your service] near me.' It's how you get found organically, without paying for ads.",
+      date: "April 15, 2025",
+      image: "https://images.unsplash.com/photo-1572573089284-38d13a9e973e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Varuni Bansal",
+      category: "SEO",
+      content: `
+        <h3 class="text-xl font-semibold my-4">What even is SEO?</h3>
+        <p class="mb-4">Search Engine Optimization is how you show up when someone Googles "best [your service] near me." It's how you get found organically, without paying for ads.</p>
+        
+        <p class="mb-4">The basics:</p>
+        
+        <h4 class="text-lg font-semibold my-3">On-page SEO</h4>
+        <p class="mb-4">Headlines, keywords, and meta descriptions. These help Google "read" your content.</p>
+        
+        <h4 class="text-lg font-semibold my-3">Technical SEO</h4>
+        <p class="mb-4">Site speed, mobile-friendliness, clean URLs. If your site loads like it's stuck in 2005, that's a problem.</p>
+        
+        <h4 class="text-lg font-semibold my-3">Off-page SEO</h4>
+        <p class="mb-4">Backlinks from reputable sites. Think of them as "votes of confidence" for your content.</p>
+        
+        <h4 class="text-lg font-semibold my-3">Content is (still) king</h4>
+        <p class="mb-4">Write blogs that answer real questions. Optimize them with relevant keywords.</p>
+        
+        <h3 class="text-xl font-semibold my-4">Tools to explore:</h3>
+        <p class="mb-4">Google Search Console, Ubersuggest, Ahrefs (if you're fancy), and Yoast (for WordPress).</p>
+        
+        <p class="mt-6 text-growzzy-primary font-medium">Quick tip: Don't keyword-stuff. You're writing for humans first, algorithms second.</p>
+      `
+    },
+    {
+      id: "marketing-trends-2025",
+      title: "The Top Marketing Trends You Can't Afford to Ignore in 2025",
+      excerpt: "From AI tools to community-led growth and the evolution of search behavior, here's what's shaping digital marketing in 2025.",
+      date: "April 3, 2025",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       author: "Mayank Goel",
-      category: "Paid Ads",
+      category: "Marketing Trends",
       content: `
-        <p class="mb-4">After managing over $2 million in Google Ads spend across various industries, we've identified patterns in why so many campaigns underperform or fail completely.</p>
+        <h3 class="text-xl font-semibold my-4">1. AI Everywhere</h3>
+        <p class="mb-4">From copywriting to customer service — AI tools are not a threat, but a tool. Use them to scale smarter.</p>
         
-        <p class="mb-4">If you're not seeing the results you expected from your Google Ads investment, you might be making one of these common mistakes:</p>
+        <h3 class="text-xl font-semibold my-4">2. Search is Changing</h3>
+        <p class="mb-4">People now search on Instagram, TikTok, and even Reddit. Think beyond Google — optimize content where your audience searches.</p>
         
-        <h3 class="text-xl font-semibold my-4">1. Targeting Keywords, Not Intent</h3>
+        <h3 class="text-xl font-semibold my-4">3. Personal Branding > Business Pages</h3>
+        <p class="mb-4">Founders are becoming influencers. People want to hear from humans, not logos.</p>
         
-        <p class="mb-4">Many campaigns focus on keyword volume rather than user intent. We've found that organizing campaigns around user intent journeys rather than just keywords improves conversion rates by up to 60%.</p>
+        <h3 class="text-xl font-semibold my-4">4. Community-Led Growth</h3>
+        <p class="mb-4">Private groups, Discord servers, and exclusive newsletters are where loyalty is built.</p>
         
-        <h3 class="text-xl font-semibold my-4">2. Poor Landing Page Alignment</h3>
+        <h3 class="text-xl font-semibold my-4">5. Micro Content is Winning</h3>
+        <p class="mb-4">60-second videos, carousels, stories — if your content can't hold attention in 3 seconds, it's gone.</p>
         
-        <p class="mb-4">Even the best ad targeting fails when landing pages don't deliver on the ad's promise. Ensuring message match between ads and landing pages has reduced our clients' bounce rates by an average of 40%.</p>
-        
-        <h3 class="text-xl font-semibold my-4">3. Ignoring Quality Score</h3>
-        
-        <p class="mb-4">Many advertisers don't realize that improving quality scores is often more cost-effective than increasing bids. We've helped clients reduce cost-per-acquisition by 30% simply by focusing on quality score improvement.</p>
-        
-        <h3 class="text-xl font-semibold my-4">4. Not Leveraging AI-Driven Insights</h3>
-        
-        <p class="mb-4">Google's AI capabilities have evolved dramatically, but many advertisers aren't taking advantage of them. Properly configured Performance Max campaigns are showing 20% better ROAS than traditional campaign structures for many of our clients.</p>
-        
-        <h3 class="text-xl font-semibold my-4">5. Neglecting Conversion Tracking</h3>
-        
-        <p class="mb-4">Accurate conversion tracking remains the foundation of optimization, yet we regularly audit accounts with incorrect or incomplete tracking. Fixing tracking issues has immediately revealed optimization opportunities that were previously invisible.</p>
-        
-        <p class="mt-6 text-growzzy-primary font-medium">Ready to transform your Google Ads performance? Let's audit your campaigns and identify opportunities for immediate improvement.</p>
-      `
-    },
-    {
-      id: "content-framework",
-      title: "The Art of Content that Converts: Our Framework",
-      excerpt: "Turn passive scrollers into active customers with this approach. We share our battle-tested content framework that works across all platforms.",
-      date: "April 15, 2025",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Varuni Bansal",
-      category: "Content Strategy",
-      content: `
-        <p class="mb-4">Creating content that not only engages but actually drives conversions is both an art and a science. After years of testing and refining, we've developed a framework that consistently helps our clients turn passive scrollers into active customers.</p>
-        
-        <h3 class="text-xl font-semibold my-4">The AEIOU Framework</h3>
-        
-        <p class="mb-4">Our content framework is built around five key elements:</p>
-        
-        <h4 class="text-lg font-semibold my-3">A - Attention</h4>
-        <p class="mb-4">Every piece of content must grab attention in the first 3 seconds (for video) or first line (for text). We use pattern interrupts, surprising statements, or compelling questions to stop the scroll.</p>
-        
-        <h4 class="text-lg font-semibold my-3">E - Emotion</h4>
-        <p class="mb-4">Content that triggers an emotional response is shared and remembered. We identify the core emotion most relevant to your offering and ensure it's woven throughout the content.</p>
-        
-        <h4 class="text-lg font-semibold my-3">I - Information</h4>
-        <p class="mb-4">Value delivery is non-negotiable. Every piece provides genuinely useful information that positions your brand as a helpful authority rather than just a seller.</p>
-        
-        <h4 class="text-lg font-semibold my-3">O - Objection Handling</h4>
-        <p class="mb-4">Great content anticipates and addresses potential objections before they become roadblocks to conversion. This builds trust and removes friction from the buyer's journey.</p>
-        
-        <h4 class="text-lg font-semibold my-3">U - Urgency</h4>
-        <p class="mb-4">Every piece of content should include a reason to act now rather than later, whether that's through limited-time offers, scarcity, or simply highlighting the cost of delay.</p>
-        
-        <p class="mt-6 text-growzzy-primary font-medium">Want to implement this framework for your content strategy? Contact us to discuss how we can help transform your content from merely engaging to actively converting.</p>
-      `
-    },
-    {
-      id: "ecommerce-case-study",
-      title: "Behind the Scenes: How We Tripled an E-commerce Brand's ROAS",
-      excerpt: "A detailed case study of how we restructured a struggling ad account and implemented a new strategy that delivered exceptional results.",
-      date: "April 8, 2025",
-      image: "https://images.unsplash.com/photo-1553531384-cc64c863e30d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Mayank Goel",
-      category: "Case Study",
-      content: `
-        <p class="mb-4">When a fashion e-commerce brand came to us with a struggling ad account and diminishing returns, they were spending $15,000 per month with a ROAS of just 1.2x. Here's how we transformed their results and tripled their return on ad spend in just 90 days.</p>
-        
-        <h3 class="text-xl font-semibold my-4">The Challenge</h3>
-        
-        <p class="mb-4">The brand was running generic campaigns with broad targeting, creative that wasn't standing out, and a conversion path that wasn't optimized for the customer journey. Their ad account structure made it difficult to identify which products and audiences were actually performing well.</p>
-        
-        <h3 class="text-xl font-semibold my-4">Our Approach</h3>
-        
-        <h4 class="text-lg font-semibold my-3">1. Account Restructuring</h4>
-        <p class="mb-4">We completely rebuilt the account structure around customer intent and product categories, allowing for much more precise optimization. This also gave us clearer data on which products deserved more budget allocation.</p>
-        
-        <h4 class="text-lg font-semibold my-3">2. Advanced Audience Segmentation</h4>
-        <p class="mb-4">Instead of broad targeting, we created detailed customer personas based on purchase behavior and engagement patterns. This allowed us to create highly relevant ad experiences for each segment.</p>
-        
-        <h4 class="text-lg font-semibold my-3">3. Creative Overhaul</h4>
-        <p class="mb-4">We developed a distinctive visual language for the brand's ads that stood out in crowded feeds. By focusing on lifestyle imagery that highlighted the emotional benefits of the products, we saw click-through rates increase by 40%.</p>
-        
-        <h4 class="text-lg font-semibold my-3">4. Landing Page Optimization</h4>
-        <p class="mb-4">We created dedicated landing pages for key product categories that were specifically designed to continue the story started in the ads, resulting in a 25% improvement in landing page conversion rate.</p>
-        
-        <h3 class="text-xl font-semibold my-4">The Results</h3>
-        
-        <p class="mb-4">Within 90 days, we achieved:</p>
-        <ul class="list-disc pl-5 mb-4">
-          <li>ROAS increase from 1.2x to 3.8x</li>
-          <li>45% reduction in cost per acquisition</li>
-          <li>28% increase in average order value</li>
-          <li>190% increase in total revenue from ads</li>
-        </ul>
-        
-        <p class="mt-6 text-growzzy-primary font-medium">Want similar results for your e-commerce store? Contact us for a free strategy session to explore how we can transform your ad performance.</p>
-      `
-    },
-    {
-      id: "website-conversion",
-      title: "Website Conversion Optimization: Small Changes, Big Impact",
-      excerpt: "Learn about the subtle design and UX changes that significantly increased conversion rates for our clients.",
-      date: "March 30, 2025",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Varuni Bansal",
-      category: "Website Design",
-      content: `
-        <p class="mb-4">When it comes to website conversion optimization, sometimes the smallest changes make the biggest difference. Over the past year, we've run dozens of optimization experiments for our clients, and we've consistently found that subtle adjustments can lead to dramatic improvements in conversion rates.</p>
-        
-        <h3 class="text-xl font-semibold my-4">Key Changes That Drove Results</h3>
-        
-        <h4 class="text-lg font-semibold my-3">1. Button Text Optimization</h4>
-        <p class="mb-4">Changing a button from "Submit" to "Get My Free Quote" increased click-through rates by 34% for a financial services client. The specificity and value-focus of the new text made the action more appealing.</p>
-        
-        <h4 class="text-lg font-semibold my-3">2. Form Field Reduction</h4>
-        <p class="mb-4">For a B2B client, reducing their lead form from 9 fields to just 4 essential ones resulted in a 56% increase in form completions without any meaningful decrease in lead quality.</p>
-        
-        <h4 class="text-lg font-semibold my-3">3. Social Proof Positioning</h4>
-        <p class="mb-4">Moving testimonials from a separate page to strategically placed spots throughout the conversion funnel increased conversion rates by 18% for an e-commerce client.</p>
-        
-        <h4 class="text-lg font-semibold my-3">4. Mobile Navigation Simplification</h4>
-        <p class="mb-4">Redesigning a client's mobile menu to prioritize the top 3 user journeys resulted in a 23% increase in mobile conversion rate as users could more easily find what they were looking for.</p>
-        
-        <h4 class="text-lg font-semibold my-3">5. Strategic White Space</h4>
-        <p class="mb-4">Adding more breathing room around key call-to-action elements increased click rates by 20% for a SaaS client. The visual hierarchy became clearer, drawing more attention to conversion elements.</p>
-        
-        <p class="mt-6 text-growzzy-primary font-medium">Want to identify the small changes that could make a big impact on your website's conversion rate? Contact us for a conversion audit and actionable recommendations.</p>
-      `
-    },
-    {
-      id: "personal-branding",
-      title: "Building Your Personal Brand: A Step-by-Step Guide",
-      excerpt: "Everything you need to know about establishing yourself as a thought leader in your industry through strategic content and positioning.",
-      date: "March 22, 2025",
-      image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Mayank Goel",
-      category: "Personal Branding",
-      content: `
-        <p class="mb-4">Personal branding has evolved from a nice-to-have to an essential professional asset. Whether you're an entrepreneur, executive, or professional looking to advance your career, strategically building your personal brand opens doors to opportunities that would otherwise remain closed.</p>
-        
-        <h3 class="text-xl font-semibold my-4">The 5-Step Personal Branding Framework</h3>
-        
-        <h4 class="text-lg font-semibold my-3">Step 1: Define Your Brand DNA</h4>
-        <p class="mb-4">Before creating content or engaging online, you need clarity on your unique positioning. Answer these key questions:</p>
-        <ul class="list-disc pl-5 mb-4">
-          <li>What specific expertise do you offer that others don't?</li>
-          <li>What are 3-5 core topics you want to be known for?</li>
-          <li>Who specifically are you trying to influence or help?</li>
-          <li>What's your unique perspective or approach?</li>
-        </ul>
-        
-        <h4 class="text-lg font-semibold my-3">Step 2: Create Your Content Strategy</h4>
-        <p class="mb-4">Content is the foundation of modern personal branding. Develop a sustainable content strategy by:</p>
-        <ul class="list-disc pl-5 mb-4">
-          <li>Choosing 1-2 primary platforms (don't try to be everywhere)</li>
-          <li>Developing content pillars around your core topics</li>
-          <li>Creating a realistic content calendar you can stick to</li>
-          <li>Balancing thought leadership with personal storytelling</li>
-        </ul>
-        
-        <h4 class="text-lg font-semibold my-3">Step 3: Build Your Visual Identity</h4>
-        <p class="mb-4">Consistency in your visual presence builds recognition. Focus on:</p>
-        <ul class="list-disc pl-5 mb-4">
-          <li>Professional photography that reflects your brand personality</li>
-          <li>Consistent color schemes and visual elements</li>
-          <li>A cohesive look across all platforms</li>
-          <li>Visual elements that reflect your industry but help you stand out</li>
-        </ul>
-        
-        <h4 class="text-lg font-semibold my-3">Step 4: Strategic Networking</h4>
-        <p class="mb-4">Personal brands grow faster with the right connections. Implement:</p>
-        <ul class="list-disc pl-5 mb-4">
-          <li>A targeted engagement strategy with key influencers in your space</li>
-          <li>Collaborative content opportunities</li>
-          <li>Consistent community engagement</li>
-          <li>Value-first relationship building</li>
-        </ul>
-        
-        <h4 class="text-lg font-semibold my-3">Step 5: Create Your Opportunity Flywheel</h4>
-        <p class="mb-4">Convert your growing influence into real opportunities:</p>
-        <ul class="list-disc pl-5 mb-4">
-          <li>Develop a clear call-to-action strategy</li>
-          <li>Create a system for capturing opportunities</li>
-          <li>Build authority accelerators (podcasts, speaking, books, etc.)</li>
-          <li>Regularly reassess and refine your strategy based on results</li>
-        </ul>
-        
-        <p class="mt-6 text-growzzy-primary font-medium">Want help implementing this framework for your personal brand? We specialize in helping executives and entrepreneurs build influential personal brands. Contact us to discuss your goals.</p>
+        <p class="mt-6 text-growzzy-primary font-medium">Final word: 2025 isn't about doing everything. It's about doing the right things, consistently, and building genuine relationships with your audience.</p>
       `
     }
   ];
