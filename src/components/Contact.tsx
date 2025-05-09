@@ -13,19 +13,38 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // This should be replaced with the actual Zapier webhook URL
+  const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/123456/abcdef/"; 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // Send to Zapier webhook (which can then connect to Google Sheets)
+      const response = await fetch(zapierWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: 'website_contact_form'
+        }),
+        mode: 'no-cors', // Required for cross-origin requests
+      });
+      
+      // Also send email notification
+      // Note: In a production app, you'd implement a server-side function
+      // This is just a simulation of the form submission
       console.log('Form submitted:', formData);
+      
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out! We'll get back to you soon.",
@@ -39,9 +58,16 @@ const Contact = () => {
         serviceNeeded: '',
         message: ''
       });
-      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const serviceOptions = [

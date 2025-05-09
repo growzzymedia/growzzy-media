@@ -28,6 +28,8 @@ const ContactPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // This should be replaced with the actual Zapier webhook URL that connects to the Google Sheet
+  const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/123456/abcdef/";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -42,11 +44,19 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // In a real implementation, you'd send this data to your backend or a form service
-      console.log("Form submitted:", formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send data to Zapier webhook (which will then send to Google Sheets)
+      await fetch(zapierWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: 'website_contact_page'
+        }),
+        mode: 'no-cors', // Required for cross-origin requests
+      });
       
       // Show success message
       toast({

@@ -1,10 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 
 const BlogDetail = () => {
   const { id } = useParams<{ id: string }>();
