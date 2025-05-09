@@ -1,19 +1,15 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, User, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 
-const BlogPage = () => {
-  useEffect(() => {
-    document.title = "Blog | Growzzy Media";
-    window.scrollTo(0, 0);
-  }, []);
-
-  const [filter, setFilter] = useState('All Posts');
-
+const BlogDetail = () => {
+  const { id } = useParams<{ id: string }>();
+  
+  // Sample blog posts data (in a real application, this would come from an API)
   const blogPosts = [
     {
       id: "linkedin-strategies",
@@ -256,111 +252,177 @@ const BlogPage = () => {
     }
   ];
 
-  const categories = ['All Posts', ...Array.from(new Set(blogPosts.map(post => post.category)))];
+  const post = blogPosts.find(post => post.id === id);
   
-  const filteredPosts = filter === 'All Posts' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === filter);
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Growzzy Media Blog`;
+    } else {
+      document.title = "Blog Post Not Found | Growzzy Media";
+    }
+    window.scrollTo(0, 0);
+  }, [post]);
+  
+  // Related posts based on category (excluding current post)
+  const relatedPosts = post 
+    ? blogPosts
+        .filter(p => p.category === post.category && p.id !== post.id)
+        .slice(0, 2)
+    : [];
+
+  if (!post) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <main className="container pt-32 pb-20">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold mb-4">Blog Post Not Found</h1>
+            <p className="mb-8">The blog post you're looking for doesn't exist.</p>
+            <Link to="/blog" className="btn-primary">
+              Back to Blog
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-growzzy-light relative overflow-hidden">
+        <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-growzzy-light relative overflow-hidden">
           <div className="bg-blob blob-1 animate-float"></div>
           
           <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-display font-bold leading-tight mb-6 fade-in-section">
-                Behind the <span className="text-growzzy-primary">Campaigns</span>
+            <div className="max-w-4xl mx-auto">
+              <Link 
+                to="/blog" 
+                className="inline-flex items-center text-growzzy-primary hover:text-growzzy-dark mb-6"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" /> Back to all articles
+              </Link>
+              
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight mb-6 fade-in-section">
+                {post.title}
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 fade-in-section" data-delay="0.2">
-                Read stories from the field, marketing experiments, LinkedIn tips, and BTS from our agency journey.
-                We keep it real. No fluff. All growth.
-              </p>
+              
+              <div className="flex flex-wrap items-center gap-4 mb-8 text-sm">
+                <div className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1 text-growzzy-primary" />
+                  <span>{post.date}</span>
+                </div>
+                
+                <div className="flex items-center">
+                  <User className="w-4 h-4 mr-1 text-growzzy-primary" />
+                  <span>{post.author}</span>
+                </div>
+                
+                <div className="flex items-center">
+                  <Tag className="w-4 h-4 mr-1 text-growzzy-primary" />
+                  <span>{post.category}</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Blog Posts */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category, index) => (
-                <button 
-                  key={index} 
-                  className={`px-4 py-2 rounded-md shadow-sm transition-colors ${filter === category ? 'bg-growzzy-primary text-white' : 'bg-white hover:bg-growzzy-light border border-gray-200'}`}
-                  onClick={() => setFilter(category)}
-                >
-                  {category}
-                </button>
-              ))}
+        {/* Featured Image */}
+        <div className="container -mt-16 mb-12 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-lg overflow-hidden shadow-xl fade-in-section" data-delay="0.1">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                className="w-full h-auto object-cover"
+              />
             </div>
+          </div>
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
-                <Link
-                  key={index}
-                  to={`/blog/${post.id}`}
-                  className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group"
-                  data-delay={`${0.1 + index * 0.1}`}
-                >
-                  <div className="overflow-hidden">
-                    <img 
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+        {/* Blog Content */}
+        <section className="py-8 md:py-12">
+          <div className="container">
+            <div className="max-w-3xl mx-auto fade-in-section" data-delay="0.2">
+              <div 
+                className="prose lg:prose-lg max-w-none"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              ></div>
+              
+              <div className="mt-12 pt-8 border-t">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full bg-growzzy-primary/10 flex items-center justify-center text-growzzy-primary mr-4">
+                    <User className="w-6 h-6" />
                   </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-2">
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {post.date}
-                      </div>
-                      <span className="text-xs bg-growzzy-light text-growzzy-primary px-2 py-1 rounded-full">{post.category}</span>
+                  <div>
+                    <p className="font-semibold">{post.author}</p>
+                    <p className="text-sm text-muted-foreground">Co-Founder, Growzzy Media</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Related Posts */}
+        {relatedPosts.length > 0 && (
+          <section className="py-16 md:py-24 bg-growzzy-light">
+            <div className="container">
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-12 text-center fade-in-section">Related Articles</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {relatedPosts.map((relatedPost, index) => (
+                  <Link
+                    key={index}
+                    to={`/blog/${relatedPost.id}`}
+                    className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group"
+                    data-delay={`${0.1 + index * 0.1}`}
+                  >
+                    <div className="overflow-hidden">
+                      <img 
+                        src={relatedPost.image}
+                        alt={relatedPost.title}
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors">{post.title}</h3>
-                    <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center text-sm">
-                        <User className="w-4 h-4 mr-1 text-growzzy-primary" />
-                        <span>{post.author}</span>
-                      </div>
-                      <span className="text-growzzy-primary font-medium inline-flex items-center hover:text-growzzy-dark transition-colors">
+                    <div className="p-6">
+                      <span className="text-xs bg-growzzy-light text-growzzy-primary px-2 py-1 rounded-full mb-2 inline-block">
+                        {relatedPost.category}
+                      </span>
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors">
+                        {relatedPost.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4 line-clamp-2">{relatedPost.excerpt}</p>
+                      <span className="text-growzzy-primary font-medium inline-flex items-center">
                         Read Article <ArrowRight className="ml-2 w-4 h-4" />
                       </span>
                     </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Newsletter Signup */}
-        <section className="py-16 md:py-24 bg-growzzy-gray">
-          <div className="container">
-            <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg max-w-3xl mx-auto fade-in-section">
-              <div className="text-center">
-                <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">Get marketing insights delivered</h2>
-                <p className="text-muted-foreground mb-8">
-                  Subscribe to our newsletter for exclusive marketing tips, case studies, and industry insights.
-                </p>
-                <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="flex-1 px-4 py-3 rounded-md border border-input focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    required
-                  />
-                  <button type="submit" className="btn-primary whitespace-nowrap">
-                    Subscribe
-                  </button>
-                </form>
+                  </Link>
+                ))}
               </div>
+              
+              <div className="text-center mt-12">
+                <Link to="/blog" className="btn-primary inline-flex items-center">
+                  See All Articles <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {/* CTA Section */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg max-w-4xl mx-auto text-center fade-in-section">
+              <h2 className="text-3xl font-display font-semibold mb-4">Ready to grow your business?</h2>
+              <p className="text-lg mb-8">
+                Let's discuss how we can help your business achieve remarkable growth with our AI-powered digital solutions.
+              </p>
+              <Link to="/connect" className="btn-primary inline-flex items-center">
+                Let's Connect <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </div>
           </div>
         </section>
@@ -371,4 +433,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default BlogDetail;

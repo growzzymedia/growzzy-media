@@ -30,41 +30,30 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Our Work", href: "/portfolio" },
+    { name: "About Us", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Resources", href: "/resources" },
-    { name: "Contact", href: "/contact" }
+    { name: "Connect", href: "/connect" }
   ];
-
-  // Determine if we're on the homepage to show hashtag links
-  const isHomePage = location.pathname === '/';
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="container flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+        <div className="flex items-center">
           <img src="/lovable-uploads/5b22c906-da6f-4a74-93b1-443537c5a5f4.png" alt="Growzzy Media Logo" className="h-12" />
-        </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => {
-            // Determine if this is a hash link (only applies on homepage)
-            const isHashLink = link.name !== "Home" && isHomePage;
-            const linkPath = isHashLink ? `/#${link.name.toLowerCase().replace(' ', '-')}` : link.href;
-            
-            return (
-              <Link
-                key={link.name}
-                to={linkPath}
-                className={`text-foreground hover:text-growzzy-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-growzzy-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${location.pathname === link.href ? 'text-growzzy-primary after:scale-x-100' : ''}`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-          <Link to="/contact" className="btn-primary">
-            Let's Talk
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              className={`text-foreground hover:text-growzzy-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-growzzy-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${location.pathname === link.href ? 'text-growzzy-primary after:scale-x-100' : ''}`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
 
         {/* Mobile menu button */}
@@ -80,26 +69,15 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-md transition-all duration-500 ${isOpen ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'}`}>
         <div className="container py-4 flex flex-col space-y-4">
-          {navLinks.map((link) => {
-            const isHashLink = link.name !== "Home" && isHomePage;
-            const linkPath = isHashLink ? `/#${link.name.toLowerCase().replace(' ', '-')}` : link.href;
-            
-            return (
-              <Link
-                key={link.name}
-                to={linkPath}
-                className={`text-foreground hover:text-growzzy-primary py-2 font-medium ${location.pathname === link.href ? 'text-growzzy-primary' : ''}`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-          <Link 
-            to="/contact" 
-            className="btn-primary w-full text-center"
-          >
-            Let's Talk
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              className={`text-foreground hover:text-growzzy-primary py-2 font-medium ${location.pathname === link.href ? 'text-growzzy-primary' : ''}`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
       </div>
     </header>
