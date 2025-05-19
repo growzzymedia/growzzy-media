@@ -6,25 +6,25 @@ import { Link } from 'react-router-dom';
 const Portfolio = () => {
   const portfolioItems = [
     {
-      id: "ecommerce-growth",
-      title: "E-commerce Growth Campaign",
-      category: "Paid Advertising",
-      metrics: "3.2x ROAS, 45% increase in conversion rate",
-      image: "https://images.unsplash.com/photo-1553531384-cc64c863e30d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      id: "humara-pandit",
+      title: "Humara Pandit – Faith Meets Performance Marketing",
+      category: "Ads Management | Meta + Google",
+      metrics: "25% ROAS growth in just 3 months",
+      image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      id: "saas-brand",
-      title: "SaaS Brand Redesign",
-      category: "Website Development",
-      metrics: "68% increase in lead generation, 2.1x demo bookings",
-      image: "https://images.unsplash.com/photo-1569098644584-210bcd375b59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      id: "claysip",
+      title: "ClaySip – Crafting an Online Identity from Clay",
+      category: "Brand Building + Website + Organic Reach",
+      metrics: "50,000+ impressions in 2 months (80% organic reach)",
+      image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      id: "linkedin-campaign",
-      title: "LinkedIn Thought Leadership",
-      category: "LinkedIn Management",
-      metrics: "10x profile growth, 24 speaking opportunities secured",
-      image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      id: "polki-sarees",
+      title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
+      category: "Organic Social Growth | Reels Strategy",
+      metrics: "8 million+ views, 100% organically",
+      image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 

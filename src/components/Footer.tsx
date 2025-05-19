@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowUp, Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { ArrowUp, Mail, Phone, Facebook, Instagram, Linkedin, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { 
   Accordion,
@@ -29,6 +29,18 @@ const Footer = () => {
     {
       question: "How do you use AI in your services?",
       answer: "We blend AI with creativity to improve targeting, analyze data faster, and create smarter campaigns — so you get better results, faster."
+    },
+    {
+      question: "Can I choose only one or two services instead of a full package?",
+      answer: "Yes! Every business has unique needs — we offer modular service plans to match your goals and budget."
+    },
+    {
+      question: "Do you work with international clients?",
+      answer: "Yes — we proudly serve clients globally, with deep understanding of regional nuances and audience behaviors."
+    },
+    {
+      question: "What's the process to get started?",
+      answer: "Simple: Book a discovery call, we'll audit your needs & goals, you get a tailored roadmap, and we execute and grow together!"
     }
   ];
 
@@ -50,6 +62,14 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
+            <a 
+              href="https://superprofile.bio/lf/67a5d624b08b3900136a29b9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-growzzy-primary text-white rounded-md hover:bg-growzzy-primary/80 transition-colors"
+            >
+              Let's Connect <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
 
           <div>

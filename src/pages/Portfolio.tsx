@@ -12,61 +12,61 @@ const PortfolioPage = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  // Sample portfolio data - in a real scenario, this would come from an API or CMS
+  // Complete portfolio data with all case studies
   const portfolioItems = [
     {
-      id: "ecommerce-growth",
-      title: "E-commerce Growth Campaign",
-      category: "Paid Advertising",
-      metrics: "3.2x ROAS, 45% increase in conversion rate",
-      image: "https://images.unsplash.com/photo-1553531384-cc64c863e30d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "FashionCo",
-      description: "A comprehensive Meta & Google ads campaign that transformed an e-commerce store's revenue."
+      id: "humara-pandit",
+      title: "Humara Pandit – Faith Meets Performance Marketing",
+      category: "Ads Management | Meta + Google",
+      metrics: "25% ROAS growth in just 3 months",
+      image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      client: "Humara Pandit",
+      description: "Faith-tech startup redefining how modern devotees access spiritual rituals."
     },
     {
-      id: "saas-brand",
-      title: "SaaS Brand Redesign",
-      category: "Website Development",
-      metrics: "68% increase in lead generation, 2.1x demo bookings",
-      image: "https://images.unsplash.com/photo-1569098644584-210bcd375b59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "CloudSync",
-      description: "Complete rebrand and website overhaul for a growing SaaS company targeting enterprise clients."
+      id: "claysip",
+      title: "ClaySip – Crafting an Online Identity from Clay",
+      category: "Brand Building + Website + Organic Reach",
+      metrics: "50,000+ impressions in 2 months (80% organic reach)",
+      image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      client: "ClaySip",
+      description: "Building a digital identity for handcrafted terracotta drinkware from scratch."
     },
     {
-      id: "linkedin-campaign",
-      title: "LinkedIn Thought Leadership",
-      category: "LinkedIn Management",
-      metrics: "10x profile growth, 24 speaking opportunities secured",
-      image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Executive Coach",
-      description: "Personal branding and content strategy for a C-suite executive building their consulting practice."
+      id: "polki-sarees",
+      title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
+      category: "Organic Social Growth | Reels Strategy",
+      metrics: "8 million+ views, 100% organically",
+      image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      client: "Polki Sarees",
+      description: "D2C brand founded by women for women, driving awareness through organic content."
     },
     {
-      id: "social-media-growth",
-      title: "Instagram Growth Strategy",
-      category: "Organic Social Growth",
-      metrics: "5x follower increase, 300% engagement rate improvement",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Wellness Brand",
-      description: "Organic growth strategy for a wellness brand looking to build community and drive product sales."
+      id: "advocate-rashi",
+      title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
+      category: "LinkedIn Personal Branding",
+      metrics: "Impressions: 870 → 45,678+",
+      image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      client: "Adv. Rashi Singhal",
+      description: "Positioning a legal professional as a credible, insightful voice in the ecosystem."
     },
     {
-      id: "lead-generation",
-      title: "B2B Lead Generation",
-      category: "Custom Online Solutions",
-      metrics: "126 qualified leads, $450k pipeline value",
-      image: "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Consulting Firm",
-      description: "Multi-channel lead generation campaign combining LinkedIn, email marketing, and retargeting."
+      id: "bedtime-essentials",
+      title: "Bedtime Essentials – From Manufacturer to D2C Brand",
+      category: "Funnel Creation | Social Media | D2C Storefront",
+      metrics: "1.6x increase in revenue in 60 days",
+      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      client: "Bedtime Essentials",
+      description: "Transforming an offline bedsheet manufacturer into a digital D2C brand."
     },
     {
-      id: "video-campaign",
-      title: "Video Marketing Series",
-      category: "Content Production",
-      metrics: "250k views, 3.7% conversion rate",
-      image: "https://images.unsplash.com/photo-1574717024453-e0244203aff1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "EdTech Platform",
-      description: "Educational video series that positioned our client as the industry leader in their field."
+      id: "pace-institute",
+      title: "PACE Institute – Hyperlocal Campaigns with National Impact",
+      category: "Paid Ads | Education Sector",
+      metrics: "₹5,000 ad spend → 180+ qualified leads",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      client: "PACE Institute",
+      description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget."
     }
   ];
 
@@ -106,7 +106,7 @@ const PortfolioPage = () => {
                   key={index} 
                   className="px-4 py-2 bg-white hover:bg-growzzy-light transition-colors border border-gray-200 rounded-md shadow-sm"
                 >
-                  {category}
+                  {category.split('|')[0].trim()}
                 </button>
               ))}
             </div>
@@ -152,9 +152,14 @@ const PortfolioPage = () => {
               <p className="text-lg mb-8">
                 Let's discuss how we can help your business achieve similar results with a custom digital strategy.
               </p>
-              <Link to="/contact" className="btn-primary inline-flex items-center">
+              <a 
+                href="https://superprofile.bio/lf/67a5d624b08b3900136a29b9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary inline-flex items-center"
+              >
                 Start Your Project
-              </Link>
+              </a>
             </div>
           </div>
         </section>

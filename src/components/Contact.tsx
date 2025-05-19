@@ -1,93 +1,9 @@
 
-import React, { useState } from 'react';
-import { Mail, Phone, Send } from 'lucide-react';
-import { toast } from '@/hooks/use-toast';
+import React from 'react';
+import { Mail, Phone, ExternalLink } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    businessType: '',
-    serviceNeeded: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  // This should be replaced with the actual Zapier webhook URL
-  const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/123456/abcdef/"; 
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Send to Zapier webhook (which can then connect to Google Sheets)
-      const response = await fetch(zapierWebhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: 'website_contact_form'
-        }),
-        mode: 'no-cors', // Required for cross-origin requests
-      });
-      
-      // Also send email notification
-      // Note: In a production app, you'd implement a server-side function
-      // This is just a simulation of the form submission
-      console.log('Form submitted:', formData);
-      
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out! We'll get back to you soon.",
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        businessType: '',
-        serviceNeeded: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast({
-        title: "Submission Error",
-        description: "There was a problem sending your message. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const serviceOptions = [
-    "Paid Ads Management",
-    "Organic Social Growth",
-    "LinkedIn Management",
-    "Website Development",
-    "Custom Online Services",
-    "Not Sure Yet"
-  ];
-
-  const businessTypes = [
-    "Startup",
-    "Small Business",
-    "Mid-size Company",
-    "Enterprise",
-    "Agency",
-    "Personal Brand",
-    "Other"
-  ];
+  const superprofileFormUrl = "https://superprofile.bio/lf/67a5d624b08b3900136a29b9";
 
   return (
     <section id="contact" className="section-padding bg-growzzy-light relative">
@@ -103,116 +19,26 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="fade-in-section" data-delay="0.2">
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                  Full Name*
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address*
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Phone (Optional)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="businessType" className="block text-sm font-medium text-foreground mb-2">
-                    Business Type*
-                  </label>
-                  <select
-                    id="businessType"
-                    name="businessType"
-                    value={formData.businessType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    required
-                  >
-                    <option value="" disabled>Select Business Type</option>
-                    {businessTypes.map(type => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="serviceNeeded" className="block text-sm font-medium text-foreground mb-2">
-                    Service Needed*
-                  </label>
-                  <select
-                    id="serviceNeeded"
-                    name="serviceNeeded"
-                    value={formData.serviceNeeded}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    required
-                  >
-                    <option value="" disabled>Select Service</option>
-                    {serviceOptions.map(service => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message*
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-growzzy-primary min-h-32"
-                  required
-                ></textarea>
-              </div>
-
-              <button 
-                type="submit" 
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-display font-semibold mb-6">Ready to grow your business?</h3>
+              <p className="text-muted-foreground mb-8">
+                Fill out our quick form and we'll get back to you within 24 hours to discuss how we can help your business grow online.
+              </p>
+              
+              <a 
+                href={superprofileFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary w-full flex items-center justify-center gap-2"
-                disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Let\'s Chat'}
-                <Send className="w-5 h-5" />
-              </button>
-            </form>
+                Complete Lead Form
+                <ExternalLink className="w-5 h-5" />
+              </a>
+              
+              <p className="text-sm text-muted-foreground mt-4 text-center">
+                Your information is secure and will never be shared with third parties.
+              </p>
+            </div>
           </div>
           
           <div className="fade-in-section" data-delay="0.4">
