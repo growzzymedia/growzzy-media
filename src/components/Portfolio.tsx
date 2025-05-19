@@ -25,6 +25,27 @@ const Portfolio = () => {
       category: "Organic Social Growth | Reels Strategy",
       metrics: "8 million+ views, 100% organically",
       image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "advocate-rashi",
+      title: "Advocate Rashi – Building a Digital Legal Brand",
+      category: "LinkedIn Personal Branding",
+      metrics: "Impressions: 870 → 45,678+",
+      image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "bedtime-essentials",
+      title: "Bedtime Essentials – From Manufacturer to D2C Brand",
+      category: "Funnel Creation | Social Media | D2C Storefront",
+      metrics: "1.6x increase in revenue in 60 days",
+      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "pace-institute",
+      title: "PACE Institute – Hyperlocal Campaigns with National Impact",
+      category: "Paid Ads | Education Sector",
+      metrics: "₹5,000 ad spend → 180+ qualified leads",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 

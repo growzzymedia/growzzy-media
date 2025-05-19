@@ -4,7 +4,18 @@ import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { ArrowLeft, BarChart3, Users, Target, CheckCircle2 } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  BarChart3, 
+  Users, 
+  Target, 
+  CheckCircle2, 
+  TrendingUp, 
+  Link as LinkIcon,
+  ChartBar
+} from 'lucide-react';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../components/ui/chart';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell } from 'recharts';
 
 const ProjectDetail = () => {
   const { id } = useParams<{id: string}>();
@@ -16,135 +27,205 @@ const ProjectDetail = () => {
       // Sample portfolio data
       const portfolioItems = [
         {
-          id: "ecommerce-growth",
-          title: "E-commerce Growth Campaign",
-          category: "Paid Advertising",
-          metrics: "3.2x ROAS, 45% increase in conversion rate",
-          image: "https://images.unsplash.com/photo-1553531384-cc64c863e30d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          client: "FashionCo",
-          description: "A comprehensive Meta & Google ads campaign that transformed an e-commerce store's revenue.",
-          challenge: "FashionCo was struggling with high ad spend and low return on investment. Their previous campaigns had poor targeting, resulting in wasted budget and minimal sales.",
-          solution: "We rebuilt their campaign structure from scratch, focusing on high-intent audiences and creating more compelling ad creative. We implemented advanced tracking to optimize for purchase value rather than just clicks.",
+          id: "humara-pandit",
+          title: "Humara Pandit – Faith Meets Performance Marketing",
+          category: "Ads Management | Meta + Google",
+          metrics: "25% ROAS growth in just 3 months",
+          image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Humara Pandit",
+          description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
+          challenge: "Humara Pandit approached us with a clear mission — they didn't just want clicks; they wanted connections. The challenge was to create ad strategies that resonated with spiritual seekers while delivering measurable results.",
+          solution: "We restructured their Google and Meta ad accounts, built niche-focused audiences, and developed campaigns that blended emotion with action. Whether it was highlighting the sacredness of temple blessings or showcasing limited-edition Prasad, every creative we delivered was spiritually resonant and high-converting.",
           results: [
-            "3.2x increase in Return On Ad Spend (ROAS)",
-            "45% higher conversion rates across all campaigns",
-            "28% reduction in customer acquisition cost",
-            "114% increase in monthly revenue from paid channels"
+            "ROAS grew by 25% within just 3 months",
+            "A 5-day festival sprint hit 2.8x ROAS",
+            "Deep targeting: audiences with spiritual interest saw up to 4x higher engagement",
+            "Creatives included reel scripts, carousels, and video concepts tailored to festival emotions"
           ],
+          chartData: [
+            { name: 'Initial ROAS', value: 100 },
+            { name: 'After 3 Months', value: 125 },
+            { name: 'Festival Sprint', value: 280 }
+          ],
+          engagementData: [
+            { name: 'Regular Audience', value: 100 },
+            { name: 'Spiritual Interest', value: 400 }
+          ],
+          website: "humarapandit.com",
           testimonial: {
-            quote: "The Growzzy Media team transformed our digital marketing. We're reaching the right customers and seeing real results in our bottom line.",
-            name: "Sarah Johnson",
-            position: "Marketing Director, FashionCo"
+            quote: "It wasn't just about selling — it was about building trust in faith, digitally.",
+            name: "Humara Pandit Team",
+            position: "Faith-Tech Startup"
           }
         },
         {
-          id: "saas-brand",
-          title: "SaaS Brand Redesign",
-          category: "Website Development",
-          metrics: "68% increase in lead generation, 2.1x demo bookings",
-          image: "https://images.unsplash.com/photo-1569098644584-210bcd375b59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          client: "CloudSync",
-          description: "Complete rebrand and website overhaul for a growing SaaS company targeting enterprise clients.",
-          challenge: "CloudSync had a dated website that didn't reflect their innovative product. The site had poor conversion paths, unclear messaging, and wasn't optimized for lead generation.",
-          solution: "We developed a complete brand identity refresh and built a new website focused on clear value propositions, testimonials, and strategic call-to-actions. The site included interactive elements and improved user experience.",
+          id: "claysip",
+          title: "ClaySip – Crafting an Online Identity from Clay",
+          category: "Brand Building + Website + Organic Reach",
+          metrics: "50,000+ impressions in 2 months (80% organic reach)",
+          image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "ClaySip",
+          description: "Building a digital identity for handcrafted terracotta drinkware from scratch.",
+          challenge: "ClaySip came to us with a dream and a product — beautifully handcrafted terracotta drinkware — but no digital identity. The challenge was to build an entire brand from scratch in just 60 days.",
+          solution: "From naming the brand to logo design, packaging, setting up the e-commerce website, and launching social media, we captured the essence of tradition with a modern twist. Our earthy-toned visuals and storytelling-focused captions helped the brand connect with audiences looking for sustainability and authenticity.",
           results: [
-            "68% increase in lead form submissions",
-            "2.1x more demo bookings per month",
-            "52% lower bounce rate on key landing pages",
-            "3.7x improvement in site speed metrics"
+            "Website launched in 3 weeks with full catalog and checkout",
+            "Professional product shoot + creatives for social + ads",
+            "50,000+ impressions in 2 months (with 80% organic reach)",
+            "Audience resonated with stories behind each piece — 'From Mud to Mug'"
           ],
+          chartData: [
+            { name: 'Organic Reach', value: 40000 },
+            { name: 'Paid Reach', value: 10000 }
+          ],
+          timelineData: [
+            { name: 'Week 1', value: 'Branding & Strategy' },
+            { name: 'Week 2', value: 'Product Shoot' },
+            { name: 'Week 3', value: 'Website Launch' },
+            { name: 'Week 6', value: 'Social Media Setup' },
+            { name: 'Week 8', value: '50k Impressions' }
+          ],
+          website: "claysip.com | @clay_sip",
           testimonial: {
-            quote: "Our new website has completely transformed how prospects perceive our brand. The strategic design choices have measurably improved our conversion rates.",
-            name: "Michael Chen",
-            position: "CEO, CloudSync"
+            quote: "We built trust with every sip, one story at a time.",
+            name: "ClaySip Founders",
+            position: "Sustainable Drinkware Brand"
           }
         },
         {
-          id: "linkedin-campaign",
-          title: "LinkedIn Thought Leadership",
-          category: "LinkedIn Management",
-          metrics: "10x profile growth, 24 speaking opportunities secured",
-          image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          client: "Executive Coach",
-          description: "Personal branding and content strategy for a C-suite executive building their consulting practice.",
-          challenge: "Our client, a former Fortune 500 executive, wanted to build a consulting practice but had limited visibility online and no content strategy to demonstrate expertise.",
-          solution: "We developed a comprehensive LinkedIn strategy involving profile optimization, strategic content planning, ghost-written articles, and engagement tactics to build visibility in target industries.",
+          id: "polki-sarees",
+          title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
+          category: "Organic Social Growth | Reels Strategy",
+          metrics: "8 million+ views, 100% organically",
+          image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Polki Sarees",
+          description: "D2C brand founded by women for women, driving awareness through organic content.",
+          challenge: "Polki Sarees, a D2C brand founded by women for women, had a powerful product but minimal reach — just 2,000 followers on Instagram. Our goal was to drive awareness and emotion around the everyday saree, using only organic content.",
+          solution: "We leaned into relatable reels — grandma's wardrobe stories, nostalgia around first sarees, the pride in draping tradition daily. Each reel struck a chord with the audience and created an emotional connection to the brand.",
           results: [
-            "10x growth in LinkedIn followers over 8 months",
-            "24 speaking opportunities at industry conferences",
-            "Featured in 5 major industry publications",
-            "Generated 37 high-value client leads directly through LinkedIn"
+            "8 million+ views, 100% organically",
+            "Instagram reach 20x in 4 months",
+            "Dozens of viral reels shared by fashion & culture pages",
+            "Conversions began to flow — with zero ad spend"
           ],
+          chartData: [
+            { name: 'Month 1', value: 10000 },
+            { name: 'Month 2', value: 50000 },
+            { name: 'Month 3', value: 120000 },
+            { name: 'Month 4', value: 200000 }
+          ],
+          followersData: [
+            { name: 'Initial', value: 2000 },
+            { name: 'After Campaign', value: 40000 }
+          ],
+          website: "polkisarees.com | @polki_sarees",
           testimonial: {
-            quote: "Growzzy Media's LinkedIn strategy completely transformed my professional brand. I'm now seen as a thought leader in my field and have more client inquiries than I can handle.",
-            name: "Robert Taylor",
-            position: "Executive Coach & Consultant"
+            quote: "When your content speaks to the heart, algorithms follow.",
+            name: "Polki Sarees Team",
+            position: "Women's Fashion Brand"
           }
         },
         {
-          id: "social-media-growth",
-          title: "Instagram Growth Strategy",
-          category: "Organic Social Growth",
-          metrics: "5x follower increase, 300% engagement rate improvement",
-          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          client: "Wellness Brand",
-          description: "Organic growth strategy for a wellness brand looking to build community and drive product sales.",
-          challenge: "The wellness brand had a stagnant social media presence with inconsistent posting and low engagement despite having quality products with positive customer feedback.",
-          solution: "We implemented a cohesive content strategy with branded templates, user-generated content campaigns, influencer partnerships, and community-building tactics to increase visibility and engagement.",
+          id: "advocate-rashi",
+          title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
+          category: "LinkedIn Personal Branding",
+          metrics: "Impressions: 870 → 45,678+",
+          image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Adv. Rashi Singhal",
+          description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
+          challenge: "In a field like law, digital presence is rare — but powerful. We partnered with Adv. Rashi Singhal to position her as a credible, insightful voice in the legal ecosystem on LinkedIn.",
+          solution: "From posts on legal rights to simplified law explainers and her personal journey as a woman in law, our content made her profile both human and professional. We created a content strategy that showcased her expertise while making legal concepts accessible.",
           results: [
-            "5x increase in Instagram followers in 6 months",
-            "300% higher engagement on posts",
-            "78% growth in website traffic from social channels",
-            "42% of new customers reported discovering the brand through Instagram"
+            "Impressions: 870 → 45,678+",
+            "Increased profile visits from clients and law firms",
+            "Direct inquiries from potential clients",
+            "Followers: 850 → 1,800+"
           ],
+          chartData: [
+            { name: 'Before', value: 870 },
+            { name: 'After', value: 45678 }
+          ],
+          followersData: [
+            { name: 'Initial', value: 850 },
+            { name: 'After 4 Months', value: 1800 }
+          ],
+          contentTypesData: [
+            { name: 'Legal Explainers', value: 40 },
+            { name: 'Personal Stories', value: 25 },
+            { name: 'Industry News', value: 20 },
+            { name: 'Career Advice', value: 15 }
+          ],
+          website: "linkedin.com/in/rashisinghal",
           testimonial: {
-            quote: "The transformation of our social media presence has been remarkable. Growzzy Media helped us find our authentic voice and build a community that truly resonates with our brand values.",
-            name: "Emma Rodriguez",
-            position: "Founder, Wellness Brand"
+            quote: "The law may be black and white — but your brand doesn't have to be.",
+            name: "Adv. Rashi Singhal",
+            position: "Legal Professional"
           }
         },
         {
-          id: "lead-generation",
-          title: "B2B Lead Generation",
-          category: "Custom Online Solutions",
-          metrics: "126 qualified leads, $450k pipeline value",
-          image: "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          client: "Consulting Firm",
-          description: "Multi-channel lead generation campaign combining LinkedIn, email marketing, and retargeting.",
-          challenge: "Our client needed to generate high-quality B2B leads for their consulting services but struggled with expensive, poor-quality leads from their existing channels.",
-          solution: "We created an integrated approach using LinkedIn advertising, content marketing, email nurture sequences, and retargeting to identify and convert high-value prospects.",
+          id: "bedtime-essentials",
+          title: "Bedtime Essentials – From Manufacturer to D2C Brand",
+          category: "Funnel Creation | Social Media | D2C Storefront",
+          metrics: "1.6x increase in revenue in 60 days",
+          image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Bedtime Essentials",
+          description: "Transforming an offline bedsheet manufacturer into a digital D2C brand.",
+          challenge: "An offline manufacturer of bedsheets wanted to go digital — not just to sell online, but to generate wholesale leads and build a trusted identity. The challenge was to create a strategy that worked for both B2C and B2B audiences.",
+          solution: "We launched their Instagram with high-quality visuals, created simple lead-gen forms for B2B customers, and rolled out a D2C store on a no-code platform. Our strategy covered two very different audiences — and served both well.",
           results: [
-            "126 qualified leads generated in the first quarter",
-            "Approximately $450k in pipeline value created",
-            "35% reduction in cost per qualified lead",
-            "18 closed deals directly attributed to the campaign"
+            "1.6x increase in revenue in 60 days",
+            "Inbound inquiries for bulk orders via DMs & forms",
+            "Direct purchases via smart-link storefront",
+            "Custom audience targeting for future remarketing"
           ],
+          chartData: [
+            { name: 'Before', value: 100 },
+            { name: 'After', value: 160 }
+          ],
+          channelData: [
+            { name: 'D2C Store', value: 45 },
+            { name: 'Wholesale', value: 55 }
+          ],
+          website: "bedtimeessentials.dm2buy.com | @bed_timeessentials",
           testimonial: {
-            quote: "The lead generation strategy developed by Growzzy Media completely transformed our business development process. The quality of leads and conversion rates exceeded all our expectations.",
-            name: "David Powell",
-            position: "Managing Partner, Consulting Firm"
+            quote: "We turned fabric into stories — and stories into sales.",
+            name: "Bedtime Essentials Team",
+            position: "Bedding Manufacturer"
           }
         },
         {
-          id: "video-campaign",
-          title: "Video Marketing Series",
-          category: "Content Production",
-          metrics: "250k views, 3.7% conversion rate",
-          image: "https://images.unsplash.com/photo-1574717024453-e0244203aff1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          client: "EdTech Platform",
-          description: "Educational video series that positioned our client as the industry leader in their field.",
-          challenge: "The EdTech platform needed to establish credibility in a competitive market and drive sign-ups for their online courses but lacked compelling content to showcase their expertise.",
-          solution: "We developed a 10-part educational video series that demonstrated the platform's unique teaching methodology while providing valuable free content to attract their target audience.",
+          id: "pace-institute",
+          title: "PACE Institute – Hyperlocal Campaigns with National Impact",
+          category: "Paid Ads | Education Sector",
+          metrics: "₹5,000 ad spend → 180+ qualified leads",
+          image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "PACE Institute",
+          description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
+          challenge: "PACE, a leading institute for Engineering/Medical/Olympiads, was expanding into CUET coaching in Delhi. The challenge was to generate local awareness and leads — fast — with a small budget.",
+          solution: "We designed creatives that highlighted results, student stories, and key course benefits. With just ₹5,000 in ad budget, we generated over 180 qualified leads via Google + Meta. Every click was tracked, every rupee optimized.",
           results: [
-            "Over 250k views across all videos",
-            "3.7% conversion rate from viewer to free trial",
-            "85% increase in brand search volume",
-            "Featured on 3 major education resource websites"
+            "₹5,000 ad spend → 180+ qualified leads",
+            "CRM integration support provided",
+            "Counselors reported 70% lead relevancy",
+            "Strong hyperlocal visibility built in 3 weeks"
           ],
+          chartData: [
+            { name: 'Ad Spend (₹)', value: 5000 },
+            { name: 'Lead Cost (₹)', value: 27.8 }
+          ],
+          leadQualityData: [
+            { name: 'Qualified', value: 70 },
+            { name: 'Unqualified', value: 30 }
+          ],
+          platformData: [
+            { name: 'Google', value: 65 },
+            { name: 'Meta', value: 35 }
+          ],
+          website: "paceinstitute.com",
           testimonial: {
-            quote: "The video series Growzzy Media created for us has become our most effective marketing asset. The quality and strategy behind the content has positioned us as authorities in our field.",
-            name: "Jennifer Lee",
-            position: "Marketing VP, EdTech Platform"
+            quote: "Every lead was a potential future topper — and we didn't let them slip.",
+            name: "PACE Institute Director",
+            position: "Education Provider"
           }
         }
       ];
@@ -162,6 +243,9 @@ const ProjectDetail = () => {
     getProject();
     window.scrollTo(0, 0);
   }, [id]);
+
+  // Colors for charts
+  const COLORS = ['#0D8B8B', '#5AAA95', '#C1EFF1', '#E6F9FA', '#F5F7F7'];
 
   if (!project) {
     return (
@@ -214,6 +298,12 @@ const ProjectDetail = () => {
                     <span className="text-sm text-muted-foreground">Service</span>
                     <p className="font-medium">{project.category}</p>
                   </div>
+                  {project.website && (
+                    <div className="bg-white px-4 py-2 rounded-md shadow-sm flex items-center">
+                      <LinkIcon className="w-4 h-4 mr-2 text-growzzy-primary" />
+                      <p className="font-medium">{project.website}</p>
+                    </div>
+                  )}
                 </div>
                 <div className="bg-white p-4 rounded-md shadow-sm inline-block">
                   <div className="text-growzzy-primary font-bold text-lg">Key Results</div>
@@ -257,6 +347,104 @@ const ProjectDetail = () => {
                     <p className="text-lg">{project.solution}</p>
                   </div>
                 </div>
+
+                {/* Performance Metrics */}
+                <div className="mb-12 fade-in-section" data-delay="0.3">
+                  <h2 className="text-2xl md:text-3xl font-display font-semibold mb-6 flex items-center">
+                    <TrendingUp className="w-8 h-8 mr-3 text-growzzy-primary" />
+                    Performance Metrics
+                  </h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Primary Chart */}
+                    <div className="bg-white p-6 rounded-lg shadow">
+                      <h3 className="text-xl font-semibold mb-4">
+                        {project.id === "humara-pandit" ? "ROAS Growth" : 
+                         project.id === "claysip" ? "Reach Breakdown" :
+                         project.id === "polki-sarees" ? "Audience Growth" :
+                         project.id === "advocate-rashi" ? "Impression Growth" :
+                         project.id === "bedtime-essentials" ? "Revenue Growth" :
+                         "Campaign ROI"}
+                      </h3>
+                      <div className="h-64">
+                        <ChartContainer config={{}} className="h-full">
+                          <BarChart data={project.chartData}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip content={<CustomTooltip />} />
+                            <Bar dataKey="value" fill="#0D8B8B" />
+                          </BarChart>
+                        </ChartContainer>
+                      </div>
+                    </div>
+
+                    {/* Secondary Chart */}
+                    <div className="bg-white p-6 rounded-lg shadow">
+                      <h3 className="text-xl font-semibold mb-4">
+                        {project.id === "humara-pandit" ? "Audience Engagement" : 
+                         project.id === "claysip" ? "Timeline" :
+                         project.id === "polki-sarees" ? "Follower Growth" :
+                         project.id === "advocate-rashi" ? "Content Breakdown" :
+                         project.id === "bedtime-essentials" ? "Revenue Channels" :
+                         "Lead Quality"}
+                      </h3>
+                      <div className="h-64">
+                        <ChartContainer config={{}} className="h-full">
+                          {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData) && (
+                            <PieChart>
+                              <Pie
+                                data={project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || []}
+                                cx="50%"
+                                cy="50%"
+                                labelLine={false}
+                                outerRadius={80}
+                                fill="#8884d8"
+                                dataKey="value"
+                                label={renderCustomizedLabel}
+                              >
+                                {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || []).map((entry, index) => (
+                                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                ))}
+                              </Pie>
+                              <Tooltip content={<CustomTooltip />} />
+                            </PieChart>
+                          )}
+                          {project.timelineData && (
+                            <div className="flex flex-col justify-center h-full">
+                              {project.timelineData.map((item, index) => (
+                                <div key={index} className="flex items-center mb-4">
+                                  <div className="w-3 h-3 rounded-full bg-growzzy-primary mr-3"></div>
+                                  <div className="font-medium">{item.name}:</div>
+                                  <div className="ml-2">{item.value}</div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {project.platformData && (
+                            <PieChart>
+                              <Pie
+                                data={project.platformData}
+                                cx="50%"
+                                cy="50%"
+                                labelLine={false}
+                                outerRadius={80}
+                                fill="#8884d8"
+                                dataKey="value"
+                                label={renderCustomizedLabel}
+                              >
+                                {project.platformData.map((entry, index) => (
+                                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                ))}
+                              </Pie>
+                              <Tooltip content={<CustomTooltip />} />
+                            </PieChart>
+                          )}
+                        </ChartContainer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="lg:col-span-1 fade-in-section" data-delay="0.3">
@@ -274,6 +462,24 @@ const ProjectDetail = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Client Impact */}
+                  <div className="mt-8 pt-8 border-t border-gray-100">
+                    <h3 className="text-xl font-semibold mb-4 flex items-center">
+                      <Users className="w-5 h-5 mr-2 text-growzzy-primary" />
+                      Client Impact
+                    </h3>
+                    <div className="bg-growzzy-light p-4 rounded-md">
+                      <p className="text-lg font-medium text-growzzy-dark">
+                        {project.id === "humara-pandit" ? "Connected devotees with rituals digitally" : 
+                         project.id === "claysip" ? "Created a sustainable brand identity" :
+                         project.id === "polki-sarees" ? "Revitalized traditional fashion" :
+                         project.id === "advocate-rashi" ? "Established legal thought leadership" :
+                         project.id === "bedtime-essentials" ? "Transformed manufacturing to D2C" :
+                         "Delivered quality leads within budget"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -309,9 +515,15 @@ const ProjectDetail = () => {
               <p className="text-lg mb-8 fade-in-section" data-delay="0.1">
                 Let's discuss how we can help you achieve your marketing goals with a tailored strategy.
               </p>
-              <Link to="/contact" className="btn-primary inline-flex items-center fade-in-section" data-delay="0.2">
+              <a 
+                href="https://superprofile.bio/lf/67a5d624b08b3900136a29b9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center fade-in-section" 
+                data-delay="0.2"
+              >
                 Start Your Project
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -319,6 +531,42 @@ const ProjectDetail = () => {
       <Footer />
       <ScrollToReveal />
     </div>
+  );
+};
+
+// Custom tooltip for charts
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white p-3 border border-gray-200 rounded-md shadow-md">
+        <p className="font-medium">{label || payload[0].name}</p>
+        <p className="text-growzzy-primary">
+          {payload[0].value.toLocaleString()}
+        </p>
+      </div>
+    );
+  }
+  return null;
+};
+
+// Custom label for pie charts
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }: any) => {
+  const RADIAN = Math.PI / 180;
+  const radius = outerRadius * 0.8;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text 
+      x={x} 
+      y={y} 
+      fill="#333" 
+      textAnchor={x > cx ? 'start' : 'end'} 
+      dominantBaseline="central"
+      fontSize="12"
+    >
+      {name} ({value})
+    </text>
   );
 };
 
