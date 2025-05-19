@@ -1,9 +1,9 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PortfolioPage = () => {
@@ -21,7 +21,8 @@ const PortfolioPage = () => {
       metrics: "25% ROAS growth in just 3 months",
       image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       client: "Humara Pandit",
-      description: "Faith-tech startup redefining how modern devotees access spiritual rituals."
+      description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
+      website: "https://humarapandit.com/"
     },
     {
       id: "claysip",
@@ -30,7 +31,9 @@ const PortfolioPage = () => {
       metrics: "50,000+ impressions in 2 months (80% organic reach)",
       image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       client: "ClaySip",
-      description: "Building a digital identity for handcrafted terracotta drinkware from scratch."
+      description: "Building a digital identity for handcrafted terracotta drinkware from scratch.",
+      website: "https://claysip.com/",
+      social: "https://www.instagram.com/clay_sip/"
     },
     {
       id: "polki-sarees",
@@ -39,7 +42,9 @@ const PortfolioPage = () => {
       metrics: "8 million+ views, 100% organically",
       image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       client: "Polki Sarees",
-      description: "D2C brand founded by women for women, driving awareness through organic content."
+      description: "D2C brand founded by women for women, driving awareness through organic content.",
+      website: "https://polkisarees.com/",
+      social: "https://www.instagram.com/polki_sarees/"
     },
     {
       id: "advocate-rashi",
@@ -48,7 +53,8 @@ const PortfolioPage = () => {
       metrics: "Impressions: 870 → 45,678+",
       image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       client: "Adv. Rashi Singhal",
-      description: "Positioning a legal professional as a credible, insightful voice in the ecosystem."
+      description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
+      website: "https://www.linkedin.com/in/rashi-singhal-326076213"
     },
     {
       id: "bedtime-essentials",
@@ -57,7 +63,9 @@ const PortfolioPage = () => {
       metrics: "1.6x increase in revenue in 60 days",
       image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       client: "Bedtime Essentials",
-      description: "Transforming an offline bedsheet manufacturer into a digital D2C brand."
+      description: "Transforming an offline bedsheet manufacturer into a digital D2C brand.",
+      website: "https://bedtimeessentials.dm2buy.com/",
+      social: "https://www.instagram.com/bed_timeessentials/"
     },
     {
       id: "pace-institute",
@@ -66,7 +74,8 @@ const PortfolioPage = () => {
       metrics: "₹5,000 ad spend → 180+ qualified leads",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       client: "PACE Institute",
-      description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget."
+      description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
+      website: "https://iitianspace.com/"
     }
   ];
 
@@ -130,8 +139,22 @@ const PortfolioPage = () => {
                   <div className="p-6">
                     <div className="text-sm text-growzzy-primary font-medium mb-2">{item.category}</div>
                     <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{item.metrics}</p>
-                    <div className="flex justify-between items-center">
+                    <p className="text-muted-foreground text-sm mb-2">{item.metrics}</p>
+                    {item.website && (
+                      <div className="flex items-center text-sm mb-2">
+                        <LinkIcon className="w-3 h-3 mr-1 text-growzzy-primary" />
+                        <a 
+                          href={item.website} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-growzzy-primary hover:underline"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {item.website.replace('https://', '')}
+                        </a>
+                      </div>
+                    )}
+                    <div className="flex justify-between items-center mt-3">
                       <span className="text-sm font-medium">Client: {item.client}</span>
                       <div className="text-growzzy-primary font-medium inline-flex items-center">
                         View Case Study <ArrowRight className="ml-2 w-4 h-4" />

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
@@ -10,42 +10,51 @@ const Portfolio = () => {
       title: "Humara Pandit – Faith Meets Performance Marketing",
       category: "Ads Management | Meta + Google",
       metrics: "25% ROAS growth in just 3 months",
-      image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://humarapandit.com/"
     },
     {
       id: "claysip",
       title: "ClaySip – Crafting an Online Identity from Clay",
       category: "Brand Building + Website + Organic Reach",
       metrics: "50,000+ impressions in 2 months (80% organic reach)",
-      image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://claysip.com/",
+      social: "https://www.instagram.com/clay_sip/"
     },
     {
       id: "polki-sarees",
       title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
       category: "Organic Social Growth | Reels Strategy",
       metrics: "8 million+ views, 100% organically",
-      image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://polkisarees.com/",
+      social: "https://www.instagram.com/polki_sarees/"
     },
     {
       id: "advocate-rashi",
       title: "Advocate Rashi – Building a Digital Legal Brand",
       category: "LinkedIn Personal Branding",
       metrics: "Impressions: 870 → 45,678+",
-      image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://www.linkedin.com/in/rashi-singhal-326076213"
     },
     {
       id: "bedtime-essentials",
       title: "Bedtime Essentials – From Manufacturer to D2C Brand",
       category: "Funnel Creation | Social Media | D2C Storefront",
       metrics: "1.6x increase in revenue in 60 days",
-      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://bedtimeessentials.dm2buy.com/",
+      social: "https://www.instagram.com/bed_timeessentials/"
     },
     {
       id: "pace-institute",
       title: "PACE Institute – Hyperlocal Campaigns with National Impact",
       category: "Paid Ads | Education Sector",
       metrics: "₹5,000 ad spend → 180+ qualified leads",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://iitianspace.com/"
     }
   ];
 
@@ -78,8 +87,22 @@ const Portfolio = () => {
               <div className="p-6">
                 <div className="text-sm text-growzzy-primary font-medium mb-2">{item.category}</div>
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.metrics}</p>
-                <div className="mt-4 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="text-muted-foreground text-sm mb-3">{item.metrics}</p>
+                {item.website && (
+                  <div className="flex items-center text-sm mb-4">
+                    <LinkIcon className="w-3 h-3 mr-1 text-growzzy-primary" />
+                    <a 
+                      href={item.website} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-growzzy-primary hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {item.website.replace('https://', '')}
+                    </a>
+                  </div>
+                )}
+                <div className="mt-2 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
                   View Project <ArrowRight className="ml-2 w-4 h-4" />
                 </div>
               </div>

@@ -14,8 +14,22 @@ import {
   Link as LinkIcon,
   ChartBar
 } from 'lucide-react';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../components/ui/chart';
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell } from 'recharts';
+import { 
+  ChartContainer, 
+  ChartTooltip, 
+  ChartTooltipContent 
+} from '../components/ui/chart';
+import { 
+  BarChart, 
+  Bar, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  PieChart, 
+  Pie, 
+  Cell 
+} from 'recharts';
 
 const ProjectDetail = () => {
   const { id } = useParams<{id: string}>();
@@ -51,7 +65,7 @@ const ProjectDetail = () => {
             { name: 'Regular Audience', value: 100 },
             { name: 'Spiritual Interest', value: 400 }
           ],
-          website: "humarapandit.com",
+          website: "https://humarapandit.com/",
           testimonial: {
             quote: "It wasn't just about selling — it was about building trust in faith, digitally.",
             name: "Humara Pandit Team",
@@ -85,7 +99,8 @@ const ProjectDetail = () => {
             { name: 'Week 6', value: 'Social Media Setup' },
             { name: 'Week 8', value: '50k Impressions' }
           ],
-          website: "claysip.com | @clay_sip",
+          website: "https://claysip.com/ | @clay_sip",
+          social: "https://www.instagram.com/clay_sip/",
           testimonial: {
             quote: "We built trust with every sip, one story at a time.",
             name: "ClaySip Founders",
@@ -118,7 +133,8 @@ const ProjectDetail = () => {
             { name: 'Initial', value: 2000 },
             { name: 'After Campaign', value: 40000 }
           ],
-          website: "polkisarees.com | @polki_sarees",
+          website: "https://polkisarees.com/",
+          social: "https://www.instagram.com/polki_sarees/",
           testimonial: {
             quote: "When your content speaks to the heart, algorithms follow.",
             name: "Polki Sarees Team",
@@ -155,7 +171,7 @@ const ProjectDetail = () => {
             { name: 'Industry News', value: 20 },
             { name: 'Career Advice', value: 15 }
           ],
-          website: "linkedin.com/in/rashisinghal",
+          website: "https://www.linkedin.com/in/rashi-singhal-326076213",
           testimonial: {
             quote: "The law may be black and white — but your brand doesn't have to be.",
             name: "Adv. Rashi Singhal",
@@ -186,7 +202,8 @@ const ProjectDetail = () => {
             { name: 'D2C Store', value: 45 },
             { name: 'Wholesale', value: 55 }
           ],
-          website: "bedtimeessentials.dm2buy.com | @bed_timeessentials",
+          website: "https://bedtimeessentials.dm2buy.com/",
+          social: "https://www.instagram.com/bed_timeessentials/",
           testimonial: {
             quote: "We turned fabric into stories — and stories into sales.",
             name: "Bedtime Essentials Team",
@@ -221,7 +238,7 @@ const ProjectDetail = () => {
             { name: 'Google', value: 65 },
             { name: 'Meta', value: 35 }
           ],
-          website: "paceinstitute.com",
+          website: "https://iitianspace.com/",
           testimonial: {
             quote: "Every lead was a potential future topper — and we didn't let them slip.",
             name: "PACE Institute Director",
@@ -267,6 +284,12 @@ const ProjectDetail = () => {
     );
   }
 
+  // Extract website and social links
+  const websiteUrl = project.website?.split('|')[0].trim();
+  const websiteLabel = project.website?.includes('|') 
+    ? project.website 
+    : websiteUrl;
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -298,10 +321,30 @@ const ProjectDetail = () => {
                     <span className="text-sm text-muted-foreground">Service</span>
                     <p className="font-medium">{project.category}</p>
                   </div>
-                  {project.website && (
-                    <div className="bg-white px-4 py-2 rounded-md shadow-sm flex items-center">
-                      <LinkIcon className="w-4 h-4 mr-2 text-growzzy-primary" />
-                      <p className="font-medium">{project.website}</p>
+                  {websiteUrl && (
+                    <div className="bg-white px-4 py-2 rounded-md shadow-sm">
+                      <span className="text-sm text-muted-foreground">Website</span>
+                      <a 
+                        href={websiteUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center text-growzzy-primary hover:underline"
+                      >
+                        <LinkIcon className="w-3 h-3 mr-1" /> {project.client}
+                      </a>
+                    </div>
+                  )}
+                  {project.social && (
+                    <div className="bg-white px-4 py-2 rounded-md shadow-sm">
+                      <span className="text-sm text-muted-foreground">Social</span>
+                      <a 
+                        href={project.social} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center text-growzzy-primary hover:underline"
+                      >
+                        <LinkIcon className="w-3 h-3 mr-1" /> @{project.social.split('/').pop()}
+                      </a>
                     </div>
                   )}
                 </div>
@@ -367,7 +410,7 @@ const ProjectDetail = () => {
                          "Campaign ROI"}
                       </h3>
                       <div className="h-64">
-                        <ChartContainer config={{}} className="h-full">
+                        <ChartContainer config={{}}>
                           <BarChart data={project.chartData}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="name" />
@@ -390,57 +433,39 @@ const ProjectDetail = () => {
                          "Lead Quality"}
                       </h3>
                       <div className="h-64">
-                        <ChartContainer config={{}} className="h-full">
-                          {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData) && (
-                            <PieChart>
-                              <Pie
-                                data={project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || []}
-                                cx="50%"
-                                cy="50%"
-                                labelLine={false}
-                                outerRadius={80}
-                                fill="#8884d8"
-                                dataKey="value"
-                                label={renderCustomizedLabel}
-                              >
-                                {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || []).map((entry, index) => (
-                                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                              </Pie>
-                              <Tooltip content={<CustomTooltip />} />
-                            </PieChart>
-                          )}
-                          {project.timelineData && (
-                            <div className="flex flex-col justify-center h-full">
-                              {project.timelineData.map((item, index) => (
-                                <div key={index} className="flex items-center mb-4">
-                                  <div className="w-3 h-3 rounded-full bg-growzzy-primary mr-3"></div>
-                                  <div className="font-medium">{item.name}:</div>
-                                  <div className="ml-2">{item.value}</div>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          {project.platformData && (
-                            <PieChart>
-                              <Pie
-                                data={project.platformData}
-                                cx="50%"
-                                cy="50%"
-                                labelLine={false}
-                                outerRadius={80}
-                                fill="#8884d8"
-                                dataKey="value"
-                                label={renderCustomizedLabel}
-                              >
-                                {project.platformData.map((entry, index) => (
-                                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                              </Pie>
-                              <Tooltip content={<CustomTooltip />} />
-                            </PieChart>
-                          )}
-                        </ChartContainer>
+                        {project.timelineData ? (
+                          <div className="flex flex-col justify-center h-full">
+                            {project.timelineData.map((item: any, index: number) => (
+                              <div key={index} className="flex items-center mb-4">
+                                <div className="w-3 h-3 rounded-full bg-growzzy-primary mr-3"></div>
+                                <div className="font-medium">{item.name}:</div>
+                                <div className="ml-2">{item.value}</div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <ChartContainer config={{}}>
+                            {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData) && (
+                              <PieChart>
+                                <Pie
+                                  data={project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || []}
+                                  cx="50%"
+                                  cy="50%"
+                                  labelLine={false}
+                                  outerRadius={80}
+                                  fill="#8884d8"
+                                  dataKey="value"
+                                  label={renderCustomizedLabel}
+                                >
+                                  {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || []).map((entry: any, index: number) => (
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                  ))}
+                                </Pie>
+                                <Tooltip content={<CustomTooltip />} />
+                              </PieChart>
+                            )}
+                          </ChartContainer>
+                        )}
                       </div>
                     </div>
                   </div>
