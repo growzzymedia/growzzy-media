@@ -1,89 +1,78 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
 import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const PortfolioPage = () => {
   useEffect(() => {
     document.title = "Our Work | Growzzy Media";
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Complete portfolio data with all case studies
-  const portfolioItems = [
-    {
-      id: "humara-pandit",
-      title: "Humara Pandit – Faith Meets Performance Marketing",
-      category: "Ads Management | Meta + Google",
-      metrics: "25% ROAS growth in just 3 months",
-      image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Humara Pandit",
-      description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
-      website: "https://humarapandit.com/"
-    },
-    {
-      id: "claysip",
-      title: "ClaySip – Crafting an Online Identity from Clay",
-      category: "Brand Building + Website + Organic Reach",
-      metrics: "50,000+ impressions in 2 months (80% organic reach)",
-      image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "ClaySip",
-      description: "Building a digital identity for handcrafted terracotta drinkware from scratch.",
-      website: "https://claysip.com/",
-      social: "https://www.instagram.com/clay_sip/"
-    },
-    {
-      id: "polki-sarees",
-      title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
-      category: "Organic Social Growth | Reels Strategy",
-      metrics: "8 million+ views, 100% organically",
-      image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Polki Sarees",
-      description: "D2C brand founded by women for women, driving awareness through organic content.",
-      website: "https://polkisarees.com/",
-      social: "https://www.instagram.com/polki_sarees/"
-    },
-    {
-      id: "advocate-rashi",
-      title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
-      category: "LinkedIn Personal Branding",
-      metrics: "Impressions: 870 → 45,678+",
-      image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Adv. Rashi Singhal",
-      description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
-      website: "https://www.linkedin.com/in/rashi-singhal-326076213"
-    },
-    {
-      id: "bedtime-essentials",
-      title: "Bedtime Essentials – From Manufacturer to D2C Brand",
-      category: "Funnel Creation | Social Media | D2C Storefront",
-      metrics: "1.6x increase in revenue in 60 days",
-      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "Bedtime Essentials",
-      description: "Transforming an offline bedsheet manufacturer into a digital D2C brand.",
-      website: "https://bedtimeessentials.dm2buy.com/",
-      social: "https://www.instagram.com/bed_timeessentials/"
-    },
-    {
-      id: "pace-institute",
-      title: "PACE Institute – Hyperlocal Campaigns with National Impact",
-      category: "Paid Ads | Education Sector",
-      metrics: "₹5,000 ad spend → 180+ qualified leads",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      client: "PACE Institute",
-      description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
-      website: "https://iitianspace.com/"
-    }
-  ];
+  const portfolioItems = [{
+    id: "humara-pandit",
+    title: "Humara Pandit – Faith Meets Performance Marketing",
+    category: "Ads Management | Meta + Google",
+    metrics: "25% ROAS growth in just 3 months",
+    image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Humara Pandit",
+    description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
+    website: "https://humarapandit.com/"
+  }, {
+    id: "claysip",
+    title: "ClaySip – Crafting an Online Identity from Clay",
+    category: "Brand Building + Website + Organic Reach",
+    metrics: "50,000+ impressions in 2 months (80% organic reach)",
+    image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "ClaySip",
+    description: "Building a digital identity for handcrafted terracotta drinkware from scratch.",
+    website: "https://claysip.com/",
+    social: "https://www.instagram.com/clay_sip/"
+  }, {
+    id: "polki-sarees",
+    title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
+    category: "Organic Social Growth | Reels Strategy",
+    metrics: "8 million+ views, 100% organically",
+    image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Polki Sarees",
+    description: "D2C brand founded by women for women, driving awareness through organic content.",
+    website: "https://polkisarees.com/",
+    social: "https://www.instagram.com/polki_sarees/"
+  }, {
+    id: "advocate-rashi",
+    title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
+    category: "LinkedIn Personal Branding",
+    metrics: "Impressions: 870 → 45,678+",
+    image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Adv. Rashi Singhal",
+    description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
+    website: "https://www.linkedin.com/in/rashi-singhal-326076213"
+  }, {
+    id: "bedtime-essentials",
+    title: "Bedtime Essentials – From Manufacturer to D2C Brand",
+    category: "Funnel Creation | Social Media | D2C Storefront",
+    metrics: "1.6x increase in revenue in 60 days",
+    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Bedtime Essentials",
+    description: "Transforming an offline bedsheet manufacturer into a digital D2C brand.",
+    website: "https://bedtimeessentials.dm2buy.com/",
+    social: "https://www.instagram.com/bed_timeessentials/"
+  }, {
+    id: "pace-institute",
+    title: "PACE Institute – Hyperlocal Campaigns with National Impact",
+    category: "Paid Ads | Education Sector",
+    metrics: "₹5,000 ad spend → 180+ qualified leads",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "PACE Institute",
+    description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
+    website: "https://iitianspace.com/"
+  }];
 
   // Group projects by category for better organization
   const categories = [...new Set(portfolioItems.map(item => item.category))];
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -110,50 +99,27 @@ const PortfolioPage = () => {
               <button className="px-4 py-2 bg-growzzy-primary text-white rounded-md shadow-sm">
                 All Projects
               </button>
-              {categories.map((category, index) => (
-                <button 
-                  key={index} 
-                  className="px-4 py-2 bg-white hover:bg-growzzy-light transition-colors border border-gray-200 rounded-md shadow-sm"
-                >
+              {categories.map((category, index) => <button key={index} className="px-4 py-2 bg-white hover:bg-growzzy-light transition-colors border border-gray-200 rounded-md shadow-sm">
                   {category.split('|')[0].trim()}
-                </button>
-              ))}
+                </button>)}
             </div>
 
             {/* Projects Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {portfolioItems.map((item, index) => (
-                <Link 
-                  key={index} 
-                  to={`/portfolio/${item.id}`}
-                  className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group"
-                  data-delay={`${0.1 + index * 0.1}`}
-                >
+              {portfolioItems.map((item, index) => <Link key={index} to={`/portfolio/${item.id}`} className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group" data-delay={`${0.1 + index * 0.1}`}>
                   <div className="overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" 
-                    />
+                    <img src={item.image} alt={item.title} className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6">
                     <div className="text-sm text-growzzy-primary font-medium mb-2">{item.category}</div>
                     <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors">{item.title}</h3>
                     <p className="text-muted-foreground text-sm mb-2">{item.metrics}</p>
-                    {item.website && (
-                      <div className="flex items-center text-sm mb-2">
+                    {item.website && <div className="flex items-center text-sm mb-2">
                         <LinkIcon className="w-3 h-3 mr-1 text-growzzy-primary" />
-                        <a 
-                          href={item.website} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="text-growzzy-primary hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
+                        <a href={item.website} target="_blank" rel="noopener noreferrer" className="text-growzzy-primary hover:underline" onClick={e => e.stopPropagation()}>
                           {item.website.replace('https://', '')}
                         </a>
-                      </div>
-                    )}
+                      </div>}
                     <div className="flex justify-between items-center mt-3">
                       <span className="text-sm font-medium">Client: {item.client}</span>
                       <div className="text-growzzy-primary font-medium inline-flex items-center">
@@ -161,8 +127,7 @@ const PortfolioPage = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
-              ))}
+                </Link>)}
             </div>
           </div>
         </section>
@@ -172,15 +137,8 @@ const PortfolioPage = () => {
           <div className="container">
             <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-display font-semibold mb-4">Ready to be our next success story?</h2>
-              <p className="text-lg mb-8">
-                Let's discuss how we can help your business achieve similar results with a custom digital strategy.
-              </p>
-              <a 
-                href="https://superprofile.bio/lf/67a5d624b08b3900136a29b9" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center"
-              >
+              <p className="text-lg mb-8">Let's discuss how we can help your business achieve similar results with a custom AI-powered digital strategy.</p>
+              <a href="https://superprofile.bio/lf/67a5d624b08b3900136a29b9" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center">
                 Start Your Project
               </a>
             </div>
@@ -189,8 +147,6 @@ const PortfolioPage = () => {
       </main>
       <Footer />
       <ScrollToReveal />
-    </div>
-  );
+    </div>;
 };
-
 export default PortfolioPage;
