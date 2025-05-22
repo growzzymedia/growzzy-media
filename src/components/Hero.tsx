@@ -1,33 +1,28 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Hero = () => {
-  return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+  return <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="bg-blob blob-1 animate-float"></div>
       
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 opacity-0 animate-fade-in" style={{
+          animationDelay: '0.2s'
+        }}>
             Marketing that <span className="text-growzzy-primary">Moves People.</span> Strategy that <span className="text-growzzy-primary">Builds Brands.</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            Growzzy Media helps businesses grow online with smart strategy, powerful visuals, and scroll-stopping content.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Link 
-              to="/contact" 
-              className="btn-primary text-lg group"
-            >
+          <p style={{
+          animationDelay: '0.4s'
+        }} className="text-lg text-muted-foreground mb-8 opacity-0 animate-fade-in md:text-base">Growzzy Media helps businesses grow online with AI-powered smart strategy, powerful visuals, and scroll-stopping content.</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{
+          animationDelay: '0.6s'
+        }}>
+            <Link to="/contact" className="btn-primary text-lg group">
               Let's Work Together
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link
-              to="/services"
-              className="btn-outline text-lg group"
-            >
+            <Link to="/services" className="btn-outline text-lg group">
               Explore Our Services
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -42,17 +37,17 @@ const Hero = () => {
             <p className="text-lg mb-4">
               We're a passionate team of digital marketers, creatives, and strategists driven to help brands stand out in the noisy online world.
             </p>
-            <p className="text-muted-foreground mb-6">
-              Whether you're a startup finding your footing or an established brand seeking a refresh, we bring the perfect blend of strategic thinking and creative execution to elevate your digital presence.
-            </p>
+            <p className="text-muted-foreground mb-6 text-justify text-base">India’s Most Relatable AI-Driven Marketing Agency — That Actually Gets It
+At Growzzy, we blend the pulse of human storytelling with the precision of AI.
+Our founder-led, insight-backed approach ensures every decision — from your ad copy to your CRM — is trained, tested, and tailored for performance.
+
+We don’t follow trends. We predict them.</p>
             <Link to="/services" className="text-growzzy-primary font-medium inline-flex items-center group hover:text-growzzy-dark transition-colors">
               Read More <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
