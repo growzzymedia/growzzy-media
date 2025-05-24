@@ -1,28 +1,25 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Hero = () => {
-  return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+  return <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="bg-blob blob-1 animate-float"></div>
       
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 opacity-0 animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
-            AI-Driven <span className="text-growzzy-primary">Digital Marketing Agency</span> | Performance Marketing that <span className="text-growzzy-primary">Drives Results</span>
+          <h1 style={{
+          animationDelay: '0.2s'
+        }} className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6 opacity-0 animate-fade-in md:text-3xl">
+            AI-Driven <span className="text-growzzy-primary text-3xl">Digital Marketing Agency</span> | Performance Marketing that <span className="text-growzzy-primary">Drives Results</span>
           </h1>
           <p style={{
-            animationDelay: '0.4s'
-          }} className="text-lg text-muted-foreground mb-8 opacity-0 animate-fade-in md:text-base">
+          animationDelay: '0.4s'
+        }} className="text-lg text-muted-foreground mb-8 opacity-0 animate-fade-in md:text-base">
             Growzzy Media combines AI marketing automation with data-driven marketing campaigns to deliver AI-powered lead generation and measurable growth for modern businesses.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{
-            animationDelay: '0.6s'
-          }}>
+          animationDelay: '0.6s'
+        }}>
             <Link to="/contact" className="btn-primary text-lg group">
               Get AI-Driven Marketing Solutions
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -53,8 +50,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
