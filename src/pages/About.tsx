@@ -1,19 +1,15 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
 import { Check } from 'lucide-react';
-
 const AboutPage = () => {
   useEffect(() => {
     document.title = "About Us | Growzzy Media";
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -48,11 +44,7 @@ const AboutPage = () => {
                 </p>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg fade-in-section" data-delay="0.2">
-                <img 
-                  src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Digital Marketing Team" 
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Team" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -102,11 +94,7 @@ const AboutPage = () => {
                 <div className="p-8">
                   <div className="flex items-center mb-6">
                     <div className="w-20 h-20 rounded-full overflow-hidden mr-4">
-                      <img 
-                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                        alt="Varuni Bansal" 
-                        className="w-full h-full object-cover"
-                      />
+                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Varuni Bansal" className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold">Varuni Bansal</h3>
@@ -115,18 +103,12 @@ const AboutPage = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Marketing has always been my first love. From early on, I was captivated by how brands grow, evolve, and connect in the digital world.
-                    </p>
-                    <p className="text-muted-foreground">
-                      I pursued my BBA and MBA in marketing, and spent 2–3 years gaining hands-on experience across social media, paid ads, branding, and more.
-                    </p>
-                    <p className="text-muted-foreground">
-                      But deep down, I always wanted to build something of my own. I started Growzzy to help others achieve digital growth alongside me — and to my surprise, we scaled from 1 to 10 clients in just a few months.
-                    </p>
-                    <p className="text-muted-foreground">
-                      Turns out, when your work speaks — people listen. :)
-                    </p>
+                    <p className="text-muted-foreground">&quot;I’ve always loved the art of branding and the science of marketing.&quot;</p>
+                    <p className="text-muted-foreground text-justify">From the start, I knew I was made for this field. The way brands come alive in the digital space fascinated me. I pursued BBA and MBA in marketing, and over time, gained hands-on experience in social media, ads, and brand strategy.</p>
+                    <p className="text-muted-foreground">But something still felt missing — until I realized I didn’t just want to work in marketing; I wanted to build something with it.</p>
+                    <p className="text-muted-foreground">That’s how Growzzy came to life. It’s more than a business — it’s a shared journey. Within months, we scaled from one to ten clients.
+
+Because when you lead with value… the work speaks for itself.</p>
                   </div>
                 </div>
               </div>
@@ -136,11 +118,7 @@ const AboutPage = () => {
                 <div className="p-8">
                   <div className="flex items-center mb-6">
                     <div className="w-20 h-20 rounded-full overflow-hidden mr-4">
-                      <img 
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                        alt="Mayank Goel" 
-                        className="w-full h-full object-cover"
-                      />
+                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mayank Goel" className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold">Mayank Goel</h3>
@@ -149,15 +127,10 @@ const AboutPage = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Though I hold a degree in B.Com (Hons) in International Accounting & Finance, my heart slowly veered toward marketing.
-                    </p>
-                    <p className="text-muted-foreground">
-                      Growing up in a business family, entrepreneurship was always in my DNA. After diving into digital marketing and gaining expertise in paid ads and personal branding, I knew it was time to build something bigger.
-                    </p>
-                    <p className="text-muted-foreground">
-                      We believe in using AI not as a threat, but as a tool for growth. This journey has been thrilling — and it's only just begun.
-                    </p>
+                    <p className="text-muted-foreground">“I’ve always lived at the crossroads of business, numbers, and impact.”</p>
+                    <p className="text-muted-foreground text-justify">I pursued B.Com (Hons) in International Accounting &amp; Finance, I always wanted to create something impactful and for that marketing was the other half for it, So just here I took a leap for digital marketing and made it my way to start in my journey. Growing up in a business family, entrepreneurship was always part of me — I just had to find the right way to channel it. And marketing gave me that path. After hands-on experience in advertising and personal branding, I saw how much potential businesses had… if only they had the right tools. </p>
+                    <p className="text-muted-foreground">The AI wave? We chose to ride it, not fear it.
+And now, Growzzy stands as our way of helping others do the same — to grow, thrive, and scale with strategy, not guesswork.</p>
                   </div>
                 </div>
               </div>
@@ -182,8 +155,6 @@ const AboutPage = () => {
       </main>
       <Footer />
       <ScrollToReveal />
-    </div>
-  );
+    </div>;
 };
-
 export default AboutPage;
