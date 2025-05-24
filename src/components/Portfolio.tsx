@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -70,8 +71,8 @@ const Portfolio = () => {
       <div className="container">
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 fade-in-section">Our Work</h2>
-          <p className="text-xl font-medium mb-2 fade-in-section" data-delay="0.1">Real brands. Real results.</p>
-          <p className="text-muted-foreground fade-in-section" data-delay="0.2">
+          <p className="text-xl font-medium mb-2 slide-in-section" data-delay="0.1">Real brands. Real results.</p>
+          <p className="text-muted-foreground scale-in-section" data-delay="0.2">
             Scroll through our favourite success stories — campaigns that tripled reach, brands that blew up, and websites that made waves.
           </p>
         </div>
@@ -81,22 +82,22 @@ const Portfolio = () => {
             <Link 
               key={index} 
               to={`/portfolio/${item.id}`}
-              className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group"
-              data-delay={`${0.2 + index * 0.1}`}
+              className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group transform transition-all duration-500 hover:scale-105"
+              data-delay={`${0.2 + index * 0.15}`}
             >
               <div className="overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" 
+                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
               </div>
               <div className="p-6">
-                <div className="text-sm text-growzzy-primary font-medium mb-2">{item.category}</div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors">{item.title}</h3>
-                <p className="text-muted-foreground text-sm mb-3">{item.metrics}</p>
+                <div className="text-sm text-growzzy-primary font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.category}</div>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors duration-300">{item.title}</h3>
+                <p className="text-muted-foreground text-sm mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">{item.metrics}</p>
                 {item.website && (
-                  <div className="flex items-center text-sm mb-4">
+                  <div className="flex items-center text-sm mb-4 opacity-75 group-hover:opacity-100 transition-opacity duration-300">
                     <LinkIcon className="w-3 h-3 mr-1 text-growzzy-primary" />
                     <a 
                       href={item.website} 
@@ -109,16 +110,16 @@ const Portfolio = () => {
                     </a>
                   </div>
                 )}
-                <div className="mt-2 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  View Project <ArrowRight className="ml-2 w-4 h-4" />
+                <div className="mt-2 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-10px] group-hover:translate-x-0">
+                  View Project <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
             </Link>
           ))}
         </div>
 
-        <div className="mt-12 text-center fade-in-section" data-delay="0.6">
-          <Link to="/portfolio" className="btn-primary inline-flex items-center group">
+        <div className="mt-12 text-center fade-in-section" data-delay="0.8">
+          <Link to="/portfolio" className="btn-primary inline-flex items-center group transform transition-all duration-300 hover:scale-105">
             See Full Portfolio
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -28,8 +27,10 @@ const ContactPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  // This should be replaced with the actual Zapier webhook URL that connects to the Google Sheet
-  const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/123456/abcdef/";
+  
+  // Updated webhook URL to connect to your Google Sheet
+  // You'll need to create a Zapier webhook that connects to your specific Google Sheet
+  const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_ID/";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -44,16 +45,23 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Send data to Zapier webhook (which will then send to Google Sheets)
-      await fetch(zapierWebhookUrl, {
+      // Send data directly to Google Sheets via Zapier webhook
+      const response = await fetch(zapierWebhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: 'website_contact_page'
+          // Map form fields to Google Sheet columns
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone || 'Not provided',
+          'Business Type': formData.businessType,
+          'Service Needed': formData.serviceNeeded,
+          Message: formData.message || 'No message provided',
+          Timestamp: new Date().toISOString(),
+          Source: 'Website Contact Form',
+          'Sheet URL': 'https://docs.google.com/spreadsheets/d/1I5Erlij7rtt2WIxUymBm97FfKw71DEiZkhheCWXC75w/edit'
         }),
         mode: 'no-cors', // Required for cross-origin requests
       });
@@ -61,7 +69,7 @@ const ContactPage = () => {
       // Show success message
       toast({
         title: "Form submitted successfully",
-        description: "We'll get back to you shortly!",
+        description: "Your information has been sent to our Google Sheet. We'll get back to you shortly!",
       });
       
       // Reset form
@@ -73,11 +81,22 @@ const ContactPage = () => {
         serviceNeeded: '',
         message: ''
       });
+
+      console.log("Form data sent to Google Sheet:", {
+        Name: formData.name,
+        Email: formData.email,
+        Phone: formData.phone,
+        'Business Type': formData.businessType,
+        'Service Needed': formData.serviceNeeded,
+        Message: formData.message,
+        Timestamp: new Date().toISOString()
+      });
+
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form to Google Sheet:", error);
       toast({
         title: "Error submitting form",
-        description: "Please try again later.",
+        description: "Please try again later or contact us directly at growzzymedia@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -282,7 +301,7 @@ const ContactPage = () => {
                     disabled={isSubmitting}
                     className="btn-primary w-full flex justify-center items-center"
                   >
-                    {isSubmitting ? 'Submitting...' : (
+                    {isSubmitting ? 'Submitting to Google Sheet...' : (
                       <>
                         Send Message <Send className="ml-2 w-4 h-4" />
                       </>
