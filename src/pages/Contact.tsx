@@ -1,8 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { Send } from 'lucide-react';
+import { Send, CheckCircle } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import {
   Accordion,
@@ -27,10 +28,10 @@ const ContactPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
-  // Updated webhook URL to connect to your Google Sheet
-  // You'll need to create a Zapier webhook that connects to your specific Google Sheet
-  const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_ID/";
+  // Formcarry endpoint URL
+  const formcarryEndpoint = "https://formcarry.com/s/4IVbzUYqZ3P";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -45,55 +46,47 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Send data directly to Google Sheets via Zapier webhook
-      const response = await fetch(zapierWebhookUrl, {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone || 'Not provided');
+      formDataToSend.append('businessType', formData.businessType);
+      formDataToSend.append('serviceNeeded', formData.serviceNeeded);
+      formDataToSend.append('message', formData.message || 'No message provided');
+      formDataToSend.append('source', 'Growzzy Website');
+
+      const response = await fetch(formcarryEndpoint, {
         method: 'POST',
+        body: formDataToSend,
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          // Map form fields to Google Sheet columns
-          Name: formData.name,
-          Email: formData.email,
-          Phone: formData.phone || 'Not provided',
-          'Business Type': formData.businessType,
-          'Service Needed': formData.serviceNeeded,
-          Message: formData.message || 'No message provided',
-          Timestamp: new Date().toISOString(),
-          Source: 'Website Contact Form',
-          'Sheet URL': 'https://docs.google.com/spreadsheets/d/1I5Erlij7rtt2WIxUymBm97FfKw71DEiZkhheCWXC75w/edit'
-        }),
-        mode: 'no-cors', // Required for cross-origin requests
-      });
-      
-      // Show success message
-      toast({
-        title: "Form submitted successfully",
-        description: "Your information has been sent to our Google Sheet. We'll get back to you shortly!",
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        businessType: '',
-        serviceNeeded: '',
-        message: ''
+          'Accept': 'application/json'
+        }
       });
 
-      console.log("Form data sent to Google Sheet:", {
-        Name: formData.name,
-        Email: formData.email,
-        Phone: formData.phone,
-        'Business Type': formData.businessType,
-        'Service Needed': formData.serviceNeeded,
-        Message: formData.message,
-        Timestamp: new Date().toISOString()
-      });
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: "Form submitted successfully",
+          description: "Thank you for your interest! We'll get back to you within 24 hours.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          businessType: '',
+          serviceNeeded: '',
+          message: ''
+        });
+
+        console.log("Form data sent to Formcarry successfully");
+      } else {
+        throw new Error('Form submission failed');
+      }
 
     } catch (error) {
-      console.error("Error submitting form to Google Sheet:", error);
+      console.error("Error submitting form:", error);
       toast({
         title: "Error submitting form",
         description: "Please try again later or contact us directly at growzzymedia@gmail.com",
@@ -204,110 +197,126 @@ const ContactPage = () => {
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-lg fade-in-section" data-delay="0.2">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone (optional)</label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="businessType" className="block text-sm font-medium mb-2">Business Type</label>
-                    <select
-                      id="businessType"
-                      name="businessType"
-                      value={formData.businessType}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                {isSubmitted ? (
+                  <div className="text-center py-12">
+                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-green-600 mb-2">Thank You!</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Your message has been sent successfully. We'll get back to you within 24 hours.
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="text-growzzy-primary hover:underline"
                     >
-                      <option value="">Select business type</option>
-                      <option value="E-commerce">E-commerce</option>
-                      <option value="SaaS">SaaS</option>
-                      <option value="Local Business">Local Business</option>
-                      <option value="B2B">B2B</option>
-                      <option value="B2C">B2C</option>
-                      <option value="Other">Other</option>
-                    </select>
+                      Send another message
+                    </button>
                   </div>
-                  
-                  <div>
-                    <label htmlFor="serviceNeeded" className="block text-sm font-medium mb-2">Service Needed</label>
-                    <select
-                      id="serviceNeeded"
-                      name="serviceNeeded"
-                      value={formData.serviceNeeded}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone (optional)</label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="businessType" className="block text-sm font-medium mb-2">Business Type</label>
+                      <select
+                        id="businessType"
+                        name="businessType"
+                        value={formData.businessType}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                      >
+                        <option value="">Select business type</option>
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="SaaS">SaaS</option>
+                        <option value="Local Business">Local Business</option>
+                        <option value="B2B">B2B</option>
+                        <option value="B2C">B2C</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="serviceNeeded" className="block text-sm font-medium mb-2">Service Needed</label>
+                      <select
+                        id="serviceNeeded"
+                        name="serviceNeeded"
+                        value={formData.serviceNeeded}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                      >
+                        <option value="">Select service</option>
+                        <option value="Paid Ads">Paid Ads (Meta & Google)</option>
+                        <option value="Social Media">Social Media Management</option>
+                        <option value="LinkedIn Branding">LinkedIn Branding</option>
+                        <option value="Website Development">Website Development</option>
+                        <option value="Lead Generation">Lead Generation</option>
+                        <option value="Brand Strategy">Brand Strategy</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
+                      ></textarea>
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="btn-primary w-full flex justify-center items-center"
                     >
-                      <option value="">Select service</option>
-                      <option value="Paid Ads">Paid Ads (Meta & Google)</option>
-                      <option value="Social Media">Social Media Management</option>
-                      <option value="LinkedIn Branding">LinkedIn Branding</option>
-                      <option value="Website Development">Website Development</option>
-                      <option value="Lead Generation">Lead Generation</option>
-                      <option value="Brand Strategy">Brand Strategy</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-growzzy-primary"
-                    ></textarea>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary w-full flex justify-center items-center"
-                  >
-                    {isSubmitting ? 'Submitting to Google Sheet...' : (
-                      <>
-                        Send Message <Send className="ml-2 w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                </form>
+                      {isSubmitting ? 'Sending...' : (
+                        <>
+                          Send Message <Send className="ml-2 w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
