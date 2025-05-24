@@ -10,28 +10,28 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "I'm a small business owner. Is Growzzy Media the right fit for me?",
-      answer: "Absolutely! We work with businesses of all sizes — and especially love helping small brands scale with tailored, affordable digital strategies."
+      question: "How to use AI for lead generation in 2025?",
+      answer: "AI transforms lead generation through predictive analytics, automated targeting, and intelligent campaign optimization. Our AI marketing tools analyze customer behavior patterns, optimize ad spend in real-time, and identify high-quality prospects using machine learning algorithms for maximum conversion rates."
+    },
+    {
+      question: "What are the best AI marketing platforms for D2C brands?",
+      answer: "The best AI marketing platforms for D2C brands include Meta's AI-powered advertising suite, Google's Performance Max campaigns, and LinkedIn's AI targeting. We integrate these with marketing automation tools to create comprehensive AI-driven digital marketing strategies that scale with your business."
+    },
+    {
+      question: "How does AI-driven campaign optimization work for small businesses?",
+      answer: "AI-driven campaign optimization uses machine learning to automatically adjust targeting, bidding, and creative elements based on performance data. For small businesses, this means better ROI with less manual work - our AI marketing automation handles the complex optimizations while you focus on growing your business."
     },
     {
       question: "What services do you specialize in?",
-      answer: "We offer: Paid Ads (Meta & Google), Social Media Management, LinkedIn Branding, Website Development, Lead Gen, Brand Strategy, Reputation Management. Basically, your entire online presence — managed and grown, start to finish."
+      answer: "We offer: AI-Powered Lead Generation (Meta & Google), AI-Driven Social Media Management, AI LinkedIn Marketing, AI-Optimized Website Development, AI Marketing Automation, Performance Marketing, and AI and SEO Integration Strategies. Basically, your entire online presence — managed and grown with AI."
     },
     {
-      question: "How do you use AI in your services?",
-      answer: "We blend AI with creativity to improve targeting, analyze data faster, and create smarter campaigns — so you get better results, faster."
+      question: "How do you use AI in your marketing services?",
+      answer: "We blend AI marketing tools 2025 with creativity to improve targeting accuracy, analyze data faster, create smarter campaigns, and automate repetitive tasks. Our AI-powered outreach systems and data-driven marketing campaigns deliver better results faster than traditional methods."
     },
     {
-      question: "Can I choose only one or two services instead of a full package?",
-      answer: "Yes! Every business has unique needs — we offer modular service plans to match your goals and budget."
-    },
-    {
-      question: "Do you work with international clients?",
-      answer: "Yes — we proudly serve clients globally, with deep understanding of regional nuances and audience behaviors."
-    },
-    {
-      question: "What's the process to get started?",
-      answer: "Simple: Book a discovery call, we'll audit your needs & goals, you get a tailored roadmap, and then we execute and grow together!"
+      question: "Do you work with international clients using AI marketing strategies?",
+      answer: "Yes — we proudly serve clients globally with AI-driven digital marketing strategies, with deep understanding of regional nuances and audience behaviors. Our AI marketing automation adapts to different markets and time zones for optimal performance."
     }
   ];
 
@@ -39,9 +39,9 @@ const FAQ = () => {
     <section id="faq" className="section-padding bg-growzzy-light">
       <div className="container">
         <div className="text-center max-w-xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 fade-in-section">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 fade-in-section">AI Marketing FAQs</h2>
           <p className="text-muted-foreground fade-in-section" data-delay="0.1">
-            Got questions? We've got answers. Here's everything you need to know about working with us.
+            Got questions about AI marketing automation and digital growth? Here's everything you need to know about working with us.
           </p>
         </div>
 
