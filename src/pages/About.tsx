@@ -21,9 +21,7 @@ const AboutPage = () => {
               <h1 className="text-4xl md:text-5xl font-display font-bold leading-tight mb-6 fade-in-section">
                 About <span className="text-growzzy-primary">Growzzy Media</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 fade-in-section" data-delay="0.2">
-                Your partner in digital growth. We combine creativity with data, strategy with storytelling — and most importantly, we grow with you.
-              </p>
+              <p className="text-xl text-muted-foreground mb-8 fade-in-section" data-delay="0.2">Your partner in digital growth. We combine creativity with data, strategy with storytelling — and most importantly, we grow with you. — and now, faster, smarter, and sharper with AI.</p>
             </div>
           </div>
         </section>
