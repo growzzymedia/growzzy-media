@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -40,6 +39,45 @@ const ProjectDetail = () => {
     const getProject = () => {
       // Sample portfolio data
       const portfolioItems = [
+        {
+          id: "hitfit-health",
+          title: "HitFit Health – Local Lead Generation via Meta Ads",
+          category: "Meta Ads | Healthcare Marketing | Lead Generation",
+          metrics: "300 leads generated in a single month at ₹33/lead",
+          image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "HitFit Health",
+          description: "Modern multi-specialty healthcare platform offering surgery coordination, insurance support, and post-op recovery services.",
+          challenge: "HitFit Health needed to generate high-quality medical leads in limited time windows while building localized brand awareness for surgical and consultation services. The challenge was maintaining low cost per lead while improving lead quality within a tight budget of ₹10,000/month.",
+          solution: "We designed hyper-local Meta Ads campaigns targeting a 50km radius from hospital partners. Our creative direction focused on regional targeting, relatable pain points, and urgency-based callouts. We used static creatives and testimonials with real patient success stories, emphasizing affordability, insurance support, and free second opinions.",
+          results: [
+            "300 leads generated in a single month",
+            "Average Cost per Lead: ₹33",
+            "Best-performing campaign achieved ₹28/lead",
+            "50+ converted patients with 60% follow-up success rate",
+            "Built recurring lead pipeline for sustainable growth",
+            "Enhanced trust and local brand awareness within weeks"
+          ],
+          chartData: [
+            { name: 'Week 1', value: 45 },
+            { name: 'Week 2', value: 68 },
+            { name: 'Week 3', value: 92 },
+            { name: 'Week 4', value: 95 }
+          ],
+          leadSourceData: [
+            { name: 'Facebook', value: 65 },
+            { name: 'Instagram', value: 35 }
+          ],
+          conversionData: [
+            { name: 'Converted', value: 60 },
+            { name: 'Follow-up Pending', value: 40 }
+          ],
+          website: "https://hitfithealth.in",
+          testimonial: {
+            quote: "Growzzy delivered exactly what we needed - quality leads at scale with minimal budget. Their understanding of healthcare marketing nuances made all the difference.",
+            name: "HitFit Health Team",
+            position: "Healthcare Platform"
+          }
+        },
         {
           id: "humara-pandit",
           title: "Humara Pandit – Faith Meets Performance Marketing",
@@ -402,7 +440,8 @@ const ProjectDetail = () => {
                     {/* Primary Chart */}
                     <div className="bg-white p-6 rounded-lg shadow">
                       <h3 className="text-xl font-semibold mb-4">
-                        {project.id === "humara-pandit" ? "ROAS Growth" : 
+                        {project.id === "hitfit-health" ? "Weekly Lead Generation" : 
+                         project.id === "humara-pandit" ? "ROAS Growth" : 
                          project.id === "claysip" ? "Reach Breakdown" :
                          project.id === "polki-sarees" ? "Audience Growth" :
                          project.id === "advocate-rashi" ? "Impression Growth" :
@@ -425,7 +464,8 @@ const ProjectDetail = () => {
                     {/* Secondary Chart */}
                     <div className="bg-white p-6 rounded-lg shadow">
                       <h3 className="text-xl font-semibold mb-4">
-                        {project.id === "humara-pandit" ? "Audience Engagement" : 
+                        {project.id === "hitfit-health" ? "Lead Source Distribution" : 
+                         project.id === "humara-pandit" ? "Audience Engagement" : 
                          project.id === "claysip" ? "Timeline" :
                          project.id === "polki-sarees" ? "Follower Growth" :
                          project.id === "advocate-rashi" ? "Content Breakdown" :
@@ -445,10 +485,10 @@ const ProjectDetail = () => {
                           </div>
                         ) : (
                           <ChartContainer config={{}}>
-                            {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData) && (
+                            {(project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData) && (
                               <PieChart>
                                 <Pie
-                                  data={project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || []}
+                                  data={project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || []}
                                   cx="50%"
                                   cy="50%"
                                   labelLine={false}
@@ -457,7 +497,7 @@ const ProjectDetail = () => {
                                   dataKey="value"
                                   label={renderCustomizedLabel}
                                 >
-                                  {(project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || []).map((entry: any, index: number) => (
+                                  {(project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || []).map((entry: any, index: number) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                   ))}
                                 </Pie>
@@ -496,7 +536,8 @@ const ProjectDetail = () => {
                     </h3>
                     <div className="bg-growzzy-light p-4 rounded-md">
                       <p className="text-lg font-medium text-growzzy-dark">
-                        {project.id === "humara-pandit" ? "Connected devotees with rituals digitally" : 
+                        {project.id === "hitfit-health" ? "Generated sustainable lead pipeline for healthcare growth" : 
+                         project.id === "humara-pandit" ? "Connected devotees with rituals digitally" : 
                          project.id === "claysip" ? "Created a sustainable brand identity" :
                          project.id === "polki-sarees" ? "Revitalized traditional fashion" :
                          project.id === "advocate-rashi" ? "Established legal thought leadership" :

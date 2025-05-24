@@ -1,10 +1,17 @@
-
 import React from 'react';
 import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const portfolioItems = [
+    {
+      id: "hitfit-health",
+      title: "HitFit Health – Local Lead Generation via Meta Ads",
+      category: "Meta Ads | Healthcare Marketing | Lead Generation",
+      metrics: "300 leads generated in a single month at ₹33/lead",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://hitfithealth.in"
+    },
     {
       id: "humara-pandit",
       title: "Humara Pandit – Faith Meets Performance Marketing",

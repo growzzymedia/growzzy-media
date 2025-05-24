@@ -12,6 +12,15 @@ const PortfolioPage = () => {
 
   // Complete portfolio data with all case studies
   const portfolioItems = [{
+    id: "hitfit-health",
+    title: "HitFit Health – Local Lead Generation via Meta Ads",
+    category: "Meta Ads | Healthcare Marketing | Lead Generation",
+    metrics: "300 leads generated in a single month at ₹33/lead",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "HitFit Health",
+    description: "Modern multi-specialty healthcare platform offering surgery coordination, insurance support, and post-op recovery services.",
+    website: "https://hitfithealth.in"
+  }, {
     id: "humara-pandit",
     title: "Humara Pandit – Faith Meets Performance Marketing",
     category: "Ads Management | Meta + Google",
