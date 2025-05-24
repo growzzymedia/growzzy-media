@@ -9,8 +9,8 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 style={{
           animationDelay: '0.2s'
-        }} className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6 opacity-0 animate-fade-in md:text-3xl">
-            AI-Driven <span className="text-growzzy-primary text-3xl">Digital Marketing Agency</span> | Performance Marketing that <span className="text-growzzy-primary">Drives Results</span>
+        }} className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6 opacity-0 animate-fade-in md:text-2xl">
+            AI-Driven <span className="text-growzzy-primary text-2xl">Digital Marketing Agency</span> | Performance Marketing that <span className="text-growzzy-primary">Drives Results</span>
           </h1>
           <p style={{
           animationDelay: '0.4s'
