@@ -35,13 +35,10 @@ const AboutPage = () => {
               <div className="fade-in-section">
                 <h2 className="text-3xl font-display font-bold mb-6">Why Growzzy Media?</h2>
                 <p className="text-lg mb-4"><span className="font-medium">Growzzy is short for "growth made eazy."</span></p>
-                <p className="text-muted-foreground mb-6">
-                  In today's digital-first world, where everyone is racing ahead online, we believe every business — big or small — deserves a fair chance to grow. 
-                  Growzzy Media was born to make digital growth easy, accessible, and impactful.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  We combine creativity with data, strategy with storytelling — and most importantly, we grow with you.
-                </p>
+                <p className="text-muted-foreground mb-6 text-justify">In a world where speed, relevance, and precision define success, we’re not just keeping up — we’re leading with AI-driven marketing solutions that scale faster, work harder, and cost less.</p>
+                <p className="text-muted-foreground mb-6 text-justify">At Growzzy Media, we blend human creativity with machine intelligence to deliver performance-first marketing — from intelligent ad campaigns to automated content strategies. Our process cuts guesswork, boosts results, and helps brands grow without burning out or burning cash.
+
+We’re not your typical agency — we’re your always-on, AI-powered growth engine.</p>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg fade-in-section" data-delay="0.2">
                 <img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Team" className="w-full h-full object-cover" />
@@ -59,9 +56,7 @@ const AboutPage = () => {
                   <Check className="w-6 h-6 text-growzzy-primary" />
                 </div>
                 <h3 className="text-2xl font-display font-semibold mb-4">Our Mission</h3>
-                <p className="text-muted-foreground">
-                  To empower modern businesses with the tools, strategies, and content needed to stand out and scale in today's competitive digital landscape.
-                </p>
+                <p className="text-muted-foreground text-justify">To empower modern businesses with AI-backed strategies, tools, and content that don’t just look good — they work hard, convert faster, and scale smarter.</p>
               </div>
               
               <div className="bg-white p-8 rounded-lg shadow-lg fade-in-section" data-delay="0.2">
@@ -69,9 +64,7 @@ const AboutPage = () => {
                   <Check className="w-6 h-6 text-growzzy-primary" />
                 </div>
                 <h3 className="text-2xl font-display font-semibold mb-4">Our Vision</h3>
-                <p className="text-muted-foreground">
-                  To become the most trusted growth partner for businesses globally by leveraging AI-powered, result-oriented digital solutions.
-                </p>
+                <p className="text-muted-foreground text-justify">To become the world’s most trusted AI-driven marketing partner — delivering human-led, machine-optimized digital growth for brands across the globe.</p>
               </div>
             </div>
             
