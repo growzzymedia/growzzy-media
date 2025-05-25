@@ -1,8 +1,9 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { MonitorSmartphone, Megaphone, Linkedin, Globe, Settings, BarChart3, Users, MessageSquare, Search, PenTool } from 'lucide-react';
+import { MonitorSmartphone, Megaphone, Linkedin, Globe, Settings, Users, MessageSquare, Search, PenTool, BarChart3, Target, Lightbulb, Palette, Zap, DollarSign, Calendar, TrendingUp, Eye, Share2, User, Building2, ArrowUpRight, Monitor, Smartphone, Clock, FileText, MousePointer, Star, Map, Trophy, Mic } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServicesPage = () => {
@@ -17,38 +18,34 @@ const ServicesPage = () => {
       title: "AI-Powered Lead Generation",
       description: "We create high-converting campaigns using AI marketing automation on Google and Meta platforms that deliver measurable performance marketing results.",
       details: [
-        "AI-driven campaign strategy & planning", 
-        "Data-driven ad creative development", 
-        "AI-powered A/B testing & optimization", 
-        "Performance tracking with marketing automation", 
-        "AI budget optimization", 
-        "Automated reporting & analytics"
+        "AI Performance – ROI-focused AI campaigns",
+        "AI Targeting – Precision audience reach", 
+        "AI Strategy & Planning – Predictive insights for smarter campaign planning",
+        "Creative Optimization – Data-backed visuals & messaging that convert",
+        "Marketing Automation – Auto-track performance & retarget high-value leads",
+        "Budget Intelligence – Maximize ROI with real-time AI spend suggestions"
       ]
     },
     {
       icon: <MonitorSmartphone className="w-10 h-10" />,
-      title: "AI-Driven Social Growth",
-      description: "Strategic content creation using AI marketing tools 2025 to build engaged audiences through data-driven marketing campaigns.",
+      title: "Organic Social Media Management",
+      description: "Strategic content creation and community management to build engaged audiences through data-driven social media campaigns.",
       details: [
-        "AI-powered content calendar development", 
-        "Platform-specific AI content creation", 
-        "AI hashtag & trend research", 
-        "Automated community management", 
-        "AI-driven engagement strategies", 
-        "Performance analytics & growth tracking"
+        "Content Calendar Creation – Consistent posting with high-impact timing",
+        "Community Management – Engaging and growing follower relationships", 
+        "Analytics & Growth Reports – Monthly reports with actionable insights",
+        "Cross-Platform Optimization – Tailored content for Instagram, LinkedIn, etc."
       ]
     },
     {
       icon: <Linkedin className="w-10 h-10" />,
-      title: "AI-Powered LinkedIn Marketing", 
+      title: "LinkedIn Management", 
       description: "Build your personal brand with AI-powered outreach systems and LinkedIn marketing automation for maximum lead generation.",
       details: [
-        "AI profile optimization", 
-        "Data-driven content strategy", 
-        "AI ghostwriting & post creation", 
-        "Automated connection growth strategies", 
-        "AI-powered engagement tactics", 
-        "Thought leadership positioning with AI"
+        "Ghostwriting & Profile Optimization – Founder-led, high-engagement content",
+        "Thought Leadership Strategy – Positioning for long-term influence", 
+        "B2B Lead Funnel Design – LinkedIn DMs, comments & CTAs that convert",
+        "Analytics Monitoring – Understand what's working & tweak accordingly"
       ]
     },
     {
@@ -56,28 +53,86 @@ const ServicesPage = () => {
       title: "AI-Optimized Website Development",
       description: "Clean, conversion-focused websites with AI and SEO integration strategies that convert visitors into leads.",
       details: [
-        "AI-driven design & development", 
-        "Mobile-responsive layouts with AI optimization", 
-        "AI and SEO integration strategies 2025", 
-        "AI-powered lead capture systems", 
-        "Analytics setup with marketing automation", 
-        "AI-enhanced maintenance & support"
+        "Responsive Design – Optimized for mobile, tablet, and desktop",
+        "Speed & SEO Optimization – Fast load times & Google visibility", 
+        "Lead Capture Setup – Forms, CTAs & automations for inbound interest",
+        "Content & Animation Support – Scroll, hover, and motion interactions"
       ]
     },
     {
       icon: <Settings className="w-10 h-10" />,
-      title: "AI Marketing Automation Solutions",
-      description: "Custom AI-driven campaign optimization for small businesses with comprehensive marketing automation systems.",
+      title: "Brand Strategy & Research",
+      description: "Comprehensive brand analysis and strategic planning to position your business for maximum market impact.",
       details: [
-        "AI digital marketing strategy consulting", 
-        "Advanced marketing automation setup", 
-        "AI-powered CRM integration", 
-        "Conversion optimization with AI", 
-        "Data-driven analytics & reporting", 
-        "AI marketing tools training & development"
+        "Audience Persona Mapping – Build campaigns on real buyer insights",
+        "Competitive Benchmarking – Know where you stand & what to improve", 
+        "Messaging Frameworks – Voice, tone & hooks tailored for your niche",
+        "Marketing Audit Reports – Identify gaps and new opportunities"
+      ]
+    },
+    {
+      icon: <Star className="w-10 h-10" />,
+      title: "Reputation & Online Presence Management",
+      description: "Manage and enhance your online reputation across all digital touchpoints to build trust and credibility.",
+      details: [
+        "Google Review Monitoring – Manage reviews & boost credibility",
+        "Local SEO Strategy – Appear where customers are searching", 
+        "Profile Optimization – GMB, social bios & listings aligned to brand",
+        "Issue Resolution Workflows – Handle negative mentions with care"
       ]
     }
   ];
+
+  const getServiceIcons = (index: number) => {
+    const iconSets = [
+      // AI-Powered Lead Generation
+      [
+        { icon: <BarChart3 className="w-8 h-8 text-growzzy-primary mb-2" />, title: "AI Performance", desc: "ROI-focused AI campaigns" },
+        { icon: <Target className="w-8 h-8 text-growzzy-primary mb-2" />, title: "AI Targeting", desc: "Precision audience reach" },
+        { icon: <Lightbulb className="w-8 h-8 text-growzzy-primary mb-2" />, title: "AI Strategy", desc: "Predictive insights" },
+        { icon: <Palette className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Creative Optimization", desc: "Data-backed visuals" },
+        { icon: <Zap className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Marketing Automation", desc: "Auto-track performance" },
+        { icon: <DollarSign className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Budget Intelligence", desc: "Maximize ROI" }
+      ],
+      // Organic Social Media Management
+      [
+        { icon: <Calendar className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Content Calendar", desc: "Consistent posting" },
+        { icon: <Users className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Community Management", desc: "Growing relationships" },
+        { icon: <TrendingUp className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Analytics Reports", desc: "Actionable insights" },
+        { icon: <Share2 className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Cross-Platform", desc: "Tailored content" }
+      ],
+      // LinkedIn Management
+      [
+        { icon: <PenTool className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Ghostwriting", desc: "High-engagement content" },
+        { icon: <User className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Thought Leadership", desc: "Long-term influence" },
+        { icon: <Building2 className="w-8 h-8 text-growzzy-primary mb-2" />, title: "B2B Lead Funnel", desc: "CTAs that convert" },
+        { icon: <Eye className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Analytics Monitoring", desc: "Track what works" }
+      ],
+      // Website Development
+      [
+        { icon: <Monitor className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Responsive Design", desc: "All device optimization" },
+        { icon: <Clock className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Speed & SEO", desc: "Fast load times" },
+        { icon: <MousePointer className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Lead Capture", desc: "Conversion optimization" },
+        { icon: <FileText className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Content Support", desc: "Motion interactions" }
+      ],
+      // Brand Strategy & Research
+      [
+        { icon: <Map className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Persona Mapping", desc: "Real buyer insights" },
+        { icon: <Trophy className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Competitive Analysis", desc: "Know your position" },
+        { icon: <MessageSquare className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Messaging Framework", desc: "Tailored voice & tone" },
+        { icon: <Search className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Marketing Audit", desc: "Identify opportunities" }
+      ],
+      // Reputation Management
+      [
+        { icon: <Star className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Review Monitoring", desc: "Boost credibility" },
+        { icon: <Map className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Local SEO", desc: "Customer search visibility" },
+        { icon: <User className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Profile Optimization", desc: "Brand alignment" },
+        { icon: <Mic className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Issue Resolution", desc: "Handle mentions with care" }
+      ]
+    ];
+    
+    return iconSets[index] || [];
+  };
 
   return (
     <div className="min-h-screen">
@@ -126,65 +181,13 @@ const ServicesPage = () => {
                 <div className="md:w-1/2 flex items-center justify-center">
                   <div className={`bg-growzzy-gray rounded-lg p-8 md:p-12 w-full h-full ${index % 2 === 0 ? 'slide-in-section' : 'slide-in-section'}`} data-animation={index % 2 === 0 ? 'slide-in-right' : 'slide-in-left'} data-delay={`${0.3 + index * 0.1}`}>
                     <div className="grid grid-cols-2 gap-4">
-                      {index === 0 && (
-                        <>
-                          <div className="bg-white rounded-lg p-4 shadow-sm">
-                            <BarChart3 className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI Performance</h4>
-                            <p className="text-sm text-muted-foreground">ROI-focused AI campaigns</p>
-                          </div>
-                          <div className="bg-white rounded-lg p-4 shadow-sm">
-                            <Search className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI Targeting</h4>
-                            <p className="text-sm text-muted-foreground">Precision audience reach</p>
-                          </div>
-                        </>
-                      )}
-                      
-                      {index === 1 && (
-                        <>
-                          <div className="bg-white rounded-lg p-4 shadow-sm">
-                            <Users className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI Community</h4>
-                            <p className="text-sm text-muted-foreground">Building loyal followers</p>
-                          </div>
-                          <div className="bg-white rounded-lg p-4 shadow-sm">
-                            <PenTool className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI Content</h4>
-                            <p className="text-sm text-muted-foreground">Engaging AI storytelling</p>
-                          </div>
-                        </>
-                      )}
-                      
-                      {index === 2 && (
-                        <>
-                          <div className="bg-white rounded-lg p-4 shadow-sm col-span-2">
-                            <MessageSquare className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI Thought Leadership</h4>
-                            <p className="text-sm text-muted-foreground">Position yourself as an industry expert with AI</p>
-                          </div>
-                        </>
-                      )}
-                      
-                      {index === 3 && (
-                        <>
-                          <div className="bg-white rounded-lg p-4 shadow-sm col-span-2">
-                            <Globe className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI-Optimized Presence</h4>
-                            <p className="text-sm text-muted-foreground">Beautiful, AI-enhanced websites</p>
-                          </div>
-                        </>
-                      )}
-                      
-                      {index === 4 && (
-                        <>
-                          <div className="bg-white rounded-lg p-4 shadow-sm col-span-2">
-                            <Settings className="w-8 h-8 text-growzzy-primary mb-2" />
-                            <h4 className="font-semibold">AI Custom Solutions</h4>
-                            <p className="text-sm text-muted-foreground">AI-tailored to your business needs</p>
-                          </div>
-                        </>
-                      )}
+                      {getServiceIcons(index).map((iconItem, iconIndex) => (
+                        <div key={iconIndex} className={`bg-white rounded-lg p-4 shadow-sm ${getServiceIcons(index).length <= 2 ? 'col-span-2' : ''}`}>
+                          {iconItem.icon}
+                          <h4 className="font-semibold">{iconItem.title}</h4>
+                          <p className="text-sm text-muted-foreground">{iconItem.desc}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -201,7 +204,7 @@ const ServicesPage = () => {
               <p className="text-lg mb-8">
                 Let's discuss how our AI-driven digital marketing strategies can help you achieve your business goals and stand out with performance marketing.
               </p>
-              <Link to="/contact" className="btn-primary inline-flex items-center">
+              <Link to="/connect" className="btn-primary inline-flex items-center">
                 Get AI Marketing Solutions
               </Link>
             </div>
