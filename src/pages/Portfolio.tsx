@@ -14,7 +14,7 @@ const PortfolioPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Complete portfolio data with all case studies
+  // Complete portfolio data with updated tags
   const portfolioItems = [{
     id: "hitfit-health",
     title: "HitFit Health – Local Lead Generation via Meta Ads",
@@ -24,7 +24,7 @@ const PortfolioPage = () => {
     client: "HitFit Health",
     description: "Modern multi-specialty healthcare platform offering surgery coordination, insurance support, and post-op recovery services.",
     website: "https://hitfithealth.in",
-    tags: ["Meta Ads", "Healthcare Marketing", "Lead Generation"]
+    tags: ["Ads Management", "Lead Generation"]
   }, {
     id: "humara-pandit",
     title: "Humara Pandit – Faith Meets Performance Marketing",
@@ -34,7 +34,7 @@ const PortfolioPage = () => {
     client: "Humara Pandit",
     description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
     website: "https://humarapandit.com/",
-    tags: ["Ads Management", "Meta", "Google", "Performance Marketing"]
+    tags: ["Ads Management", "Lead Generation"]
   }, {
     id: "claysip",
     title: "ClaySip – Crafting an Online Identity from Clay",
@@ -45,7 +45,7 @@ const PortfolioPage = () => {
     description: "Building a digital identity for handcrafted terracotta drinkware from scratch.",
     website: "https://claysip.com/",
     social: "https://www.instagram.com/clay_sip/",
-    tags: ["Brand Building", "Website", "Organic Reach"]
+    tags: ["Brand Building", "Ads Management", "Website Building", "Organic Social Growth"]
   }, {
     id: "polki-sarees",
     title: "Polki Sarees – Reviving the Saree, One Reel at a Time",
@@ -56,7 +56,7 @@ const PortfolioPage = () => {
     description: "D2C brand founded by women for women, driving awareness through organic content.",
     website: "https://polkisarees.com/",
     social: "https://www.instagram.com/polki_sarees/",
-    tags: ["Organic Social Growth", "Reels Strategy", "Social Media"]
+    tags: ["Organic Social Growth"]
   }, {
     id: "advocate-rashi",
     title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
@@ -66,7 +66,7 @@ const PortfolioPage = () => {
     client: "Adv. Rashi Singhal",
     description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
     website: "https://www.linkedin.com/in/rashi-singhal-326076213",
-    tags: ["LinkedIn Personal Branding", "Personal Branding", "Legal"]
+    tags: ["Personal Branding"]
   }, {
     id: "bedtime-essentials",
     title: "Bedtime Essentials – From Manufacturer to D2C Brand",
@@ -77,7 +77,7 @@ const PortfolioPage = () => {
     description: "Transforming an offline bedsheet manufacturer into a digital D2C brand.",
     website: "https://bedtimeessentials.dm2buy.com/",
     social: "https://www.instagram.com/bed_timeessentials/",
-    tags: ["Funnel Creation", "Social Media", "D2C Storefront"]
+    tags: ["Lead Generation", "Organic Social Growth", "Brand Building", "Website Building"]
   }, {
     id: "pace-institute",
     title: "PACE Institute – Hyperlocal Campaigns with National Impact",
@@ -87,11 +87,18 @@ const PortfolioPage = () => {
     client: "PACE Institute",
     description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
     website: "https://iitianspace.com/",
-    tags: ["Paid Ads", "Education Sector", "Hyperlocal"]
+    tags: ["Ads Management", "Lead Generation"]
   }];
 
-  // Extract unique categories from tags
-  const categories = Array.from(new Set(portfolioItems.flatMap(item => item.tags)));
+  // Define categories in the specified order
+  const categories = [
+    "Ads Management",
+    "Lead Generation", 
+    "Brand Building",
+    "Organic Social Growth",
+    "Personal Branding",
+    "Website Building"
+  ];
 
   // Filter items based on active filter
   const filteredItems = activeFilter === 'all' 
