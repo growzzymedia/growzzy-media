@@ -6,6 +6,20 @@ import { Link } from 'react-router-dom';
 const Blog = () => {
   const blogPosts = [
     {
+      title: "How to Integrate AI in Your Marketing Strategies in 2025",
+      excerpt: "AI is not the future of marketing – it's the present, and it's here to stay! As we move deeper into 2025, artificial intelligence is completely reshaping how brands connect, convert, and captivate their audiences.",
+      date: "May 15, 2025",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      url: "/blog/ai-marketing-strategies-2025"
+    },
+    {
+      title: "Scaling Coaching Businesses Online in 2025: What Works and What's Just BS?",
+      excerpt: "If you're a coach, consultant, or trainer in India trying to scale your business online, you've likely been fed a cocktail of overhyped strategies. Let's break down what actually works.",
+      date: "May 20, 2025",
+      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      url: "/blog/scaling-coaching-businesses-2025"
+    },
+    {
       title: "Building Your Business's Online Presence",
       excerpt: "In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability.",
       date: "May 5, 2025",

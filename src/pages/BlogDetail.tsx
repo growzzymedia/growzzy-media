@@ -11,6 +11,129 @@ const BlogDetail = () => {
   // Blog posts data
   const blogPosts = [
     {
+      id: "ai-marketing-strategies-2025",
+      title: "How to Integrate AI in Your Marketing Strategies in 2025",
+      excerpt: "AI is not the future of marketing – it's the present, and it's here to stay! As we move deeper into 2025, artificial intelligence is completely reshaping how brands connect, convert, and captivate their audiences.",
+      date: "May 15, 2025",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Sara Purohit",
+      category: "AI Marketing",
+      content: `
+        <p class="mb-4">AI is not the future of marketing – it's the present, and it's here to stay! As we move deeper into 2025, artificial intelligence is completely reshaping how brands connect, convert, and captivate their audiences. From campaign planning and creative development to writing scripts and producing visuals, AI is playing a central role.</p>
+        
+        <p class="mb-4">Whether you're a growing startup or a well-established enterprise, integrating AI into your marketing strategy is no longer optional—it's essential. Striking the right balance between manual effort and automation can make your company both efficient and effective.</p>
+        
+        <p class="mb-4">Here's how you can smartly and successfully integrate AI into your marketing playbook this year:</p>
+        
+        <h3 class="text-xl font-semibold my-4">1. Hyper-Personalization at Scale (Customers love this ;)</h3>
+        <p class="mb-4">Gone are the days of one-size-fits-all campaigns. Today's consumers expect personalization. And with attention spans dropping to just 3 seconds, your hook needs to be highly targeted and instantly engaging.</p>
+        <p class="mb-4">AI tools—like machine learning algorithms and predictive analytics—help marketers tailor messaging based on user behavior, preferences, and buying patterns. Imagine email campaigns where subject lines, product suggestions, and even send times are customized for each recipient.</p>
+        <p class="mb-4">This applies to everything from WhatsApp and email marketing to in-app communication—the key is feeding the AI the right data.</p>
+        <p class="mb-4 text-growzzy-primary font-medium">Growzzy Tip: Use AI-powered CRMs to dynamically segment your audience and create experiences that feel deeply personal and relevant.</p>
+        
+        <h3 class="text-xl font-semibold my-4">2. AI-Powered Content Creation (It's never been easier!)</h3>
+        <p class="mb-4">In 2025, content creation has hit a new level of ease and speed thanks to AI. From SEO-optimized blog posts and social media captions to video scripts and ad copy, AI can do it all.</p>
+        <p class="mb-4">Gone are the days when you needed a full production team to shoot a single ad. With the right AI tools, you can generate high-quality content faster, cheaper, and often with better performance. Tools like ChatGPT, Leonardo.ai, and Captions.ai help marketers brainstorm, draft, and polish content in minutes.</p>
+        <p class="mb-4 text-growzzy-primary font-medium">Growzzy Insight: Let AI handle the first draft, but always add your unique brand voice and human touch to keep the content authentic and emotionally resonant.</p>
+        
+        <h3 class="text-xl font-semibold my-4">3. Smart Customer Support with AI Voice Agents</h3>
+        <p class="mb-4">Still picturing basic chatbots? Think again. In 2025, AI voice agents will go far beyond text-based bots—they can carry on realistic, human-like conversations that make customers feel truly heard.</p>
+        <p class="mb-4">This 24/7 support option not only improves the customer experience but also saves your business significant time and money. Tools like Tably, Vapi, and Zendesk AI can manage FAQs, resolve issues, and even handle upselling—all while sounding like a real person.</p>
+        <p class="mb-4 text-growzzy-primary font-medium">Action Step: Integrate AI-powered chat and voice bots across your website and social media platforms to enhance engagement and reduce response time.</p>
+        
+        <h3 class="text-xl font-semibold my-4">4. Data-Driven Decision Making (Let AI do the heavy lifting)</h3>
+        <p class="mb-4">Sure, humans have been analyzing data for years—but not at the speed and accuracy AI can offer. In 2025, AI thrives on data, and that's a game-changer for marketers.</p>
+        <p class="mb-4">From Google Analytics 4's AI-powered insights to platforms like Harmonize and Power BI, marketers can now forecast trends, measure ROI, and optimize strategies in real-time—without drowning in spreadsheets.</p>
+        <p class="mb-4 text-growzzy-primary font-medium">Growzzy Tip: Use AI tools to detect performance anomalies early, so you can quickly pivot and make informed decisions that keep campaigns on track & to check for your competitors strategies- Use Spyfu.</p>
+        
+        <p class="mt-6 text-growzzy-primary font-medium">AI isn't here to replace marketers, it's here to empower them. By blending human creativity with machine intelligence, your brand can stay agile, authentic, and ahead of the curve.</p>
+        <p class="mt-4 text-growzzy-primary font-medium">So, start experimenting, stay curious, and let AI be your smartest marketing partner in 2025.</p>
+      `
+    },
+    {
+      id: "scaling-coaching-businesses-2025",
+      title: "Scaling Coaching Businesses Online in 2025: What Works and What's Just BS?",
+      excerpt: "If you're a coach, consultant, or trainer in India trying to scale your business online, you've likely been fed a cocktail of overhyped strategies. Let's break down what actually works.",
+      date: "May 20, 2025",
+      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Mayank Goel",
+      category: "Business Growth",
+      content: `
+        <p class="mb-4">If you're a coach, consultant, or trainer in India trying to scale your business online, you've likely been fed a cocktail of overhyped strategies. From daily Reels to "DM everyone you know" tactics—some work, most don't.</p>
+        
+        <p class="mb-4">At Growzzy Media, we've worked with coaches across Mumbai, Delhi, Bangalore, Hyderabad, Ahmedabad and beyond. We've seen what actually drives growth—and what's just BS.</p>
+        
+        <p class="mb-4">Let's break it down.</p>
+        
+        <h2 class="text-2xl font-semibold my-6">What Actually Works in Scaling Coaching Businesses</h2>
+        
+        <h3 class="text-xl font-semibold my-4">1. Niche Positioning That Speaks Clearly</h3>
+        <p class="mb-4">Most coaches try to help "everyone." That's noise. Instead:</p>
+        <ul class="mb-4 ml-6 list-disc">
+          <li>Define your ideal client: Age, pain point, income level</li>
+          <li>Position around outcomes, not services</li>
+          <li>E.g., "I help working moms lose 10kg in 90 days" > "I'm a fitness coach"</li>
+        </ul>
+        <p class="mb-4 text-growzzy-primary font-medium">SEO Tip: Use niche-specific landing pages with keywords like "business coach in Mumbai" or "career coaching for IT professionals in Bangalore."</p>
+        
+        <h3 class="text-xl font-semibold my-4">2. Client Results as Core Content</h3>
+        <p class="mb-4">Reels are great, but proof sells:</p>
+        <ul class="mb-4 ml-6 list-disc">
+          <li>Showcase transformation stories</li>
+          <li>Use UGC (user-generated content) testimonials</li>
+          <li>Create before-after journeys with clear outcomes</li>
+        </ul>
+        <p class="mb-4 text-growzzy-primary font-medium">AEO Tip: Answer questions like "How do I find a good life coach in Hyderabad?" or "What does a business coach do?" in your blogs and videos.</p>
+        
+        <h3 class="text-xl font-semibold my-4">3. High-Converting Funnels</h3>
+        <p class="mb-4">Free masterclass + Email nurture > Random Instagram Lives</p>
+        <ul class="mb-4 ml-6 list-disc">
+          <li>Offer a free, valuable lead magnet (e.g., "5-Step Blueprint to Scale to 1L/month")</li>
+          <li>Build an email list</li>
+          <li>Use automation for follow-ups</li>
+        </ul>
+        <p class="mb-4 text-growzzy-primary font-medium">Tools that help: Systeme.io, ConvertKit, and Calendly for booking calls</p>
+        
+        <h3 class="text-xl font-semibold my-4">4. Strategic Paid Ads (Not Boosted Posts)</h3>
+        <p class="mb-4">Meta ads, YouTube, and Google Local ads work—but only when:</p>
+        <ul class="mb-4 ml-6 list-disc">
+          <li>You use solid creatives (UGC-style)</li>
+          <li>Funnel traffic to a landing page (not your IG profile!)</li>
+          <li>Retarget with testimonials & webinar invites</li>
+        </ul>
+        <p class="mb-4 text-growzzy-primary font-medium">Geo-Targeting Tip: Use keywords like "top career coach in Bangalore" and run ads around IT parks or co-working spaces.</p>
+        
+        <h3 class="text-xl font-semibold my-4">5. Authority Building via YouTube & Podcasts</h3>
+        <p class="mb-4">Consistency wins. Your target client needs:</p>
+        <ul class="mb-4 ml-6 list-disc">
+          <li>Weekly videos answering their top 10 questions</li>
+          <li>Guest features on niche podcasts</li>
+          <li>Personal brand > Corporate feel</li>
+        </ul>
+        <p class="mb-4 text-growzzy-primary font-medium">Bonus: Videos and podcasts are AI voice-search friendly and help with long-tail SEO.</p>
+        
+        <h2 class="text-2xl font-semibold my-6">What's Total BS (And Wastes Time)</h2>
+        
+        <h4 class="text-lg font-semibold my-3">Posting daily Reels expecting clients</h4>
+        <p class="mb-4">Unless you're a content creator and a coach, that's vanity. A reel without a funnel is like shouting into the void.</p>
+        
+        <h4 class="text-lg font-semibold my-3">Copy-pasting ChatGPT quotes on LinkedIn</h4>
+        <p class="mb-4">Generic posts don't build brand equity. Your audience wants your voice, not recycled content.</p>
+        
+        <h4 class="text-lg font-semibold my-3">Buying fake followers or testimonials</h4>
+        <p class="mb-4">One word: Trust. Gone. Once lost, it's game over in this space.</p>
+        
+        <h4 class="text-lg font-semibold my-3">DIY'ing Everything</h4>
+        <p class="mb-4">Being your own designer, video editor, strategist, and closer? That's not scaling—that's struggling.</p>
+        
+        <h2 class="text-2xl font-semibold my-6">Local SEO Hacks for Coaches in India</h2>
+        <ul class="mb-4 ml-6 list-disc">
+          <li>Use city-specific keywords in your site's H1 and meta titles > "Best Business Coach in Delhi NCR"</li>
+          <li>Claim and optimize your Google My Business profile</li>
+        </ul>
+      `
+    },
+    {
       id: "building-online-presence",
       title: "Building Your Business's Online Presence",
       excerpt: "In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability — all rolled into one.",
