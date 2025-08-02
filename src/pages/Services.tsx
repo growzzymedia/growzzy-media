@@ -17,78 +17,78 @@ const ServicesPage = () => {
     {
       id: "brand-strategy",
       title: "Brand Strategy & Consultation",
-      description: "Strategic deep-dive into your brand's positioning, personality, and marketing roadmap.",
-      value: "Helps you show up with clarity, consistency, and conversion in mind.",
+      description: "Your brand isn't just a logo. It's your story, your vibe, your promise.",
+      value: "",
       benefits: [
-        "Brand voice, values & audience mapping",
-        "Market research + competitor benchmarking", 
-        "Clear GTM roadmap or revamp"
+        "Brand audits & positioning made simple",
+        "Strategy decks that align with your goals",
+        "Clarity on what you do, how you say it, and why it matters"
       ]
     },
     {
       id: "funnel-content",
       title: "Funnel & Content Scripting",
-      description: "Strategic scripts for paid ads, landing pages, and email flows.",
-      value: "Converts scrollers into loyal buyers across the funnel.",
+      description: "Struggling to convert eyeballs into buyers? Let us write words that not only attract, but also sell.",
+      value: "",
       benefits: [
-        "Scroll-stopping hooks & CTAs",
-        "Full-funnel creative scripts",
-        "Tailored content journeys (D2C or service-based)"
+        "End-to-end funnel content — ads, emails, landing pages",
+        "Copy that speaks to your audience's pain points",
+        "Proven frameworks that nudge action"
       ]
     },
     {
       id: "social-media",
       title: "Social Media Management",
-      description: "Done-for-you content calendars, designs, and uploads.",
-      value: "Builds community + keeps you top of mind with your audience.",
+      description: "Too busy to post? Or too confused about what works? We get your socials talking, trending, and converting.",
+      value: "",
       benefits: [
-        "Weekly content plans",
-        "Trend-adaptive creatives",
-        "Engagement support"
+        "Platform-specific content calendars",
+        "Engagement strategies, not just posts",
+        "Insight-led tweaks for better performance"
       ]
     },
     {
       id: "paid-ads",
       title: "Paid Ads (Meta, Google, Snapchat, Amazon, WhatsApp)",
-      description: "Performance marketing using AI-based media buying & creative testing.",
-      value: "Gets you leads, sales, or bookings at a lower CAC.",
+      description: "You shouldn't have to burn money to get leads. We manage your paid media like it's our own wallet.",
+      value: "",
       benefits: [
-        "ROI-focused ad strategy",
-        "Real-time data-driven optimization",
-        "Proven across D2C, healthcare, education"
+        "High-ROAS campaigns, low wastage",
+        "A/B testing, audience targeting, optimization",
+        "Transparent reports that actually make sense"
       ]
     },
     {
       id: "launch-campaigns",
       title: "Launch & Campaign Execution",
-      description: "GTM or relaunch campaigns with end-to-end support.",
-      value: "Makes launches smooth, loud, and data-backed.",
+      description: "Product ready? But what about the launch buzz? We don't just post — we build hype.",
+      value: "",
       benefits: [
-        "Strategic rollout plans",
-        "Multi-channel content & media",
-        "Post-launch analysis"
+        "End-to-end launch calendars",
+        "Influencer tie-ins + UGC campaigns",
+        "Paid + organic rollout for max impact"
       ]
     },
     {
       id: "influencer-ugc",
       title: "Influencer & UGC Support",
-      description: "Collaborations with micro-creators & UGC campaigns.",
-      value: "Builds trust & drives organic conversions.",
+      description: "People trust people. That's why UGC works. We find the right voices to speak for your brand.",
+      value: "",
       benefits: [
-        "UGC strategy + scripting",
-        "Creator sourcing + briefing",
-        "Integration with ads + organic"
+        "Sourcing creators that match your vibe",
+        "UGC that doesn't feel like ads",
+        "Trackable performance, not just vanity metrics"
       ]
     },
     {
       id: "analytics-reporting",
       title: "Analytics + Reporting + Optimization",
-      description: "AI-backed dashboards + monthly review calls.",
-      value: "Ensures you're always improving, never guessing.",
+      description: "Posting blindly? Let's change that. We make sure your strategy evolves with data.",
+      value: "",
       benefits: [
-        "ROI reports + insight decks",
-        "Weekly or monthly syncs",
-        "Conversion rate optimization"
+        "Custom dashboards with real insights",
+        "Weekly/monthly performance reviews",
+        "Iteration plans that drive results"
       ]
     }
   ];
@@ -97,56 +97,56 @@ const ServicesPage = () => {
     {
       id: "personal-branding",
       title: "LinkedIn Personal Branding (Founders/Experts)",
-      description: "Personal brand development & content for founders or CXOs.",
-      value: "Turns you into an industry voice your clients trust.",
+      description: "You need people to see you, right? Let's turn you into a credible voice in your space.",
+      value: "",
       benefits: [
-        "Ghostwritten posts that build authority",
-        "Content aligned with business goals",
-        "Profile revamp + strategy sync"
+        "Thought leadership strategy & content",
+        "Audience building via hooks, comments, DMs",
+        "Visibility without burnout"
       ]
     },
     {
       id: "ghostwriting-comments",
       title: "Ghostwriting & Comment Strategy",
-      description: "Thought leadership content + curated commenting.",
-      value: "Increases visibility, engagement, and DMs.",
+      description: "But who has time for this? How about we ghost-write them for you while you focus on running your business?",
+      value: "",
       benefits: [
-        "Weekly ghostwritten content",
-        "Strategic engagement in target circles",
-        "Authority building across key niches"
+        "Thought leadership without the time drain",
+        "Smart comment strategies for visibility",
+        "Consistent posting that sounds like you"
       ]
     },
     {
       id: "company-page",
       title: "Company Page Management",
-      description: "Full-funnel management of brand's LinkedIn company page.",
-      value: "Builds brand trust + recruits talent + generates leads.",
+      description: "But wait — what about your brand's voice on LinkedIn? Your company isn't you. It needs its own spotlight.",
+      value: "",
       benefits: [
-        "Post planning & scheduling",
-        "Follower growth support",
-        "Team content integration"
+        "Engaging company updates & thought-led posts",
+        "Hiring + culture content that builds trust",
+        "Consistent page growth strategies"
       ]
     },
     {
       id: "linkedin-ads",
       title: "LinkedIn Ads & Messaging Funnels",
-      description: "Precision-targeted ad campaigns and smart DM sequences.",
-      value: "Gets you in front of decision-makers fast.",
+      description: "Organic's great. But what if we added fuel to it? LinkedIn Ads done right = faster authority + leads.",
+      value: "",
       benefits: [
-        "Ad creatives + copy",
-        "Cold outreach + warm nurture flows",
-        "Analytics + conversion tracking"
+        "Sponsored content, lead gen forms, message ads",
+        "Funnel design for every stage",
+        "Smart spends with real ROI"
       ]
     },
     {
       id: "b2b-lead-gen",
       title: "B2B Lead Gen & Nurturing",
-      description: "AI + human-run lead generation and nurture support.",
-      value: "Fills your pipeline with qualified, conversion-ready leads.",
+      description: "Stop cold-pitching. Start attracting. We help businesses come to you.",
+      value: "",
       benefits: [
-        "CRM integration + calendar booking",
-        "Multi-step nurturing campaigns",
-        "ICP-specific outreach flows"
+        "Profile + content that draws the right audience",
+        "Warm nurturing via DMs and drip content",
+        "Inbox full of leads, not ignores"
       ]
     }
   ];
@@ -237,8 +237,7 @@ const ServicesPage = () => {
                           <AccordionContent className="px-6 pb-6">
                             <div className="space-y-4 pl-5">
                               <div>
-                                <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
-                                <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
+                                <p className="text-muted-foreground mb-4">{service.description}</p>
                               </div>
                               <ul className="space-y-2">
                                 {service.benefits.map((benefit, index) => (
@@ -290,8 +289,7 @@ const ServicesPage = () => {
                           <AccordionContent className="px-6 pb-6">
                             <div className="space-y-4 pl-5">
                               <div>
-                                <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
-                                <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
+                                <p className="text-muted-foreground mb-4">{service.description}</p>
                               </div>
                               <ul className="space-y-2">
                                 {service.benefits.map((benefit, index) => (
