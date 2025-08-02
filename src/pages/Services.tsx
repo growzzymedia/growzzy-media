@@ -49,7 +49,7 @@ const ServicesPage = () => {
     },
     {
       id: "paid-ads",
-      title: "Paid Ads (Meta, Google, Snapchat)",
+      title: "Paid Ads (Meta, Google, Snapchat, Amazon, WhatsApp)",
       description: "Performance marketing using AI-based media buying & creative testing.",
       value: "Gets you leads, sales, or bookings at a lower CAC.",
       benefits: [
@@ -184,9 +184,10 @@ const ServicesPage = () => {
         </section>
 
         {/* Our Studios Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-growzzy-light to-white">
           <div className="container">
-            <div className="text-center max-w-4xl mx-auto mb-16">
+            {/* Main Header */}
+            <div className="text-center max-w-4xl mx-auto mb-20">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 fade-in-section">
                 Our Studios — Where Human-Led Strategy Meets <span className="text-growzzy-primary">AI-Powered Speed</span>
               </h2>
@@ -195,99 +196,125 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            {/* Brand Studio */}
-            <div className="mb-20 fade-in-section" data-delay="0.3">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 rounded-full bg-growzzy-primary flex items-center justify-center">
-                  <Palette className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold">Brand Studio</h3>
-                  <p className="text-lg text-muted-foreground">Helping brands find their voice, audience, and scalable growth engine.</p>
-                </div>
-              </div>
+            {/* Tree Structure */}
+            <div className="relative max-w-6xl mx-auto">
+              {/* Central connecting line */}
+              <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-20 bg-gradient-to-b from-growzzy-primary to-transparent"></div>
+              
+              {/* Horizontal connecting line */}
+              <div className="hidden md:block absolute top-20 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-growzzy-primary to-transparent"></div>
+              
+              {/* Branch lines */}
+              <div className="hidden md:block absolute top-20 left-1/4 w-px h-16 bg-gradient-to-b from-growzzy-primary to-transparent"></div>
+              <div className="hidden md:block absolute top-20 right-1/4 w-px h-16 bg-gradient-to-b from-growzzy-primary to-transparent"></div>
 
-              <Accordion type="single" collapsible className="space-y-4">
-                {brandStudioServices.map((service) => (
-                  <AccordionItem key={service.id} value={service.id} className="bg-white rounded-lg border shadow-sm">
-                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                      <div>
-                        <h4 className="text-lg font-semibold text-left">{service.title}</h4>
+              {/* Studios Container */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-16">
+                {/* Brand Studio */}
+                <div className="fade-in-section" data-delay="0.3">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 relative">
+                    {/* Studio Icon */}
+                    <div className="absolute -top-8 left-8">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-growzzy-primary to-purple-600 flex items-center justify-center shadow-lg">
+                        <Palette className="w-8 h-8 text-white" />
                       </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-6">
-                      <div className="space-y-4">
-                        <div>
-                          <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
-                          <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
-                        </div>
-                        <ul className="space-y-2">
-                          {service.benefits.map((benefit, index) => (
-                            <li key={index} className="flex items-start">
-                              <span className="inline-block w-2 h-2 bg-growzzy-primary rounded-full mt-2 mr-3"></span>
-                              <span>{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+                    </div>
+                    
+                    <div className="pt-8">
+                      <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">Brand Studio</h3>
+                      <p className="text-lg text-muted-foreground mb-8">Helping brands find their voice, audience, and scalable growth engine.</p>
+                    </div>
 
-              <div className="text-center mt-8">
-                <Link to="/connect" className="btn-primary inline-flex items-center group">
-                  Book a Discovery Call
-                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
+                    <Accordion type="single" collapsible className="space-y-3">
+                      {brandStudioServices.map((service) => (
+                        <AccordionItem key={service.id} value={service.id} className="bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-200 hover:border-growzzy-primary/30 transition-all duration-300">
+                          <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group">
+                            <div className="flex items-center gap-3">
+                              <div className="w-2 h-2 bg-growzzy-primary rounded-full group-hover:scale-125 transition-transform"></div>
+                              <h4 className="text-lg font-semibold text-left group-hover:text-growzzy-primary transition-colors">{service.title}</h4>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="px-6 pb-6">
+                            <div className="space-y-4 pl-5">
+                              <div>
+                                <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
+                                <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
+                              </div>
+                              <ul className="space-y-2">
+                                {service.benefits.map((benefit, index) => (
+                                  <li key={index} className="flex items-start">
+                                    <span className="inline-block w-1.5 h-1.5 bg-growzzy-primary rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                                    <span className="text-sm">{benefit}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
 
-            {/* LinkedIn Studio */}
-            <div className="fade-in-section" data-delay="0.4">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 rounded-full bg-growzzy-primary flex items-center justify-center">
-                  <Building2 className="w-8 h-8 text-white" />
+                    <div className="text-center mt-8">
+                      <Link to="/connect" className="btn-primary inline-flex items-center group">
+                        Book a Discovery Call
+                        <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold">LinkedIn Studio</h3>
-                  <p className="text-lg text-muted-foreground">LinkedIn isn't a resume platform. It's a revenue platform — we help you use it right.</p>
+
+                {/* LinkedIn Studio */}
+                <div className="fade-in-section" data-delay="0.4">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 relative">
+                    {/* Studio Icon */}
+                    <div className="absolute -top-8 left-8">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-growzzy-primary flex items-center justify-center shadow-lg">
+                        <Building2 className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    
+                    <div className="pt-8">
+                      <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">LinkedIn Studio</h3>
+                      <p className="text-lg text-muted-foreground mb-8">LinkedIn isn't a resume platform. It's a revenue platform — we help you use it right.</p>
+                    </div>
+
+                    <Accordion type="single" collapsible className="space-y-3">
+                      {linkedinStudioServices.map((service) => (
+                        <AccordionItem key={service.id} value={service.id} className="bg-gradient-to-r from-blue-50 to-white rounded-xl border border-gray-200 hover:border-blue-400/30 transition-all duration-300">
+                          <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group">
+                            <div className="flex items-center gap-3">
+                              <div className="w-2 h-2 bg-blue-600 rounded-full group-hover:scale-125 transition-transform"></div>
+                              <h4 className="text-lg font-semibold text-left group-hover:text-blue-600 transition-colors">{service.title}</h4>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="px-6 pb-6">
+                            <div className="space-y-4 pl-5">
+                              <div>
+                                <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
+                                <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
+                              </div>
+                              <ul className="space-y-2">
+                                {service.benefits.map((benefit, index) => (
+                                  <li key={index} className="flex items-start">
+                                    <span className="inline-block w-1.5 h-1.5 bg-blue-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                                    <span className="text-sm">{benefit}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+
+                    <div className="text-center mt-8">
+                      <Link to="/connect" className="btn-primary inline-flex items-center group">
+                        Let's Build Your Authority
+                        <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <Accordion type="single" collapsible className="space-y-4">
-                {linkedinStudioServices.map((service) => (
-                  <AccordionItem key={service.id} value={service.id} className="bg-white rounded-lg border shadow-sm">
-                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                      <div>
-                        <h4 className="text-lg font-semibold text-left">{service.title}</h4>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-6">
-                      <div className="space-y-4">
-                        <div>
-                          <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
-                          <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
-                        </div>
-                        <ul className="space-y-2">
-                          {service.benefits.map((benefit, index) => (
-                            <li key={index} className="flex items-start">
-                              <span className="inline-block w-2 h-2 bg-growzzy-primary rounded-full mt-2 mr-3"></span>
-                              <span>{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-
-              <div className="text-center mt-8">
-                <Link to="/connect" className="btn-primary inline-flex items-center group">
-                  Let's Build Your Authority
-                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Link>
               </div>
             </div>
           </div>
