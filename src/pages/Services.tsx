@@ -3,136 +3,153 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
-import { MonitorSmartphone, Megaphone, Linkedin, Globe, Settings, Users, MessageSquare, Search, PenTool, BarChart3, Target, Lightbulb, Palette, Zap, DollarSign, Calendar, TrendingUp, Eye, Share2, User, Building2, ArrowUpRight, Monitor, Smartphone, Clock, FileText, MousePointer, Star, Map, Trophy, Mic } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ArrowRight, Palette, PenTool, Users, Target, Rocket, TrendingUp, BarChart3, User, MessageSquare, Building2, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServicesPage = () => {
   useEffect(() => {
-    document.title = "AI-Driven Digital Marketing Services | Growzzy Media";
+    document.title = "AI-Driven Marketing Services That Actually Scale | Growzzy Media";
     window.scrollTo(0, 0);
   }, []);
 
-  const services = [
+  const brandStudioServices = [
     {
-      icon: <Megaphone className="w-10 h-10" />,
-      title: "AI-Powered Lead Generation",
-      description: "We create high-converting campaigns using AI marketing automation on Google and Meta platforms that deliver measurable performance marketing results.",
-      details: [
-        "AI Performance – ROI-focused AI campaigns",
-        "AI Targeting – Precision audience reach", 
-        "AI Strategy & Planning – Predictive insights for smarter campaign planning",
-        "Creative Optimization – Data-backed visuals & messaging that convert",
-        "Marketing Automation – Auto-track performance & retarget high-value leads",
-        "Budget Intelligence – Maximize ROI with real-time AI spend suggestions"
+      id: "brand-strategy",
+      title: "Brand Strategy & Consultation",
+      description: "Strategic deep-dive into your brand's positioning, personality, and marketing roadmap.",
+      value: "Helps you show up with clarity, consistency, and conversion in mind.",
+      benefits: [
+        "Brand voice, values & audience mapping",
+        "Market research + competitor benchmarking", 
+        "Clear GTM roadmap or revamp"
       ]
     },
     {
-      icon: <MonitorSmartphone className="w-10 h-10" />,
-      title: "Organic Social Media Management",
-      description: "Strategic content creation and community management to build engaged audiences through data-driven social media campaigns.",
-      details: [
-        "Content Calendar Creation – Consistent posting with high-impact timing",
-        "Community Management – Engaging and growing follower relationships", 
-        "Analytics & Growth Reports – Monthly reports with actionable insights",
-        "Cross-Platform Optimization – Tailored content for Instagram, LinkedIn, etc."
+      id: "funnel-content",
+      title: "Funnel & Content Scripting",
+      description: "Strategic scripts for paid ads, landing pages, and email flows.",
+      value: "Converts scrollers into loyal buyers across the funnel.",
+      benefits: [
+        "Scroll-stopping hooks & CTAs",
+        "Full-funnel creative scripts",
+        "Tailored content journeys (D2C or service-based)"
       ]
     },
     {
-      icon: <Linkedin className="w-10 h-10" />,
-      title: "LinkedIn Management", 
-      description: "Build your personal brand with AI-powered outreach systems and LinkedIn marketing automation for maximum lead generation.",
-      details: [
-        "Ghostwriting & Profile Optimization – Founder-led, high-engagement content",
-        "Thought Leadership Strategy – Positioning for long-term influence", 
-        "B2B Lead Funnel Design – LinkedIn DMs, comments & CTAs that convert",
-        "Analytics Monitoring – Understand what's working & tweak accordingly"
+      id: "social-media",
+      title: "Social Media Management",
+      description: "Done-for-you content calendars, designs, and uploads.",
+      value: "Builds community + keeps you top of mind with your audience.",
+      benefits: [
+        "Weekly content plans",
+        "Trend-adaptive creatives",
+        "Engagement support"
       ]
     },
     {
-      icon: <Globe className="w-10 h-10" />,
-      title: "AI-Optimized Website Development",
-      description: "Clean, conversion-focused websites with AI and SEO integration strategies that convert visitors into leads.",
-      details: [
-        "Responsive Design – Optimized for mobile, tablet, and desktop",
-        "Speed & SEO Optimization – Fast load times & Google visibility", 
-        "Lead Capture Setup – Forms, CTAs & automations for inbound interest",
-        "Content & Animation Support – Scroll, hover, and motion interactions"
+      id: "paid-ads",
+      title: "Paid Ads (Meta, Google, Snapchat)",
+      description: "Performance marketing using AI-based media buying & creative testing.",
+      value: "Gets you leads, sales, or bookings at a lower CAC.",
+      benefits: [
+        "ROI-focused ad strategy",
+        "Real-time data-driven optimization",
+        "Proven across D2C, healthcare, education"
       ]
     },
     {
-      icon: <Settings className="w-10 h-10" />,
-      title: "Brand Strategy & Research",
-      description: "Comprehensive brand analysis and strategic planning to position your business for maximum market impact.",
-      details: [
-        "Audience Persona Mapping – Build campaigns on real buyer insights",
-        "Competitive Benchmarking – Know where you stand & what to improve", 
-        "Messaging Frameworks – Voice, tone & hooks tailored for your niche",
-        "Marketing Audit Reports – Identify gaps and new opportunities"
+      id: "launch-campaigns",
+      title: "Launch & Campaign Execution",
+      description: "GTM or relaunch campaigns with end-to-end support.",
+      value: "Makes launches smooth, loud, and data-backed.",
+      benefits: [
+        "Strategic rollout plans",
+        "Multi-channel content & media",
+        "Post-launch analysis"
       ]
     },
     {
-      icon: <Star className="w-10 h-10" />,
-      title: "Reputation & Online Presence Management",
-      description: "Manage and enhance your online reputation across all digital touchpoints to build trust and credibility.",
-      details: [
-        "Google Review Monitoring – Manage reviews & boost credibility",
-        "Local SEO Strategy – Appear where customers are searching", 
-        "Profile Optimization – GMB, social bios & listings aligned to brand",
-        "Issue Resolution Workflows – Handle negative mentions with care"
+      id: "influencer-ugc",
+      title: "Influencer & UGC Support",
+      description: "Collaborations with micro-creators & UGC campaigns.",
+      value: "Builds trust & drives organic conversions.",
+      benefits: [
+        "UGC strategy + scripting",
+        "Creator sourcing + briefing",
+        "Integration with ads + organic"
+      ]
+    },
+    {
+      id: "analytics-reporting",
+      title: "Analytics + Reporting + Optimization",
+      description: "AI-backed dashboards + monthly review calls.",
+      value: "Ensures you're always improving, never guessing.",
+      benefits: [
+        "ROI reports + insight decks",
+        "Weekly or monthly syncs",
+        "Conversion rate optimization"
       ]
     }
   ];
 
-  const getServiceIcons = (index: number) => {
-    const iconSets = [
-      // AI-Powered Lead Generation
-      [
-        { icon: <BarChart3 className="w-8 h-8 text-growzzy-primary mb-2" />, title: "AI Performance", desc: "ROI-focused AI campaigns" },
-        { icon: <Target className="w-8 h-8 text-growzzy-primary mb-2" />, title: "AI Targeting", desc: "Precision audience reach" },
-        { icon: <Lightbulb className="w-8 h-8 text-growzzy-primary mb-2" />, title: "AI Strategy", desc: "Predictive insights" },
-        { icon: <Palette className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Creative Optimization", desc: "Data-backed visuals" },
-        { icon: <Zap className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Marketing Automation", desc: "Auto-track performance" },
-        { icon: <DollarSign className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Budget Intelligence", desc: "Maximize ROI" }
-      ],
-      // Organic Social Media Management
-      [
-        { icon: <Calendar className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Content Calendar", desc: "Consistent posting" },
-        { icon: <Users className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Community Management", desc: "Growing relationships" },
-        { icon: <TrendingUp className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Analytics Reports", desc: "Actionable insights" },
-        { icon: <Share2 className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Cross-Platform", desc: "Tailored content" }
-      ],
-      // LinkedIn Management
-      [
-        { icon: <PenTool className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Ghostwriting", desc: "High-engagement content" },
-        { icon: <User className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Thought Leadership", desc: "Long-term influence" },
-        { icon: <Building2 className="w-8 h-8 text-growzzy-primary mb-2" />, title: "B2B Lead Funnel", desc: "CTAs that convert" },
-        { icon: <Eye className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Analytics Monitoring", desc: "Track what works" }
-      ],
-      // Website Development
-      [
-        { icon: <Monitor className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Responsive Design", desc: "All device optimization" },
-        { icon: <Clock className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Speed & SEO", desc: "Fast load times" },
-        { icon: <MousePointer className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Lead Capture", desc: "Conversion optimization" },
-        { icon: <FileText className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Content Support", desc: "Motion interactions" }
-      ],
-      // Brand Strategy & Research
-      [
-        { icon: <Map className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Persona Mapping", desc: "Real buyer insights" },
-        { icon: <Trophy className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Competitive Analysis", desc: "Know your position" },
-        { icon: <MessageSquare className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Messaging Framework", desc: "Tailored voice & tone" },
-        { icon: <Search className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Marketing Audit", desc: "Identify opportunities" }
-      ],
-      // Reputation Management
-      [
-        { icon: <Star className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Review Monitoring", desc: "Boost credibility" },
-        { icon: <Map className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Local SEO", desc: "Customer search visibility" },
-        { icon: <User className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Profile Optimization", desc: "Brand alignment" },
-        { icon: <Mic className="w-8 h-8 text-growzzy-primary mb-2" />, title: "Issue Resolution", desc: "Handle mentions with care" }
+  const linkedinStudioServices = [
+    {
+      id: "personal-branding",
+      title: "LinkedIn Personal Branding (Founders/Experts)",
+      description: "Personal brand development & content for founders or CXOs.",
+      value: "Turns you into an industry voice your clients trust.",
+      benefits: [
+        "Ghostwritten posts that build authority",
+        "Content aligned with business goals",
+        "Profile revamp + strategy sync"
       ]
-    ];
-    
-    return iconSets[index] || [];
-  };
+    },
+    {
+      id: "ghostwriting-comments",
+      title: "Ghostwriting & Comment Strategy",
+      description: "Thought leadership content + curated commenting.",
+      value: "Increases visibility, engagement, and DMs.",
+      benefits: [
+        "Weekly ghostwritten content",
+        "Strategic engagement in target circles",
+        "Authority building across key niches"
+      ]
+    },
+    {
+      id: "company-page",
+      title: "Company Page Management",
+      description: "Full-funnel management of brand's LinkedIn company page.",
+      value: "Builds brand trust + recruits talent + generates leads.",
+      benefits: [
+        "Post planning & scheduling",
+        "Follower growth support",
+        "Team content integration"
+      ]
+    },
+    {
+      id: "linkedin-ads",
+      title: "LinkedIn Ads & Messaging Funnels",
+      description: "Precision-targeted ad campaigns and smart DM sequences.",
+      value: "Gets you in front of decision-makers fast.",
+      benefits: [
+        "Ad creatives + copy",
+        "Cold outreach + warm nurture flows",
+        "Analytics + conversion tracking"
+      ]
+    },
+    {
+      id: "b2b-lead-gen",
+      title: "B2B Lead Gen & Nurturing",
+      description: "AI + human-run lead generation and nurture support.",
+      value: "Fills your pipeline with qualified, conversion-ready leads.",
+      benefits: [
+        "CRM integration + calendar booking",
+        "Multi-step nurturing campaigns",
+        "ICP-specific outreach flows"
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -143,70 +160,149 @@ const ServicesPage = () => {
           <div className="bg-blob blob-1 animate-float"></div>
           
           <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-display font-bold leading-tight mb-6 fade-in-section">
-                AI-Driven Digital Marketing <span className="text-growzzy-primary">Services</span>
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 fade-in-section">
+                AI-Driven Marketing Services That Actually <span className="text-growzzy-primary">Scale</span>
               </h1>
-              <p data-delay="0.2" className="text-xl text-muted-foreground mb-8 fade-in-section text-justify md:text-lg font-normal">
-                We offer comprehensive AI marketing automation and data-driven marketing campaigns designed to help your brand grow using the best AI marketing platforms for D2C brands.
-                <br /><br />
-                We're not just a digital marketing agency — we're your AI-powered growth partner. At Growzzy Media, every campaign is fueled by AI marketing tools 2025, performance data, and audience intent — not guesswork. From AI-powered lead generation to automated SEO and trend-predictive content, our stack learns what converts faster than any team alone.
-              </p>
+              <div data-delay="0.2" className="text-lg md:text-xl text-muted-foreground mb-8 fade-in-section max-w-3xl mx-auto">
+                <p className="mb-4">
+                  We offer comprehensive AI marketing automation and data-driven campaigns designed to help your brand grow using the best AI marketing platforms for D2C and B2B brands.
+                </p>
+                <p className="mb-4">
+                  We're not just an AI digital marketing agency — we're your AI-powered growth partner.
+                </p>
+                <p className="mb-6">
+                  At Growzzy Media, every campaign is fueled by real-time data, not guesswork. From AI-powered lead generation to automated SEO and trend-predictive content, our stack learns what converts — faster than any human team alone.
+                </p>
+                <Link to="/connect" className="btn-primary inline-flex items-center group">
+                  Book Your Free Consultation
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Services Details */}
+        {/* Our Studios Section */}
         <section className="py-16 md:py-24">
           <div className="container">
-            {services.map((service, index) => (
-              <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 mb-20 fade-in-section`} data-delay={`${0.1 * index}`}>
-                <div className="md:w-1/2">
-                  <div className={`bg-white p-8 md:p-10 rounded-lg shadow-lg h-full flex flex-col ${index % 2 !== 0 ? 'items-start' : 'items-end'}`}>
-                    <div className={`w-20 h-20 rounded-full flex items-center justify-center bg-growzzy-light text-growzzy-primary mb-6 ${index % 2 !== 0 ? '' : 'mr-auto'}`}>
-                      {service.icon}
-                    </div>
-                    <h2 className={`text-3xl font-display font-semibold mb-4 ${index % 2 !== 0 ? 'text-left' : 'text-right mr-auto'}`}>{service.title}</h2>
-                    <p className={`text-lg mb-6 ${index % 2 !== 0 ? 'text-left' : 'text-right mr-auto'}`}>{service.description}</p>
-                    <ul className={`space-y-2 text-muted-foreground mb-6 ${index % 2 !== 0 ? '' : 'mr-auto'}`}>
-                      {service.details.map((detail, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="inline-block w-2 h-2 bg-growzzy-primary rounded-full mt-2 mr-2"></span>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 fade-in-section">
+                Our Studios — Where Human-Led Strategy Meets <span className="text-growzzy-primary">AI-Powered Speed</span>
+              </h2>
+              <p data-delay="0.2" className="text-lg md:text-xl text-muted-foreground fade-in-section mb-8">
+                We aren't just a marketing agency — we're your creative growth partners. At Growzzy, we combine human creativity with AI efficiency across two core studios:
+              </p>
+            </div>
+
+            {/* Brand Studio */}
+            <div className="mb-20 fade-in-section" data-delay="0.3">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-full bg-growzzy-primary flex items-center justify-center">
+                  <Palette className="w-8 h-8 text-white" />
                 </div>
-                <div className="md:w-1/2 flex items-center justify-center">
-                  <div className={`bg-growzzy-gray rounded-lg p-8 md:p-12 w-full h-full ${index % 2 === 0 ? 'slide-in-section' : 'slide-in-section'}`} data-animation={index % 2 === 0 ? 'slide-in-right' : 'slide-in-left'} data-delay={`${0.3 + index * 0.1}`}>
-                    <div className="grid grid-cols-2 gap-4">
-                      {getServiceIcons(index).map((iconItem, iconIndex) => (
-                        <div key={iconIndex} className={`bg-white rounded-lg p-4 shadow-sm ${getServiceIcons(index).length <= 2 ? 'col-span-2' : ''}`}>
-                          {iconItem.icon}
-                          <h4 className="font-semibold">{iconItem.title}</h4>
-                          <p className="text-sm text-muted-foreground">{iconItem.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold">Brand Studio</h3>
+                  <p className="text-lg text-muted-foreground">Helping brands find their voice, audience, and scalable growth engine.</p>
                 </div>
               </div>
-            ))}
+
+              <Accordion type="single" collapsible className="space-y-4">
+                {brandStudioServices.map((service) => (
+                  <AccordionItem key={service.id} value={service.id} className="bg-white rounded-lg border shadow-sm">
+                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                      <div>
+                        <h4 className="text-lg font-semibold text-left">{service.title}</h4>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-6">
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
+                          <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
+                        </div>
+                        <ul className="space-y-2">
+                          {service.benefits.map((benefit, index) => (
+                            <li key={index} className="flex items-start">
+                              <span className="inline-block w-2 h-2 bg-growzzy-primary rounded-full mt-2 mr-3"></span>
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              <div className="text-center mt-8">
+                <Link to="/connect" className="btn-primary inline-flex items-center group">
+                  Book a Discovery Call
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* LinkedIn Studio */}
+            <div className="fade-in-section" data-delay="0.4">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-full bg-growzzy-primary flex items-center justify-center">
+                  <Building2 className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold">LinkedIn Studio</h3>
+                  <p className="text-lg text-muted-foreground">LinkedIn isn't a resume platform. It's a revenue platform — we help you use it right.</p>
+                </div>
+              </div>
+
+              <Accordion type="single" collapsible className="space-y-4">
+                {linkedinStudioServices.map((service) => (
+                  <AccordionItem key={service.id} value={service.id} className="bg-white rounded-lg border shadow-sm">
+                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                      <div>
+                        <h4 className="text-lg font-semibold text-left">{service.title}</h4>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-6">
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-muted-foreground mb-2"><strong>What it is:</strong> {service.description}</p>
+                          <p className="text-muted-foreground mb-4"><strong>What it does:</strong> {service.value}</p>
+                        </div>
+                        <ul className="space-y-2">
+                          {service.benefits.map((benefit, index) => (
+                            <li key={index} className="flex items-start">
+                              <span className="inline-block w-2 h-2 bg-growzzy-primary rounded-full mt-2 mr-3"></span>
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              <div className="text-center mt-8">
+                <Link to="/connect" className="btn-primary inline-flex items-center group">
+                  Let's Build Your Authority
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
-        
-        {/* CTA Section */}
+
+        {/* Global Availability Section */}
         <section className="py-16 md:py-24 bg-growzzy-light">
           <div className="container">
-            <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-display font-semibold mb-4">Ready to grow with AI marketing automation?</h2>
-              <p className="text-lg mb-8">
-                Let's discuss how our AI-driven digital marketing strategies can help you achieve your business goals and stand out with performance marketing.
+            <div className="max-w-4xl mx-auto text-center">
+              <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 fade-in-section">
+                Remote-Ready, Location-Friendly, <span className="text-growzzy-primary">Globally Available</span>
+              </h3>
+              <p data-delay="0.2" className="text-lg text-muted-foreground fade-in-section">
+                We work with brands across India (Delhi NCR, Mumbai, Bangalore, Hyderabad, Ahmedabad, etc.) and globally (US, UK, UAE, Singapore & more). Our systems are built remote-first, results-focused, and timezone-flexible.
               </p>
-              <Link to="/connect" className="btn-primary inline-flex items-center">
-                Get AI Marketing Solutions
-              </Link>
             </div>
           </div>
         </section>
