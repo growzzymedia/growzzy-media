@@ -81,18 +81,18 @@ const ProjectDetail = () => {
         {
           id: "humara-pandit",
           title: "Humara Pandit – Faith Meets Performance Marketing",
-          category: "Ads Management | Meta + Google",
-          metrics: "25% ROAS growth in just 3 months",
+          category: "Ads Management | Lead Generation | Brand Building",
+          metrics: "CPL as low as ₹2.8 • High-quality leads consistently • Exceptional CTR and ROAS",
           image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Humara Pandit",
           description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
           challenge: "Humara Pandit approached us with a clear mission — they didn't just want clicks; they wanted connections. The challenge was to create ad strategies that resonated with spiritual seekers while delivering measurable results.",
           solution: "We restructured their Google and Meta ad accounts, built niche-focused audiences, and developed campaigns that blended emotion with action. Whether it was highlighting the sacredness of temple blessings or showcasing limited-edition Prasad, every creative we delivered was spiritually resonant and high-converting.",
           results: [
-            "ROAS grew by 25% within just 3 months",
-            "A 5-day festival sprint hit 2.8x ROAS",
-            "Deep targeting: audiences with spiritual interest saw up to 4x higher engagement",
-            "Creatives included reel scripts, carousels, and video concepts tailored to festival emotions"
+            "Cost Per Lead (CPL) as low as ₹2.8",
+            "Generated high-quality leads consistently",
+            "Executed sales campaigns with exceptional CTR and ROAS",
+            "Ongoing consultations and strategic inputs led to a massive turnaround in digital performance"
           ],
           chartData: [
             { name: 'Initial ROAS', value: 100 },
@@ -182,22 +182,23 @@ const ProjectDetail = () => {
         {
           id: "advocate-rashi",
           title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
-          category: "LinkedIn Personal Branding",
-          metrics: "Impressions: 870 → 45,678+",
+          category: "Personal Branding | Organic Social Growth",
+          metrics: "Impressions: 870 → 450,678+ • Followers: 850 → 1,800+ • Strategic LinkedIn positioning",
           image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Adv. Rashi Singhal",
           description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
           challenge: "In a field like law, digital presence is rare — but powerful. We partnered with Adv. Rashi Singhal to position her as a credible, insightful voice in the legal ecosystem on LinkedIn.",
           solution: "From posts on legal rights to simplified law explainers and her personal journey as a woman in law, our content made her profile both human and professional. We created a content strategy that showcased her expertise while making legal concepts accessible.",
           results: [
-            "Impressions: 870 → 45,678+",
-            "Increased profile visits from clients and law firms",
+            "Impressions: 870 → 450,678+",
+            "Profile visits surged from top-tier clients and law firms",
             "Direct inquiries from potential clients",
-            "Followers: 850 → 1,800+"
+            "Followers doubled from 850 → 1,800+",
+            "Strategic brand positioning as a legal expert on LinkedIn"
           ],
           chartData: [
             { name: 'Before', value: 870 },
-            { name: 'After', value: 45678 }
+            { name: 'After', value: 450678 }
           ],
           followersData: [
             { name: 'Initial', value: 850 },
@@ -281,6 +282,139 @@ const ProjectDetail = () => {
             quote: "Every lead was a potential future topper — and we didn't let them slip.",
             name: "PACE Institute Director",
             position: "Education Provider"
+          }
+        },
+        {
+          id: "that-blingy-thing",
+          title: "That Blingy Thing – Turning Passion into Profit",
+          category: "Ads Management | Brand Building | Organic Social Growth",
+          metrics: "From 0 to 10–15 online orders in the first month with just 10 posts",
+          image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "That Blingy Thing",
+          description: "Turning a passion project into a monetized brand within weeks.",
+          challenge: "That Blingy Thing was a passion project struggling to take its first commercial leap. With no previous online sales and limited product confidence, the founder needed more than just content—they needed direction, clarity, and motivation.",
+          solution: "We ran a focused 2-month pilot. This included: Planning and directing content shoots to highlight product aesthetics, Reworking product presentation and positioning, Running performance-oriented Meta ads and organic posts, Consistent support to boost founder's confidence and execution.",
+          results: [
+            "10–15 orders generated within the first 30 days",
+            "Achieved this with only 10 Instagram posts",
+            "Improved product clarity, shoot aesthetics, and founder narrative",
+            "Turned a passion project into a monetized brand—within weeks"
+          ],
+          chartData: [
+            { name: 'Week 1', value: 2 },
+            { name: 'Week 2', value: 5 },
+            { name: 'Week 3', value: 8 },
+            { name: 'Week 4', value: 15 }
+          ],
+          contentData: [
+            { name: 'Product Shots', value: 6 },
+            { name: 'Lifestyle Posts', value: 4 }
+          ],
+          social: "https://www.instagram.com/that.blingy.thingy",
+          testimonial: {
+            quote: "We needed more than just content—we needed confidence. Growzzy gave us both.",
+            name: "That Blingy Thing Founder",
+            position: "Jewelry Brand"
+          }
+        },
+        {
+          id: "dr-karan-chawla",
+          title: "Dr. Karan Chawla – Voice of Finance for Doctors",
+          category: "Personal Branding | Organic Social Growth",
+          metrics: "Educated fellow doctors through reels & grew community organically",
+          image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Dr. Karan Chawla",
+          description: "Established authority and relevance in niche medical creator economy.",
+          challenge: "Dr. Karan wanted to be more than a practicing doctor—he aimed to become a thought leader guiding fellow medicos through finance, strategy, and growth. But with no structured content, he needed a voice and visuals that matched his vision.",
+          solution: "We stepped in with: Scripting & editing end-to-end content (mainly reels), Strategic positioning for thought leadership, Educative, community-first narrative style, Weekly themes built around finance, growth, and career for medical professionals.",
+          results: [
+            "Reels with high engagement & shares in the doctor niche",
+            "Increased following and organic reach",
+            "Earned credibility as a relatable, sharp personal brand",
+            "Established authority and relevance in niche medical creator economy"
+          ],
+          chartData: [
+            { name: 'Month 1', value: 1200 },
+            { name: 'Month 2', value: 3400 },
+            { name: 'Month 3', value: 5800 },
+            { name: 'Month 4', value: 8500 }
+          ],
+          contentTypesData: [
+            { name: 'Finance Education', value: 40 },
+            { name: 'Career Guidance', value: 30 },
+            { name: 'Strategy Tips', value: 20 },
+            { name: 'Personal Stories', value: 10 }
+          ],
+          social: "https://www.instagram.com/dr.karanchawla",
+          testimonial: {
+            quote: "From doctor to thought leader—Growzzy helped me find my voice in the medical creator space.",
+            name: "Dr. Karan Chawla",
+            position: "Medical Professional & Finance Educator"
+          }
+        },
+        {
+          id: "aerie-academy",
+          title: "Aerie Academy – Cracking GATE with Precision",
+          category: "Ads Management | Lead Generation",
+          metrics: "Reduced CPL and achieved enrolment targets through targeted funnels",
+          image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Aerie Academy",
+          description: "Restored trust in marketing ROI and scaled with clarity for architecture students.",
+          challenge: "The brand had great intent but struggled with high CPL and a lack of qualified leads. Their funnel felt broken, and ghost leads made it harder to hit batch goals.",
+          solution: "We came in with a creative-funnel-audit-first approach: Redesigned landing page + ads to directly hit pain points of architecture students, Introduced alumni-driven messaging and mentor assurance, Built campaigns around urgency, clarity, and credibility.",
+          results: [
+            "CPL reduced significantly in 2 weeks",
+            "Batch enrollment goals achieved",
+            "Fixed ghost lead issue and improved closure rate",
+            "Restored trust in marketing ROI and scaled with clarity"
+          ],
+          chartData: [
+            { name: 'Before CPL (₹)', value: 450 },
+            { name: 'After CPL (₹)', value: 180 }
+          ],
+          leadQualityData: [
+            { name: 'Qualified Leads', value: 85 },
+            { name: 'Ghost Leads', value: 15 }
+          ],
+          website: "https://aerieacademy.com",
+          testimonial: {
+            quote: "From broken funnels to batch goals—Growzzy fixed our lead generation completely.",
+            name: "Aerie Academy Team",
+            position: "Architecture Coaching Institute"
+          }
+        },
+        {
+          id: "dr-jivika-singh",
+          title: "Dr. Jivika Singh – Educating Parents, Building Presence",
+          category: "Personal Branding | Organic Social Growth",
+          metrics: "Built early-stage brand trust as a pediatric voice through educational content",
+          image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          client: "Dr. Jivika Singh",
+          description: "Built foundation for organic medical brand in first year of PG.",
+          challenge: "As a pediatric resident, Dr. Jivika wanted to build visibility among young parents and establish herself as a credible digital doctor—without losing her voice to trends.",
+          solution: "We offered a low-effort yet research-driven content plan: 3 carousels/week backed by pediatric science & trends, 1 reel/week with scripts and edits from our side, Aesthetic planning in beige-cream tones, Strategic positioning to fight misinformation & create responsible engagement.",
+          results: [
+            "Built early trust and credibility with new parents",
+            "Positioned as an educative pediatric voice",
+            "Consistent engagement growth while the doctor handled stories and DMs",
+            "Built the foundation for an organic medical brand in her first year of PG"
+          ],
+          chartData: [
+            { name: 'Week 1', value: 150 },
+            { name: 'Week 4', value: 400 },
+            { name: 'Week 8', value: 750 },
+            { name: 'Week 12', value: 1200 }
+          ],
+          contentTypesData: [
+            { name: 'Educational Carousels', value: 60 },
+            { name: 'Myth-busting Reels', value: 25 },
+            { name: 'Parent Tips', value: 15 }
+          ],
+          social: "https://www.instagram.com/dr.jivikasingh",
+          testimonial: {
+            quote: "Building trust with new parents while staying true to medical science—that's what great content does.",
+            name: "Dr. Jivika Singh",
+            position: "Pediatric Resident"
           }
         }
       ];
