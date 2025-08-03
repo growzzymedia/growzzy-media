@@ -16,8 +16,8 @@ const Portfolio = () => {
     {
       id: "humara-pandit",
       title: "Humara Pandit – Faith Meets Performance Marketing",
-      category: "Ads Management | Meta + Google",
-      metrics: "25% ROAS growth in just 3 months",
+      category: "Ads Management | Lead Generation | Brand Building",
+      metrics: "CPL as low as ₹2.8 • High-quality leads consistently • Exceptional CTR and ROAS",
       image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       website: "https://humarapandit.com/"
     },
@@ -42,8 +42,8 @@ const Portfolio = () => {
     {
       id: "advocate-rashi",
       title: "Advocate Rashi – Building a Digital Legal Brand",
-      category: "LinkedIn Personal Branding",
-      metrics: "Impressions: 870 → 45,678+",
+      category: "Personal Branding | Organic Social Growth",
+      metrics: "Impressions: 870 → 450,678+ • Followers: 850 → 1,800+ • Strategic LinkedIn positioning",
       image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       website: "https://www.linkedin.com/in/rashi-singhal-326076213"
     },
