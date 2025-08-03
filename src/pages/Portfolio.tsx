@@ -28,13 +28,13 @@ const PortfolioPage = () => {
   }, {
     id: "humara-pandit",
     title: "Humara Pandit – Faith Meets Performance Marketing",
-    category: "Ads Management | Meta + Google",
-    metrics: "25% ROAS growth in just 3 months",
+    category: "Ads Management | Lead Generation | Brand Building",
+    metrics: "CPL as low as ₹2.8 • High-quality leads consistently • Exceptional CTR and ROAS",
     image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     client: "Humara Pandit",
     description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
     website: "https://humarapandit.com/",
-    tags: ["Ads Management", "Lead Generation"]
+    tags: ["Ads Management", "Lead Generation", "Brand Building"]
   }, {
     id: "claysip",
     title: "ClaySip – Crafting an Online Identity from Clay",
@@ -60,13 +60,13 @@ const PortfolioPage = () => {
   }, {
     id: "advocate-rashi",
     title: "Advocate Rashi Singhal – Building a Digital Legal Brand",
-    category: "LinkedIn Personal Branding",
-    metrics: "Impressions: 870 → 45,678+",
+    category: "Personal Branding | Organic Social Growth",
+    metrics: "Impressions: 870 → 450,678+ • Followers: 850 → 1,800+ • Strategic LinkedIn positioning",
     image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     client: "Adv. Rashi Singhal",
     description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
     website: "https://www.linkedin.com/in/rashi-singhal-326076213",
-    tags: ["Personal Branding"]
+    tags: ["Personal Branding", "Organic Social Growth"]
   }, {
     id: "bedtime-essentials",
     title: "Bedtime Essentials – From Manufacturer to D2C Brand",
@@ -88,6 +88,46 @@ const PortfolioPage = () => {
     description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
     website: "https://iitianspace.com/",
     tags: ["Ads Management", "Lead Generation"]
+  }, {
+    id: "that-blingy-thing",
+    title: "That Blingy Thing – Turning Passion into Profit",
+    category: "Ads Management | Brand Building | Organic Social Growth",
+    metrics: "0 to 10-15 orders in first month with just 10 posts",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "That Blingy Thing",
+    description: "Turning a passion project into a monetized brand within weeks.",
+    social: "https://www.instagram.com/that.blingy.thingy",
+    tags: ["Ads Management", "Brand Building", "Organic Social Growth"]
+  }, {
+    id: "dr-karan-chawla",
+    title: "Dr. Karan Chawla – Voice of Finance for Doctors",
+    category: "Personal Branding | Organic Social Growth",
+    metrics: "High engagement reels • Organic reach growth • Medical creator authority",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Dr. Karan Chawla",
+    description: "Established authority and relevance in niche medical creator economy.",
+    social: "https://www.instagram.com/dr.karanchawla",
+    tags: ["Personal Branding", "Organic Social Growth"]
+  }, {
+    id: "aerie-academy",
+    title: "Aerie Academy – Cracking GATE with Precision",
+    category: "Ads Management | Lead Generation",
+    metrics: "CPL reduced significantly • Enrollment targets achieved • Improved closure rate",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Aerie Academy",
+    description: "Restored trust in marketing ROI and scaled with clarity for architecture students.",
+    website: "https://aerieacademy.com",
+    tags: ["Ads Management", "Lead Generation"]
+  }, {
+    id: "dr-jivika-singh",
+    title: "Dr. Jivika Singh – Educating Parents, Building Presence",
+    category: "Personal Branding | Organic Social Growth",
+    metrics: "Built early-stage brand trust • Consistent engagement growth • Educational authority",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    client: "Dr. Jivika Singh",
+    description: "Built foundation for organic medical brand in first year of PG.",
+    social: "https://www.instagram.com/dr.jivikasingh",
+    tags: ["Personal Branding", "Organic Social Growth"]
   }];
 
   // Define categories in the specified order
