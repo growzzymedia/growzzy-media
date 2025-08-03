@@ -63,6 +63,38 @@ const Portfolio = () => {
       metrics: "₹5,000 ad spend → 180+ qualified leads",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       website: "https://iitianspace.com/"
+    },
+    {
+      id: "that-blingy-thing",
+      title: "That Blingy Thing – Turning Passion into Profit",
+      category: "Ads Management | Brand Building | Organic Social Growth",
+      metrics: "0 to 10-15 orders in first month with just 10 posts",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      social: "https://www.instagram.com/that.blingy.thingy"
+    },
+    {
+      id: "dr-karan-chawla",
+      title: "Dr. Karan Chawla – Voice of Finance for Doctors",
+      category: "Personal Branding | Organic Social Growth",
+      metrics: "High engagement reels • Organic reach growth • Medical creator authority",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      social: "https://www.instagram.com/dr.karanchawla"
+    },
+    {
+      id: "aerie-academy",
+      title: "Aerie Academy – Cracking GATE with Precision",
+      category: "Ads Management | Lead Generation",
+      metrics: "CPL reduced significantly • Enrollment targets achieved • Improved closure rate",
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      website: "https://aerieacademy.com"
+    },
+    {
+      id: "dr-jivika-singh",
+      title: "Dr. Jivika Singh – Educating Parents, Building Presence",
+      category: "Personal Branding | Organic Social Growth",
+      metrics: "Built early-stage brand trust • Consistent engagement growth • Educational authority",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      social: "https://www.instagram.com/dr.jivikasingh"
     }
   ];
 
