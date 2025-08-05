@@ -21,6 +21,7 @@ import {
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { toast } from '../hooks/use-toast';
 import { Loader2, Send } from 'lucide-react';
 
@@ -33,6 +34,9 @@ const formSchema = z.object({
   }),
   phone: z.string().min(10, {
     message: "Please enter a valid phone number.",
+  }),
+  businessType: z.string().min(1, {
+    message: "Please select your business type.",
   }),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
@@ -59,6 +63,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
       name: "",
       email: "",
       phone: "",
+      businessType: "",
       message: "",
     },
   });
@@ -159,6 +164,32 @@ const LeadForm: React.FC<LeadFormProps> = ({
                       className="h-12 border-gray-200 focus:border-growzzy-primary focus:ring-growzzy-primary/20"
                     />
                   </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="businessType"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium">What kind of business do you have? *</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger className="h-12 border-gray-200 focus:border-growzzy-primary focus:ring-growzzy-primary/20">
+                        <SelectValue placeholder="Select your business type" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="d2c-brand">D2C Brand</SelectItem>
+                      <SelectItem value="retail-store">Retail Store</SelectItem>
+                      <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                      <SelectItem value="service-based">Service Based</SelectItem>
+                      <SelectItem value="education">Education</SelectItem>
+                      <SelectItem value="others">Others</SelectItem>
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
