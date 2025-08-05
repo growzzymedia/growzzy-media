@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
+import LeadForm from './LeadForm';
 
 const Contact = () => {
   const superprofileFormUrl = "https://superprofile.bio/lf/67a5d624b08b3900136a29b9";
@@ -25,15 +26,28 @@ const Contact = () => {
                 Fill out our quick form and we'll get back to you within 24 hours to discuss how we can help your business grow online.
               </p>
               
-              <a 
-                href={superprofileFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full flex items-center justify-center gap-2"
-              >
-                Complete Lead Form
-                <ExternalLink className="w-5 h-5" />
-              </a>
+              <div className="flex flex-col gap-4">
+                <LeadForm 
+                  trigger={
+                    <button className="btn-primary w-full flex items-center justify-center gap-2">
+                      Quick Lead Form
+                      <ExternalLink className="w-5 h-5" />
+                    </button>
+                  }
+                  title="Let's Discuss Your Project"
+                  description="Fill out our quick form and we'll get back to you within 24 hours to discuss your marketing goals."
+                />
+                
+                <a 
+                  href={superprofileFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline w-full flex items-center justify-center gap-2"
+                >
+                  Complete Detailed Form
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
               
               <p className="text-sm text-muted-foreground mt-4 text-center">
                 Your information is secure and will never be shared with third parties.

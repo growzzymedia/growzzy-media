@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import LeadForm from './LeadForm';
 const Hero = () => {
   return <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="bg-blob blob-1 animate-float"></div>
@@ -20,10 +21,16 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in" style={{
           animationDelay: '0.6s'
         }}>
-            <Link to="/contact" className="btn-primary text-lg group">
-              Get AI-Driven Marketing Solutions
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <LeadForm 
+              trigger={
+                <button className="btn-primary text-lg group">
+                  Get AI-Driven Marketing Solutions
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </button>
+              }
+              title="Start Your AI Marketing Journey"
+              description="Tell us about your business goals and we'll create a custom AI marketing strategy for you."
+            />
             <Link to="/services" className="btn-outline text-lg group">
               Explore AI Marketing Tools 2025
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

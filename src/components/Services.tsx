@@ -4,6 +4,7 @@ import { MonitorSmartphone, Megaphone, Linkedin, Globe, Settings, ArrowRight } f
 import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 import ExpandedServiceCards from './ExpandedServiceCards';
+import LeadForm from './LeadForm';
 
 const Services = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
@@ -105,10 +106,22 @@ const Services = () => {
         </div>
 
         <div className="mt-12 text-center fade-in-section" data-delay="0.6">
-          <Link to="/services" className="btn-primary inline-flex items-center group">
-            Explore AI Marketing Services
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </Link>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <LeadForm 
+              trigger={
+                <button className="btn-primary inline-flex items-center group">
+                  Get Started with AI Marketing
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </button>
+              }
+              title="Ready to Transform Your Marketing?"
+              description="Let's discuss which AI marketing services will work best for your business goals."
+            />
+            <Link to="/services" className="btn-outline inline-flex items-center group">
+              Explore AI Marketing Services
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

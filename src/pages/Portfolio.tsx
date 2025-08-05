@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import ScrollToReveal from '../components/ScrollToReveal';
 import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import LeadForm from '../components/LeadForm';
 
 const PortfolioPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -248,9 +249,15 @@ const PortfolioPage = () => {
             <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-display font-semibold mb-4">Ready to be our next success story?</h2>
               <p className="text-lg mb-8">Let's discuss how we can help your business achieve similar results with a custom AI-powered digital strategy.</p>
-              <a href="https://superprofile.bio/lf/67a5d624b08b3900136a29b9" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center">
-                Start Your Project
-              </a>
+              <LeadForm 
+                trigger={
+                  <button className="btn-primary inline-flex items-center">
+                    Start Your Project
+                  </button>
+                }
+                title="Ready to be our next success story?"
+                description="Tell us about your business and let's create a winning strategy together."
+              />
             </div>
           </div>
         </section>
