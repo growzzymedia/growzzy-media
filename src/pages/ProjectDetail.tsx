@@ -580,6 +580,11 @@ const ProjectDetail = () => {
                          project.id === "polki-sarees" ? "Audience Growth" :
                          project.id === "advocate-rashi" ? "Impression Growth" :
                          project.id === "bedtime-essentials" ? "Revenue Growth" :
+                         project.id === "pace-institute" ? "Campaign Performance" :
+                         project.id === "that-blingy-thing" ? "Weekly Order Growth" :
+                         project.id === "dr-karan-chawla" ? "Engagement Growth" :
+                         project.id === "aerie-academy" ? "CPL Improvement" :
+                         project.id === "dr-jivika-singh" ? "Audience Growth" :
                          "Campaign ROI"}
                       </h3>
                       <div className="h-64">
@@ -604,7 +609,12 @@ const ProjectDetail = () => {
                          project.id === "polki-sarees" ? "Follower Growth" :
                          project.id === "advocate-rashi" ? "Content Breakdown" :
                          project.id === "bedtime-essentials" ? "Revenue Channels" :
-                         "Lead Quality"}
+                         project.id === "pace-institute" ? "Lead Quality & Platform" :
+                         project.id === "that-blingy-thing" ? "Content Distribution" :
+                         project.id === "dr-karan-chawla" ? "Content Types" :
+                         project.id === "aerie-academy" ? "Lead Quality" :
+                         project.id === "dr-jivika-singh" ? "Content Breakdown" :
+                         "Performance Metrics"}
                       </h3>
                       <div className="h-64">
                         {project.timelineData ? (
@@ -619,10 +629,10 @@ const ProjectDetail = () => {
                           </div>
                         ) : (
                           <ChartContainer config={{}}>
-                            {(project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData) && (
+                            {(project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || project.contentData) && (
                               <PieChart>
                                 <Pie
-                                  data={project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || []}
+                                  data={project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || project.contentData || []}
                                   cx="50%"
                                   cy="50%"
                                   labelLine={false}
@@ -631,7 +641,7 @@ const ProjectDetail = () => {
                                   dataKey="value"
                                   label={renderCustomizedLabel}
                                 >
-                                  {(project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || []).map((entry: any, index: number) => (
+                                  {(project.leadSourceData || project.engagementData || project.followersData || project.contentTypesData || project.channelData || project.leadQualityData || project.platformData || project.conversionData || project.contentData || []).map((entry: any, index: number) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                   ))}
                                 </Pie>
@@ -676,7 +686,12 @@ const ProjectDetail = () => {
                          project.id === "polki-sarees" ? "Revitalized traditional fashion" :
                          project.id === "advocate-rashi" ? "Established legal thought leadership" :
                          project.id === "bedtime-essentials" ? "Transformed manufacturing to D2C" :
-                         "Delivered quality leads within budget"}
+                         project.id === "pace-institute" ? "Delivered hyperlocal education marketing success" :
+                         project.id === "that-blingy-thing" ? "Turned passion into profitable brand" :
+                         project.id === "dr-karan-chawla" ? "Established medical creator authority" :
+                         project.id === "aerie-academy" ? "Fixed lead generation for sustainable growth" :
+                         project.id === "dr-jivika-singh" ? "Built trusted pediatric brand presence" :
+                         "Delivered measurable marketing impact"}
                       </p>
                     </div>
                   </div>
