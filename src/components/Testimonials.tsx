@@ -16,7 +16,7 @@ const Testimonials = () => {
   const [count, setCount] = React.useState(0);
 
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 4500, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
   React.useEffect(() => {
@@ -90,19 +90,20 @@ const Testimonials = () => {
           <Carousel
             setApi={setApi}
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
+              duration: 30,
             }}
             plugins={[plugin.current]}
-            className="w-full max-w-5xl mx-auto"
+            className="w-full max-w-4xl mx-auto"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/2">
-                  <div className="p-4">
-                    <div className="group bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] hover:border-primary/30 hover:shadow-primary/10">
+                <CarouselItem key={index} className="pl-4">
+                  <div className="p-2">
+                    <div className="group bg-white rounded-2xl border border-gray-100 shadow-lg p-8 h-full flex flex-col transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:border-primary/30 hover:shadow-primary/10">
                       <div className="flex items-center mb-4">
                         <div className="w-14 h-14 rounded-full overflow-hidden mr-4 ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
                           <img 
@@ -128,17 +129,17 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             
-            <div className="flex items-center justify-center gap-6 mt-8">
-              <CarouselPrevious className="relative static h-12 w-12 rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" />
+            <div className="flex items-center justify-center gap-8 mt-10">
+              <CarouselPrevious className="relative static h-14 w-14 rounded-full border-2 border-primary/30 bg-white hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110" />
               
-              <div className="flex gap-2">
+              <div className="flex gap-2.5">
                 {Array.from({ length: count }).map((_, index) => (
                   <button
                     key={index}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-3 rounded-full transition-all duration-500 ${
                       index === current 
-                        ? 'w-8 bg-primary' 
-                        : 'w-2.5 bg-primary/20 hover:bg-primary/40'
+                        ? 'w-10 bg-primary shadow-md' 
+                        : 'w-3 bg-primary/25 hover:bg-primary/50 hover:w-6'
                     }`}
                     onClick={() => api?.scrollTo(index)}
                     aria-label={`Go to slide ${index + 1}`}
@@ -146,7 +147,7 @@ const Testimonials = () => {
                 ))}
               </div>
               
-              <CarouselNext className="relative static h-12 w-12 rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" />
+              <CarouselNext className="relative static h-14 w-14 rounded-full border-2 border-primary/30 bg-white hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110" />
             </div>
           </Carousel>
         </div>
