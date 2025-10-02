@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Carousel,
@@ -6,10 +5,33 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { Star } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
 
 const Testimonials = () => {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   const testimonials = [
     {
       name: "Team Humara Pandit",
@@ -66,19 +88,23 @@ const Testimonials = () => {
 
         <div className="fade-in-section" data-delay="0.2">
           <Carousel
+            setApi={setApi}
             opts={{
               align: "start",
               loop: true,
             }}
+            plugins={[plugin.current]}
             className="w-full max-w-5xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/2">
                   <div className="p-4">
-                    <div className="bg-white rounded-lg border border-gray-100 shadow-md p-6 h-full flex flex-col">
+                    <div className="group bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] hover:border-primary/30 hover:shadow-primary/10">
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <div className="w-14 h-14 rounded-full overflow-hidden mr-4 ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
                           <img 
                             src={testimonial.image} 
                             alt={testimonial.name} 
@@ -86,7 +112,7 @@ const Testimonials = () => {
                           />
                         </div>
                         <div>
-                          <h3 className="font-semibold">{testimonial.name}</h3>
+                          <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{testimonial.name}</h3>
                           <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                         </div>
                       </div>
@@ -95,15 +121,32 @@ const Testimonials = () => {
                         {renderStars(testimonial.stars)}
                       </div>
                       
-                      <p className="text-muted-foreground flex-grow">{testimonial.content}</p>
+                      <p className="text-muted-foreground flex-grow leading-relaxed animate-fade-in">{testimonial.content}</p>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <CarouselPrevious className="relative static mr-2" />
-              <CarouselNext className="relative static ml-2" />
+            
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <CarouselPrevious className="relative static h-12 w-12 rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" />
+              
+              <div className="flex gap-2">
+                {Array.from({ length: count }).map((_, index) => (
+                  <button
+                    key={index}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      index === current 
+                        ? 'w-8 bg-primary' 
+                        : 'w-2.5 bg-primary/20 hover:bg-primary/40'
+                    }`}
+                    onClick={() => api?.scrollTo(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              <CarouselNext className="relative static h-12 w-12 rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" />
             </div>
           </Carousel>
         </div>
