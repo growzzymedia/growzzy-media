@@ -91,15 +91,23 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <Mail className="w-5 h-5 mr-2" />
+                <Mail className="w-5 h-5 mr-2 flex-shrink-0" />
                 <a href="mailto:growzzymedia@gmail.com" className="text-gray-300 hover:text-white transition-colors">growzzymedia@gmail.com</a>
               </li>
               <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-2" />
+                <Phone className="w-5 h-5 mr-2 flex-shrink-0" />
                 <a href="tel:+919259737609" className="text-gray-300 hover:text-white transition-colors">+91-9259737609</a>
               </li>
-              <p className="text-gray-300 mt-4">Serving clients globally with AI-driven digital marketing strategies and performance marketing solutions.</p>
             </ul>
+            <div className="mt-6 pt-6 border-t border-gray-600">
+              <h5 className="font-semibold mb-3">Serving Brands Globally</h5>
+              <p className="text-gray-300 text-sm mb-2">
+                <strong className="text-white">India:</strong> Delhi NCR, Mumbai, Bangalore, Hyderabad, Ahmedabad
+              </p>
+              <p className="text-gray-300 text-sm">
+                <strong className="text-white">International:</strong> US, UK, UAE & more
+              </p>
+            </div>
           </div>
         </div>
 
