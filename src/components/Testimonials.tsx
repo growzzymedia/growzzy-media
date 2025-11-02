@@ -77,12 +77,19 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-white">
-      <div className="container">
-        <div className="text-center max-w-xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 fade-in-section">Client Success Stories</h2>
-          <p className="text-muted-foreground fade-in-section" data-delay="0.1">
-            Don't just take our word for it. Here's what our clients have to say about working with Growzzy Media.
+    <section id="testimonials" className="section-padding bg-gradient-to-b from-white to-growzzy-gray relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="bg-blob blob-3 animate-float-slow"></div>
+      </div>
+
+      <div className="container relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-12 fade-in-section">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
+            Client <span className="text-growzzy-primary animate-pulse-scale">Success Stories</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Real results. Real brands. Hear from clients who've transformed their business with AI-driven marketing.
           </p>
         </div>
 
@@ -95,7 +102,7 @@ const Testimonials = () => {
               duration: 30,
             }}
             plugins={[plugin.current]}
-            className="w-full max-w-4xl mx-auto"
+            className="w-full max-w-5xl mx-auto"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
@@ -103,34 +110,44 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4">
                   <div className="p-2">
-                    <div className="group bg-white rounded-2xl border border-gray-100 shadow-lg p-8 h-full flex flex-col transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:border-primary/30 hover:shadow-primary/10">
-                      <div className="flex items-center mb-4">
-                        <div className="w-14 h-14 rounded-full overflow-hidden mr-4 ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
+                    <div className="group bg-white rounded-2xl border-2 border-gray-100 shadow-xl p-8 md:p-10 h-full flex flex-col transition-all duration-500 hover-lift hover:border-growzzy-primary hover:shadow-2xl gradient-glow-effect">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-4">
+                        <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-growzzy-light group-hover:ring-growzzy-primary/30 transition-all duration-300 flex-shrink-0 animate-scale-in">
                           <img 
                             src={testimonial.image} 
                             alt={testimonial.name} 
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{testimonial.name}</h3>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        <div className="flex-1">
+                          <h3 className="font-bold text-lg text-foreground group-hover:text-growzzy-primary transition-colors duration-300">
+                            {testimonial.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mb-2">{testimonial.role}</p>
+                          <div className="flex gap-1">
+                            {renderStars(testimonial.stars)}
+                          </div>
                         </div>
                       </div>
                       
-                      <div className="flex mb-4">
-                        {renderStars(testimonial.stars)}
+                      <p className="text-muted-foreground flex-grow leading-relaxed text-base animate-fade-in">
+                        "{testimonial.content}"
+                      </p>
+
+                      {/* Decorative Quote Icon */}
+                      <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" className="text-growzzy-primary">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
                       </div>
-                      
-                      <p className="text-muted-foreground flex-grow leading-relaxed animate-fade-in">{testimonial.content}</p>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
             
-            <div className="flex items-center justify-center gap-8 mt-10">
-              <CarouselPrevious className="relative static h-14 w-14 rounded-full border-2 border-primary/30 bg-white hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110" />
+            <div className="flex items-center justify-center gap-8 mt-12">
+              <CarouselPrevious className="relative static h-14 w-14 rounded-full border-2 border-growzzy-primary/30 bg-white hover:border-growzzy-primary hover:bg-growzzy-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-2xl hover-scale" />
               
               <div className="flex gap-2.5">
                 {Array.from({ length: count }).map((_, index) => (
@@ -138,8 +155,8 @@ const Testimonials = () => {
                     key={index}
                     className={`h-3 rounded-full transition-all duration-500 ${
                       index === current 
-                        ? 'w-10 bg-primary shadow-md' 
-                        : 'w-3 bg-primary/25 hover:bg-primary/50 hover:w-6'
+                        ? 'w-10 bg-growzzy-primary shadow-lg animate-pulse-glow' 
+                        : 'w-3 bg-growzzy-primary/25 hover:bg-growzzy-primary/50 hover:w-6 hover-scale'
                     }`}
                     onClick={() => api?.scrollTo(index)}
                     aria-label={`Go to slide ${index + 1}`}
@@ -147,7 +164,7 @@ const Testimonials = () => {
                 ))}
               </div>
               
-              <CarouselNext className="relative static h-14 w-14 rounded-full border-2 border-primary/30 bg-white hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110" />
+              <CarouselNext className="relative static h-14 w-14 rounded-full border-2 border-growzzy-primary/30 bg-white hover:border-growzzy-primary hover:bg-growzzy-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-2xl hover-scale" />
             </div>
           </Carousel>
         </div>

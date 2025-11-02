@@ -20,7 +20,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="fade-in-section" data-delay="0.2">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover-lift">
               <h3 className="text-2xl font-display font-semibold mb-6">Ready to grow your business?</h3>
               <p className="text-muted-foreground mb-8">
                 Fill out our quick form and we'll get back to you within 24 hours to discuss how we can help your business grow online.
@@ -29,9 +29,12 @@ const Contact = () => {
               <div className="flex flex-col gap-4">
                 <LeadForm 
                   trigger={
-                    <button className="btn-primary w-full flex items-center justify-center gap-2">
-                      Quick Lead Form
-                      <ExternalLink className="w-5 h-5" />
+                    <button className="btn-primary w-full flex items-center justify-center gap-2 animate-pulse-glow hover-lift relative overflow-hidden">
+                      <span className="relative z-10 flex items-center gap-2">
+                        Quick Lead Form
+                        <ExternalLink className="w-5 h-5" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-growzzy-primary via-growzzy-secondary to-growzzy-primary bg-[length:200%_100%] animate-shimmer opacity-0 group-hover:opacity-30"></div>
                     </button>
                   }
                   title="Let's Discuss Your Project"
@@ -42,7 +45,7 @@ const Contact = () => {
                   href={superprofileFormUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline w-full flex items-center justify-center gap-2"
+                  className="btn-outline w-full flex items-center justify-center gap-2 hover-lift"
                 >
                   Complete Detailed Form
                   <ExternalLink className="w-5 h-5" />

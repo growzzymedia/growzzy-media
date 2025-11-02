@@ -111,47 +111,49 @@ const Portfolio = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item, index) => (
-            <Link 
+            <div 
               key={index} 
-              to={`/portfolio/${item.id}`}
-              className="bg-white rounded-lg overflow-hidden shadow card-hover fade-in-section group transform transition-all duration-500 hover:scale-105"
+              className="bg-white rounded-lg overflow-hidden shadow hover-lift fade-in-section group transform transition-all duration-500"
               data-delay={`${0.2 + index * 0.15}`}
             >
-              <div className="overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-growzzy-primary font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.category}</div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors duration-300">{item.title}</h3>
-                <p className="text-muted-foreground text-sm mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">{item.metrics}</p>
-                {item.website && (
-                  <div className="flex items-center text-sm mb-4 opacity-75 group-hover:opacity-100 transition-opacity duration-300">
-                    <LinkIcon className="w-3 h-3 mr-1 text-growzzy-primary" />
-                    <a 
-                      href={item.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-growzzy-primary hover:underline"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {item.website.replace('https://', '')}
-                    </a>
-                  </div>
-                )}
-                <div className="mt-2 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-10px] group-hover:translate-x-0">
-                  View Project <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <Link to={`/portfolio/${item.id}`} className="block">
+                <div className="overflow-hidden relative">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-growzzy-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-              </div>
-            </Link>
+                <div className="p-6">
+                  <div className="text-sm text-growzzy-primary font-medium mb-2 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    {item.category}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-growzzy-primary transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                    {item.metrics}
+                  </p>
+                  {item.website && (
+                    <div className="flex items-center text-sm mb-2 opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+                      <LinkIcon className="w-3 h-3 mr-1 text-growzzy-primary" />
+                      <span className="text-growzzy-primary text-xs truncate">
+                        {item.website.replace('https://', '').replace('www.', '')}
+                      </span>
+                    </div>
+                  )}
+                  <div className="mt-4 text-growzzy-primary font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-10px] group-hover:translate-x-0">
+                    View Project <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
+            </div>
           ))}
         </div>
 
         <div className="mt-12 text-center fade-in-section" data-delay="0.8">
-          <Link to="/portfolio" className="btn-primary inline-flex items-center group transform transition-all duration-300 hover:scale-105">
+          <Link to="/portfolio" className="btn-primary inline-flex items-center group hover-lift animate-pulse-glow">
             See Full Portfolio
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>

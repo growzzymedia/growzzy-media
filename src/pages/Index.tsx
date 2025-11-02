@@ -1,9 +1,9 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
+import AIProcess from '../components/AIProcess';
 import Blog from '../components/Blog';
 import Resources from '../components/Resources';
 import Testimonials from '../components/Testimonials';
@@ -14,7 +14,7 @@ import ScrollToReveal from '../components/ScrollToReveal';
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Growzzy Media - Digital Marketing Agency";
+    document.title = "Growzzy Media - AI-Powered Digital Marketing Agency";
     window.scrollTo(0, 0);
   }, []);
 
@@ -24,6 +24,7 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
+        <AIProcess />
         <Portfolio />
         <Testimonials />
         <Blog />
