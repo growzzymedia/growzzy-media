@@ -23,7 +23,7 @@ const FAQ = () => {
     },
     {
       question: "What services do you specialize in?",
-      answer: "We offer: AI-Powered Lead Generation (Meta & Google), AI-Driven Social Media Management, AI LinkedIn Marketing, AI-Optimized Website Development, AI Marketing Automation, Performance Marketing, and AI and SEO Integration Strategies. Basically, your entire online presence — managed and grown with AI."
+      answer: "We offer: AI-Powered Lead Generation (Meta & Google), AI-Driven Social Media Management, AI LinkedIn Marketing, AI-Optimized Website Development, AI Marketing Automation, Performance Marketing, and AI and SEO Integration Strategies. Basically, your entire online presence. Managed and grown with AI."
     },
     {
       question: "How do you use AI in your marketing services?",
@@ -31,7 +31,7 @@ const FAQ = () => {
     },
     {
       question: "Do you work with international clients using AI marketing strategies?",
-      answer: "Yes — we proudly serve clients globally with AI-driven digital marketing strategies, with deep understanding of regional nuances and audience behaviors. Our AI marketing automation adapts to different markets and time zones for optimal performance."
+      answer: "Yes. We proudly serve clients globally with AI-driven digital marketing strategies and deep understanding of regional nuances and audience behaviors. Our AI marketing automation adapts to different markets and time zones for optimal performance."
     }
   ];
 

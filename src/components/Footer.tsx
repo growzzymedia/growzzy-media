@@ -28,15 +28,15 @@ const Footer = () => {
     },
     {
       question: "How does AI marketing automation work?",
-      answer: "AI marketing automation uses machine learning to improve targeting, analyze data faster, and create smarter campaigns — so you get better results with less manual work through data-driven marketing campaigns."
+      answer: "AI marketing automation uses machine learning to improve targeting, analyze data faster, and create smarter campaigns. You get better results with less manual work through data-driven marketing campaigns."
     },
     {
       question: "Can I choose only one AI marketing service instead of a full package?",
-      answer: "Yes! Every business has unique needs — we offer modular AI-driven digital marketing strategies to match your goals and budget, from AI-powered lead generation to performance marketing."
+      answer: "Yes. Every business has unique needs. We offer modular AI-driven digital marketing strategies to match your goals and budget, from AI-powered lead generation to performance marketing."
     },
     {
       question: "Do you work with international clients using AI marketing?",
-      answer: "Yes — we proudly serve clients globally with AI marketing automation, with deep understanding of regional nuances and audience behaviors for optimal performance marketing results."
+      answer: "Yes. We proudly serve clients globally with AI marketing automation and deep understanding of regional nuances and audience behaviors for optimal performance marketing results."
     },
     {
       question: "What's the process to get started with AI marketing?",

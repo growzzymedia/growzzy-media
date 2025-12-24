@@ -118,13 +118,13 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "ClaySip",
           description: "Building a digital identity for handcrafted terracotta drinkware from scratch.",
-          challenge: "ClaySip came to us with a dream and a product — beautifully handcrafted terracotta drinkware — but no digital identity. The challenge was to build an entire brand from scratch in just 60 days.",
+          challenge: "ClaySip came to us with a dream and a product. Beautifully handcrafted terracotta drinkware. But no digital identity. The challenge was to build an entire brand from scratch in just 60 days.",
           solution: "From naming the brand to logo design, packaging, setting up the e-commerce website, and launching social media, we captured the essence of tradition with a modern twist. Our earthy-toned visuals and storytelling-focused captions helped the brand connect with audiences looking for sustainability and authenticity.",
           results: [
             "Website launched in 3 weeks with full catalog and checkout",
             "Professional product shoot + creatives for social + ads",
             "50,000+ impressions in 2 months (with 80% organic reach)",
-            "Audience resonated with stories behind each piece — 'From Mud to Mug'"
+            "Audience resonated with stories behind each piece: 'From Mud to Mug'"
           ],
           chartData: [
             { name: 'Organic Reach', value: 40000 },
@@ -153,13 +153,13 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Polki Sarees",
           description: "D2C brand founded by women for women, driving awareness through organic content.",
-          challenge: "Polki Sarees, a D2C brand founded by women for women, had a powerful product but minimal reach — just 2,000 followers on Instagram. Our goal was to drive awareness and emotion around the everyday saree, using only organic content.",
-          solution: "We leaned into relatable reels — grandma's wardrobe stories, nostalgia around first sarees, the pride in draping tradition daily. Each reel struck a chord with the audience and created an emotional connection to the brand.",
+          challenge: "Polki Sarees, a D2C brand founded by women for women, had a powerful product but minimal reach. Just 2,000 followers on Instagram. Our goal was to drive awareness and emotion around the everyday saree, using only organic content.",
+          solution: "We leaned into relatable reels. Grandma's wardrobe stories. Nostalgia around first sarees. The pride in draping tradition daily. Each reel struck a chord with the audience and created an emotional connection to the brand.",
           results: [
             "8 million+ views, 100% organically",
             "Instagram reach 20x in 4 months",
             "Dozens of viral reels shared by fashion & culture pages",
-            "Conversions began to flow — with zero ad spend"
+            "Conversions began to flow. Zero ad spend."
           ],
           chartData: [
             { name: 'Month 1', value: 10000 },
@@ -187,7 +187,7 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Adv. Rashi Singhal",
           description: "Positioning a legal professional as a credible, insightful voice in the ecosystem.",
-          challenge: "In a field like law, digital presence is rare — but powerful. We partnered with Adv. Rashi Singhal to position her as a credible, insightful voice in the legal ecosystem on LinkedIn.",
+          challenge: "In a field like law, digital presence is rare but powerful. We partnered with Adv. Rashi Singhal to position her as a credible, insightful voice in the legal ecosystem on LinkedIn.",
           solution: "From posts on legal rights to simplified law explainers and her personal journey as a woman in law, our content made her profile both human and professional. We created a content strategy that showcased her expertise while making legal concepts accessible.",
           results: [
             "Impressions: 870 → 450,678+",
@@ -212,7 +212,7 @@ const ProjectDetail = () => {
           ],
           website: "https://www.linkedin.com/in/rashi-singhal-326076213",
           testimonial: {
-            quote: "The law may be black and white — but your brand doesn't have to be.",
+            quote: "The law may be black and white. But your brand doesn't have to be.",
             name: "Adv. Rashi Singhal",
             position: "Legal Professional"
           }
@@ -225,8 +225,8 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Bedtime Essentials",
           description: "Transforming an offline bedsheet manufacturer into a digital D2C brand.",
-          challenge: "An offline manufacturer of bedsheets wanted to go digital — not just to sell online, but to generate wholesale leads and build a trusted identity. The challenge was to create a strategy that worked for both B2C and B2B audiences.",
-          solution: "We launched their Instagram with high-quality visuals, created simple lead-gen forms for B2B customers, and rolled out a D2C store on a no-code platform. Our strategy covered two very different audiences — and served both well.",
+          challenge: "An offline manufacturer of bedsheets wanted to go digital. Not just to sell online, but to generate wholesale leads and build a trusted identity. The challenge was to create a strategy that worked for both B2C and B2B audiences.",
+          solution: "We launched their Instagram with high-quality visuals, created simple lead-gen forms for B2B customers, and rolled out a D2C store on a no-code platform. Our strategy covered two very different audiences and served both well.",
           results: [
             "1.6x increase in revenue in 60 days",
             "Inbound inquiries for bulk orders via DMs & forms",
@@ -244,7 +244,7 @@ const ProjectDetail = () => {
           website: "https://bedtimeessentials.dm2buy.com/",
           social: "https://www.instagram.com/bed_timeessentials/",
           testimonial: {
-            quote: "We turned fabric into stories — and stories into sales.",
+            quote: "We turned fabric into stories. And stories into sales.",
             name: "Bedtime Essentials Team",
             position: "Bedding Manufacturer"
           }
@@ -257,7 +257,7 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "PACE Institute",
           description: "Generating local awareness and leads for CUET coaching in Delhi with limited budget.",
-          challenge: "PACE, a leading institute for Engineering/Medical/Olympiads, was expanding into CUET coaching in Delhi. The challenge was to generate local awareness and leads — fast — with a small budget.",
+          challenge: "PACE, a leading institute for Engineering/Medical/Olympiads, was expanding into CUET coaching in Delhi. The challenge was to generate local awareness and leads. Fast. With a small budget.",
           solution: "We designed creatives that highlighted results, student stories, and key course benefits. With just ₹5,000 in ad budget, we generated over 180 qualified leads via Google + Meta. Every click was tracked, every rupee optimized.",
           results: [
             "₹5,000 ad spend → 180+ qualified leads",
@@ -279,7 +279,7 @@ const ProjectDetail = () => {
           ],
           website: "https://iitianspace.com/",
           testimonial: {
-            quote: "Every lead was a potential future topper — and we didn't let them slip.",
+            quote: "Every lead was a potential future topper. And we didn't let them slip.",
             name: "PACE Institute Director",
             position: "Education Provider"
           }
@@ -378,7 +378,7 @@ const ProjectDetail = () => {
           ],
           website: "https://aerieacademy.com",
           testimonial: {
-            quote: "From broken funnels to batch goals—Growzzy fixed our lead generation completely.",
+            quote: "From broken funnels to batch goals. Growzzy fixed our lead generation completely.",
             name: "Aerie Academy Team",
             position: "Architecture Coaching Institute"
           }
@@ -391,7 +391,7 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Dr. Jivika Singh",
           description: "Built foundation for organic medical brand in first year of PG.",
-          challenge: "As a pediatric resident, Dr. Jivika wanted to build visibility among young parents and establish herself as a credible digital doctor—without losing her voice to trends.",
+          challenge: "As a pediatric resident, Dr. Jivika wanted to build visibility among young parents and establish herself as a credible digital doctor. Without losing her voice to trends.",
           solution: "We offered a low-effort yet research-driven content plan: 3 carousels/week backed by pediatric science & trends, 1 reel/week with scripts and edits from our side, Aesthetic planning in beige-cream tones, Strategic positioning to fight misinformation & create responsible engagement.",
           results: [
             "Built early trust and credibility with new parents",
@@ -412,7 +412,7 @@ const ProjectDetail = () => {
           ],
           social: "https://www.instagram.com/dr.jivikasingh",
           testimonial: {
-            quote: "Building trust with new parents while staying true to medical science—that's what great content does.",
+            quote: "Building trust with new parents while staying true to medical science. That's what great content does.",
             name: "Dr. Jivika Singh",
             position: "Pediatric Resident"
           }
