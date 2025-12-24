@@ -125,7 +125,7 @@ const Services = () => {
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 fade-in-section">
-            Our Studios — Where <span className="text-growzzy-primary animate-pulse-scale">Human Strategy</span> Meets <span className="text-growzzy-primary animate-pulse-scale">AI Speed</span>
+            Our Studios: Where <span className="text-growzzy-primary animate-pulse-scale">Human Strategy</span> Meets <span className="text-growzzy-primary animate-pulse-scale">AI Speed</span>
           </h2>
           <p className="text-lg text-muted-foreground fade-in-section" data-delay="0.2">
             Two specialized studios, one mission: helping you scale smarter with AI-driven marketing

@@ -31,7 +31,7 @@ const ServicesPage = () => {
       description: "Struggling to convert eyeballs into buyers? Let us write words that not only attract, but also sell.",
       value: "",
       benefits: [
-        "End-to-end funnel content — ads, emails, landing pages",
+        "End-to-end funnel content: ads, emails, landing pages",
         "Copy that speaks to your audience's pain points",
         "Proven frameworks that nudge action"
       ]
@@ -61,7 +61,7 @@ const ServicesPage = () => {
     {
       id: "launch-campaigns",
       title: "Launch & Campaign Execution",
-      description: "Product ready? But what about the launch buzz? We don't just post — we build hype.",
+      description: "Product ready? But what about the launch buzz? We build hype, not just posts.",
       value: "",
       benefits: [
         "End-to-end launch calendars",
@@ -119,7 +119,7 @@ const ServicesPage = () => {
     {
       id: "company-page",
       title: "Company Page Management",
-      description: "But wait — what about your brand's voice on LinkedIn? Your company isn't you. It needs its own spotlight.",
+      description: "What about your brand's voice on LinkedIn? Your company isn't you. It needs its own spotlight.",
       value: "",
       benefits: [
         "Engaging company updates & thought-led posts",
@@ -169,10 +169,10 @@ const ServicesPage = () => {
                   We offer comprehensive AI marketing automation and data-driven campaigns designed to help your brand grow using the best AI marketing platforms for D2C and B2B brands.
                 </p>
                 <p className="mb-4">
-                  We're not just an AI digital marketing agency — we're your AI-powered growth partner.
+                  We're your AI-powered growth partner.
                 </p>
                 <p className="mb-6">
-                  At Growzzy Media, every campaign is fueled by real-time data, not guesswork. From AI-powered lead generation to automated SEO and trend-predictive content, our stack learns what converts — faster than any human team alone.
+                  At Growzzy Media, every campaign is fueled by real-time data, not guesswork. From AI-powered lead generation to automated SEO and trend-predictive content, our stack learns what converts. Faster than any human team alone.
                 </p>
                 <Link to="/connect" className="btn-primary inline-flex items-center group">
                   Book Your Free Consultation

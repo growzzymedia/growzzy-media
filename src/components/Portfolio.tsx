@@ -105,7 +105,7 @@ const Portfolio = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 fade-in-section">Our Work</h2>
           <p className="text-xl font-medium mb-2 slide-in-section" data-delay="0.1">Real brands. Real results.</p>
           <p className="text-muted-foreground scale-in-section" data-delay="0.2">
-            Scroll through our favourite success stories — campaigns that tripled reach, brands that blew up, and websites that made waves.
+            Scroll through our favourite success stories. Campaigns that tripled reach, brands that blew up, and websites that made waves.
           </p>
         </div>
 

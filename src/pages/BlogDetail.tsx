@@ -21,14 +21,14 @@ const BlogDetail = () => {
       content: `
         <p class="mb-4">AI is not the future of marketing – it's the present, and it's here to stay! As we move deeper into 2025, artificial intelligence is completely reshaping how brands connect, convert, and captivate their audiences. From campaign planning and creative development to writing scripts and producing visuals, AI is playing a central role.</p>
         
-        <p class="mb-4">Whether you're a growing startup or a well-established enterprise, integrating AI into your marketing strategy is no longer optional—it's essential. Striking the right balance between manual effort and automation can make your company both efficient and effective.</p>
+        <p class="mb-4">Whether you're a growing startup or a well-established enterprise, integrating AI into your marketing strategy is no longer optional. It's essential. Striking the right balance between manual effort and automation can make your company both efficient and effective.</p>
         
         <p class="mb-4">Here's how you can smartly and successfully integrate AI into your marketing playbook this year:</p>
         
         <h3 class="text-xl font-semibold my-4">1. Hyper-Personalization at Scale (Customers love this ;)</h3>
         <p class="mb-4">Gone are the days of one-size-fits-all campaigns. Today's consumers expect personalization. And with attention spans dropping to just 3 seconds, your hook needs to be highly targeted and instantly engaging.</p>
-        <p class="mb-4">AI tools—like machine learning algorithms and predictive analytics—help marketers tailor messaging based on user behavior, preferences, and buying patterns. Imagine email campaigns where subject lines, product suggestions, and even send times are customized for each recipient.</p>
-        <p class="mb-4">This applies to everything from WhatsApp and email marketing to in-app communication—the key is feeding the AI the right data.</p>
+        <p class="mb-4">AI tools like machine learning algorithms and predictive analytics help marketers tailor messaging based on user behavior, preferences, and buying patterns. Imagine email campaigns where subject lines, product suggestions, and even send times are customized for each recipient.</p>
+        <p class="mb-4">This applies to everything from WhatsApp and email marketing to in-app communication. The key is feeding the AI the right data.</p>
         <p class="mb-4 text-growzzy-primary font-medium">Growzzy Tip: Use AI-powered CRMs to dynamically segment your audience and create experiences that feel deeply personal and relevant.</p>
         
         <h3 class="text-xl font-semibold my-4">2. AI-Powered Content Creation (It's never been easier!)</h3>
@@ -37,13 +37,13 @@ const BlogDetail = () => {
         <p class="mb-4 text-growzzy-primary font-medium">Growzzy Insight: Let AI handle the first draft, but always add your unique brand voice and human touch to keep the content authentic and emotionally resonant.</p>
         
         <h3 class="text-xl font-semibold my-4">3. Smart Customer Support with AI Voice Agents</h3>
-        <p class="mb-4">Still picturing basic chatbots? Think again. In 2025, AI voice agents will go far beyond text-based bots—they can carry on realistic, human-like conversations that make customers feel truly heard.</p>
-        <p class="mb-4">This 24/7 support option not only improves the customer experience but also saves your business significant time and money. Tools like Tably, Vapi, and Zendesk AI can manage FAQs, resolve issues, and even handle upselling—all while sounding like a real person.</p>
+        <p class="mb-4">Still picturing basic chatbots? Think again. In 2025, AI voice agents go far beyond text-based bots. They carry on realistic, human-like conversations that make customers feel truly heard.</p>
+        <p class="mb-4">This 24/7 support option improves the customer experience and saves your business significant time and money. Tools like Tably, Vapi, and Zendesk AI can manage FAQs, resolve issues, and even handle upselling. All while sounding like a real person.</p>
         <p class="mb-4 text-growzzy-primary font-medium">Action Step: Integrate AI-powered chat and voice bots across your website and social media platforms to enhance engagement and reduce response time.</p>
         
         <h3 class="text-xl font-semibold my-4">4. Data-Driven Decision Making (Let AI do the heavy lifting)</h3>
-        <p class="mb-4">Sure, humans have been analyzing data for years—but not at the speed and accuracy AI can offer. In 2025, AI thrives on data, and that's a game-changer for marketers.</p>
-        <p class="mb-4">From Google Analytics 4's AI-powered insights to platforms like Harmonize and Power BI, marketers can now forecast trends, measure ROI, and optimize strategies in real-time—without drowning in spreadsheets.</p>
+        <p class="mb-4">Humans have been analyzing data for years. But not at the speed and accuracy AI can offer. In 2025, AI thrives on data, and that's a game-changer for marketers.</p>
+        <p class="mb-4">From Google Analytics 4's AI-powered insights to platforms like Harmonize and Power BI, marketers can now forecast trends, measure ROI, and optimize strategies in real-time. No more drowning in spreadsheets.</p>
         <p class="mb-4 text-growzzy-primary font-medium">Growzzy Tip: Use AI tools to detect performance anomalies early, so you can quickly pivot and make informed decisions that keep campaigns on track & to check for your competitors strategies- Use Spyfu.</p>
         
         <p class="mt-6 text-growzzy-primary font-medium">AI isn't here to replace marketers, it's here to empower them. By blending human creativity with machine intelligence, your brand can stay agile, authentic, and ahead of the curve.</p>
@@ -59,9 +59,9 @@ const BlogDetail = () => {
       author: "Mayank Goel",
       category: "Business Growth",
       content: `
-        <p class="mb-4">If you're a coach, consultant, or trainer in India trying to scale your business online, you've likely been fed a cocktail of overhyped strategies. From daily Reels to "DM everyone you know" tactics—some work, most don't.</p>
+        <p class="mb-4">If you're a coach, consultant, or trainer in India trying to scale your business online, you've likely been fed a cocktail of overhyped strategies. From daily Reels to "DM everyone you know" tactics. Some work, most don't.</p>
         
-        <p class="mb-4">At Growzzy Media, we've worked with coaches across Mumbai, Delhi, Bangalore, Hyderabad, Ahmedabad and beyond. We've seen what actually drives growth—and what's just BS.</p>
+        <p class="mb-4">At Growzzy Media, we've worked with coaches across Mumbai, Delhi, Bangalore, Hyderabad, Ahmedabad and beyond. We've seen what actually drives growth. And what's just noise.</p>
         
         <p class="mb-4">Let's break it down.</p>
         
@@ -95,7 +95,7 @@ const BlogDetail = () => {
         <p class="mb-4 text-growzzy-primary font-medium">Tools that help: Systeme.io, ConvertKit, and Calendly for booking calls</p>
         
         <h3 class="text-xl font-semibold my-4">4. Strategic Paid Ads (Not Boosted Posts)</h3>
-        <p class="mb-4">Meta ads, YouTube, and Google Local ads work—but only when:</p>
+        <p class="mb-4">Meta ads, YouTube, and Google Local ads work. But only when:</p>
         <ul class="mb-4 ml-6 list-disc">
           <li>You use solid creatives (UGC-style)</li>
           <li>Funnel traffic to a landing page (not your IG profile!)</li>
@@ -124,7 +124,7 @@ const BlogDetail = () => {
         <p class="mb-4">One word: Trust. Gone. Once lost, it's game over in this space.</p>
         
         <h4 class="text-lg font-semibold my-3">DIY'ing Everything</h4>
-        <p class="mb-4">Being your own designer, video editor, strategist, and closer? That's not scaling—that's struggling.</p>
+        <p class="mb-4">Being your own designer, video editor, strategist, and closer? That's not scaling. That's struggling.</p>
         
         <h2 class="text-2xl font-semibold my-6">Local SEO Hacks for Coaches in India</h2>
         <ul class="mb-4 ml-6 list-disc">
@@ -136,13 +136,13 @@ const BlogDetail = () => {
     {
       id: "building-online-presence",
       title: "Building Your Business's Online Presence",
-      excerpt: "In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability — all rolled into one.",
+      excerpt: "In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability. All rolled into one.",
       date: "May 5, 2025",
       image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       author: "Varuni Bansal",
       category: "Digital Strategy",
       content: `
-        <p class="mb-4">In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability — all rolled into one. But building it? That's a whole journey.</p>
+        <p class="mb-4">In a world where digital is default, your online presence is more than just a fancy website or Instagram page. It's your business's personality, credibility, and discoverability. All rolled into one. But building it? That's a whole journey.</p>
         
         <p class="mb-4">Here's how to start:</p>
         
@@ -156,7 +156,7 @@ const BlogDetail = () => {
         <p class="mb-4">Choose platforms based on where your audience hangs out. Be consistent, not just present.</p>
         
         <h3 class="text-xl font-semibold my-4">Content is Currency</h3>
-        <p class="mb-4">Blog posts, reels, newsletters — the more value you offer, the more trust you build.</p>
+        <p class="mb-4">Blog posts, reels, newsletters. The more value you offer, the more trust you build.</p>
         
         <h3 class="text-xl font-semibold my-4">Google My Business + Listings</h3>
         <p class="mb-4">Don't sleep on local SEO. GMB is your best friend for foot traffic and credibility.</p>
@@ -179,14 +179,14 @@ const BlogDetail = () => {
         
         <h3 class="text-xl font-semibold my-4">The Learning Curve</h3>
         <p class="mb-4">We learned (the hard way) how to run ads that actually convert.</p>
-        <p class="mb-4">We figured out SEO isn't just keywords — it's strategy.</p>
+        <p class="mb-4">We figured out SEO isn't just keywords. It's strategy.</p>
         <p class="mb-4">We stopped saying yes to everyone and niched down.</p>
         <p class="mb-4">We made mistakes, lost sleep, and sometimes even lost confidence.</p>
         
         <p class="mb-4">But we stayed real. Every brand we helped grow became proof we were doing something right.</p>
         
         <h3 class="text-xl font-semibold my-4">Today?</h3>
-        <p class="mb-4">We're a team that breathes digital. From ghostwriting for LinkedIn influencers to managing multi-channel ad funnels — we've evolved into a full-stack agency with heart.</p>
+        <p class="mb-4">We're a team that breathes digital. From ghostwriting for LinkedIn influencers to managing multi-channel ad funnels. We've evolved into a full-stack agency with heart.</p>
         
         <p class="mt-6 text-growzzy-primary font-medium">Moral of the story: You don't have to start perfect. You just have to start. And stay obsessed with learning.</p>
       `
@@ -233,10 +233,10 @@ const BlogDetail = () => {
       category: "Marketing Trends",
       content: `
         <h3 class="text-xl font-semibold my-4">1. AI Everywhere</h3>
-        <p class="mb-4">From copywriting to customer service — AI tools are not a threat, but a tool. Use them to scale smarter.</p>
+        <p class="mb-4">From copywriting to customer service, AI tools are not a threat. They're an advantage. Use them to scale smarter.</p>
         
         <h3 class="text-xl font-semibold my-4">2. Search is Changing</h3>
-        <p class="mb-4">People now search on Instagram, TikTok, and even Reddit. Think beyond Google — optimize content where your audience searches.</p>
+        <p class="mb-4">People now search on Instagram, TikTok, and even Reddit. Think beyond Google. Optimize content where your audience searches.</p>
         
         <h3 class="text-xl font-semibold my-4">3. Personal Branding > Business Pages</h3>
         <p class="mb-4">Founders are becoming influencers. People want to hear from humans, not logos.</p>
@@ -245,7 +245,7 @@ const BlogDetail = () => {
         <p class="mb-4">Private groups, Discord servers, and exclusive newsletters are where loyalty is built.</p>
         
         <h3 class="text-xl font-semibold my-4">5. Micro Content is Winning</h3>
-        <p class="mb-4">60-second videos, carousels, stories — if your content can't hold attention in 3 seconds, it's gone.</p>
+        <p class="mb-4">60-second videos, carousels, stories. If your content can't hold attention in 3 seconds, it's gone.</p>
         
         <p class="mt-6 text-growzzy-primary font-medium">Final word: 2025 isn't about doing everything. It's about doing the right things, consistently, and building genuine relationships with your audience.</p>
       `
