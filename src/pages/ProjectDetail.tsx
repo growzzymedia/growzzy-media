@@ -86,7 +86,7 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Humara Pandit",
           description: "Faith-tech startup redefining how modern devotees access spiritual rituals.",
-          challenge: "Humara Pandit approached us with a clear mission — they didn't just want clicks; they wanted connections. The challenge was to create ad strategies that resonated with spiritual seekers while delivering measurable results.",
+          challenge: "Humara Pandit approached us with a clear mission. They didn't just want clicks. They wanted connections. The challenge was to create ad strategies that resonated with spiritual seekers while delivering measurable results.",
           solution: "We restructured their Google and Meta ad accounts, built niche-focused audiences, and developed campaigns that blended emotion with action. Whether it was highlighting the sacredness of temple blessings or showcasing limited-edition Prasad, every creative we delivered was spiritually resonant and high-converting.",
           results: [
             "Cost Per Lead (CPL) as low as ₹2.8",
@@ -105,7 +105,7 @@ const ProjectDetail = () => {
           ],
           website: "https://humarapandit.com/",
           testimonial: {
-            quote: "It wasn't just about selling — it was about building trust in faith, digitally.",
+            quote: "It wasn't just about selling. It was about building trust in faith, digitally.",
             name: "Humara Pandit Team",
             position: "Faith-Tech Startup"
           }
@@ -292,13 +292,13 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "That Blingy Thing",
           description: "Turning a passion project into a monetized brand within weeks.",
-          challenge: "That Blingy Thing was a passion project struggling to take its first commercial leap. With no previous online sales and limited product confidence, the founder needed more than just content—they needed direction, clarity, and motivation.",
+          challenge: "That Blingy Thing was a passion project struggling to take its first commercial leap. With no previous online sales and limited product confidence, the founder needed more than content. They needed direction, clarity, and motivation.",
           solution: "We ran a focused 2-month pilot. This included: Planning and directing content shoots to highlight product aesthetics, Reworking product presentation and positioning, Running performance-oriented Meta ads and organic posts, Consistent support to boost founder's confidence and execution.",
           results: [
-            "10–15 orders generated within the first 30 days",
+            "10-15 orders generated within the first 30 days",
             "Achieved this with only 10 Instagram posts",
             "Improved product clarity, shoot aesthetics, and founder narrative",
-            "Turned a passion project into a monetized brand—within weeks"
+            "Turned a passion project into a monetized brand within weeks"
           ],
           chartData: [
             { name: 'Week 1', value: 2 },
@@ -312,7 +312,7 @@ const ProjectDetail = () => {
           ],
           social: "https://www.instagram.com/that.blingy.thingy",
           testimonial: {
-            quote: "We needed more than just content—we needed confidence. Growzzy gave us both.",
+            quote: "We needed more than content. We needed confidence. Growzzy gave us both.",
             name: "That Blingy Thing Founder",
             position: "Jewelry Brand"
           }
@@ -325,7 +325,7 @@ const ProjectDetail = () => {
           image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           client: "Dr. Karan Chawla",
           description: "Established authority and relevance in niche medical creator economy.",
-          challenge: "Dr. Karan wanted to be more than a practicing doctor—he aimed to become a thought leader guiding fellow medicos through finance, strategy, and growth. But with no structured content, he needed a voice and visuals that matched his vision.",
+          challenge: "Dr. Karan wanted to be more than a practicing doctor. He aimed to become a thought leader guiding fellow medicos through finance, strategy, and growth. But with no structured content, he needed a voice and visuals that matched his vision.",
           solution: "We stepped in with: Scripting & editing end-to-end content (mainly reels), Strategic positioning for thought leadership, Educative, community-first narrative style, Weekly themes built around finance, growth, and career for medical professionals.",
           results: [
             "Reels with high engagement & shares in the doctor niche",
@@ -347,7 +347,7 @@ const ProjectDetail = () => {
           ],
           social: "https://www.instagram.com/dr.karanchawla",
           testimonial: {
-            quote: "From doctor to thought leader—Growzzy helped me find my voice in the medical creator space.",
+            quote: "From doctor to thought leader. Growzzy helped me find my voice in the medical creator space.",
             name: "Dr. Karan Chawla",
             position: "Medical Professional & Finance Educator"
           }

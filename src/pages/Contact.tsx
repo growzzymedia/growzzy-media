@@ -100,27 +100,27 @@ const ContactPage = () => {
   const faqs = [
     {
       question: "I'm a small business owner. Is Growzzy Media the right fit for me?",
-      answer: "Absolutely! We work with businesses of all sizes — and especially love helping small brands scale with tailored, affordable digital strategies."
+      answer: "Absolutely. We work with businesses of all sizes. We especially love helping small brands scale with tailored, affordable digital strategies."
     },
     {
       question: "What services do you specialize in?",
-      answer: "We offer: Paid Ads (Meta & Google), Social Media Management, LinkedIn Branding, Website Development, Lead Gen, Brand Strategy, Reputation Management. Basically, your entire online presence — managed and grown, start to finish."
+      answer: "We offer Paid Ads (Meta & Google), Social Media Management, LinkedIn Branding, Website Development, Lead Gen, Brand Strategy, and Reputation Management. Basically, your entire online presence. Managed and grown, start to finish."
     },
     {
       question: "How do you use AI in your services?",
-      answer: "We blend AI with creativity to improve targeting, analyze data faster, and create smarter campaigns — so you get better results, faster."
+      answer: "We blend AI with creativity to improve targeting, analyze data faster, and create smarter campaigns. You get better results, faster."
     },
     {
       question: "Can I choose only one or two services instead of a full package?",
-      answer: "Yes! Every business has unique needs — we offer modular service plans to match your goals and budget."
+      answer: "Yes. Every business has unique needs. We offer modular service plans to match your goals and budget."
     },
     {
       question: "Do you work with international clients?",
-      answer: "Yes — we proudly serve clients globally, with deep understanding of regional nuances and audience behaviors."
+      answer: "Yes. We proudly serve clients globally, with deep understanding of regional nuances and audience behaviors."
     },
     {
       question: "What's the process to get started?",
-      answer: "Simple: Book a discovery call, we'll audit your needs & goals, you get a tailored roadmap, and then we execute and grow together!"
+      answer: "Simple. Book a discovery call. We'll audit your needs and goals. You get a tailored roadmap. Then we execute and grow together."
     }
   ];
 
