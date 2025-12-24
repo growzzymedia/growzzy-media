@@ -36,35 +36,35 @@ const Testimonials = () => {
     {
       name: "Team Humara Pandit",
       role: "Faith-Tech Startup | Ads & Content",
-      content: "Partnering with Growzzy Media has been one of the best decisions for our startup. Their sharp ads, smart targeting, and culturally resonant content gave us not just leads, but trust. Our ROAS jumped, and even 5-day campaigns brought real results. They didn't just run ads — they understood our faith-driven mission and brought it alive in every campaign.",
+      content: "Partnering with Growzzy Media has been one of the best decisions for our startup. Their sharp ads, smart targeting, and culturally resonant content gave us real leads and real trust. Our ROAS jumped. Even 5-day campaigns brought solid results. They understood our faith-driven mission and brought it alive in every campaign.",
       stars: 5,
       image: "https://images.unsplash.com/photo-1614107707379-283a65f5b1d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Founders, ClaySip",
       role: "Branding, Social Media, Website for Terracotta Brand",
-      content: "We were completely offline, unsure if going digital was worth it. Growzzy Media not only convinced us to take that leap — they built our entire brand from scratch, thoughtfully and affordably. From logo to launch, they handled everything. In just 2 months, we reached over 50,000 people and started receiving direct website sales. It was like watching our mitti ka sapna come alive online.",
+      content: "We were completely offline and unsure if going digital was worth it. Growzzy convinced us to take the leap. Then they built our entire brand from scratch. Thoughtfully. Affordably. From logo to launch, they handled everything. In just 2 months, we reached over 50,000 people and started getting direct website sales. It felt like watching our mitti ka sapna come alive online.",
       stars: 5,
       image: "https://images.unsplash.com/photo-1509527855516-5ab203a0a0a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Founder, Polki Sarees",
       role: "Social Media Management for D2C Saree Brand",
-      content: "We didn't think Instagram could move the needle this fast. With Growzzy's creative direction, we went from 2K to over 8 million reach in just 4 months — and that too organically! Every reel, every post, told our story perfectly. They truly helped us make sarees feel magical again, just like childhood memories.",
+      content: "We didn't think Instagram could move the needle this fast. With Growzzy's creative direction, we went from 2K to over 8 million reach in 4 months. All organic. Every reel, every post told our story perfectly. They truly helped us make sarees feel magical again, just like childhood memories.",
       stars: 5,
       image: "https://images.unsplash.com/photo-1619411281075-8272e104115e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Adv. Rashi Singhal",
       role: "LinkedIn Personal Branding",
-      content: "I always knew I needed a digital presence, but I didn't know how to make it impactful until Growzzy stepped in. In 4 months, my LinkedIn impressions jumped from 800 to 45,000+. New clients began reaching out through the platform, and my content finally reflected my credibility. Their strategy gave my practice a personal brand I'm proud of.",
+      content: "I always knew I needed a digital presence, but I didn't know how to make it impactful. Then Growzzy stepped in. In 4 months, my LinkedIn impressions jumped from 800 to 45,000+. New clients began reaching out through the platform. My content finally reflected my credibility. Their strategy gave my practice a personal brand I'm proud of.",
       stars: 5,
       image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Owner, Bedtime Essentials",
       role: "Social Media + Lead Gen for D2C & Wholesale",
-      content: "We'd been in the bedsheet business for years, but online was new for us. Growzzy Media gave us the confidence — and the results. They built our social presence from scratch, ran B2B outreach, and created a D2C buying link that actually sold. Our revenue grew by 1.6x in two months. They turned our bedsheets into a digital success story.",
+      content: "We'd been in the bedsheet business for years, but online was new for us. Growzzy gave us the confidence. And the results. They built our social presence from scratch, ran B2B outreach, and created a D2C buying link that actually sold. Revenue grew 1.6x in two months. They turned our bedsheets into a digital success story.",
       stars: 5,
       image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     }

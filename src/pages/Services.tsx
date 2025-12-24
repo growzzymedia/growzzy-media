@@ -188,11 +188,11 @@ const ServicesPage = () => {
           <div className="container">
             {/* Main Header */}
             <div className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 fade-in-section">
-                Our Studios — Where Human-Led Strategy Meets <span className="text-growzzy-primary">AI-Powered Speed</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 fade-in-section">
+                Our Studios: Where Human-Led Strategy Meets <span className="text-growzzy-primary">AI-Powered Speed</span>
               </h2>
               <p data-delay="0.2" className="text-lg md:text-xl text-muted-foreground fade-in-section mb-8">
-                We aren't just a marketing agency — we're your creative growth partners. At Growzzy, we combine human creativity with AI efficiency across two core studios:
+                We're your creative growth partners, not just another marketing agency. At Growzzy, we combine human creativity with AI efficiency across two core studios:
               </p>
             </div>
 
@@ -274,7 +274,7 @@ const ServicesPage = () => {
                     
                     <div className="pt-8">
                       <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">LinkedIn Studio</h3>
-                      <p className="text-lg text-muted-foreground mb-8">LinkedIn isn't a resume platform. It's a revenue platform — we help you use it right.</p>
+                      <p className="text-lg text-muted-foreground mb-8">LinkedIn isn't a resume platform. It's a revenue platform. We help you use it right.</p>
                     </div>
 
                     <Accordion type="single" collapsible className="space-y-3">
